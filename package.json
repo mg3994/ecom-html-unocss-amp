@@ -1,0 +1,18 @@
+{
+  "name": "amp-unocss-ecommerce",
+  "version": "1.0.0",
+  "description": "AMP E-Commerce Store with HTML, UnoCSS presetWind3 & JSON-LD",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-css.js",
+    "validate": "node scripts/validate-amp.js",
+    "serve": "npx serve -p 8080 ."
+  },
+  "devDependencies": {
+    "@unocss/core": "^66.8.0",
+    "@unocss/preset-wind3": "^66.8.0",
+    "amphtml-validator": "^1.0.35",
+    "serve": "^14.2.4",
+    "unocss": "^66.8.0"
+  }
+}
