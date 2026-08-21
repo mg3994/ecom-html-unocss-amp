@@ -81,6 +81,7 @@
 .mx-auto{margin-left:auto;margin-right:auto;}
 .mb-2{margin-bottom:0.5rem;}
 .mb-3{margin-bottom:0.75rem;}
+.mb-6{margin-bottom:1.5rem;}
 .ml-auto{margin-left:auto;}
 .mt-0\.5{margin-top:0.125rem;}
 .mt-16{margin-top:4rem;}
@@ -98,6 +99,7 @@
 .h-4{height:1rem;}
 .h-5{height:1.25rem;}
 .h-6{height:1.5rem;}
+.h-full{height:100%;}
 .max-w-\[110px\]{max-width:110px;}
 .max-w-2xl{max-width:42rem;}
 .max-w-7xl{max-width:80rem;}
@@ -250,7 +252,6 @@
 .dark .dark\:text-brand-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
 .dark .dark\:text-brand-500{--un-text-opacity:1;color:rgb(34 197 94 / var(--un-text-opacity));}
 .dark .dark\:text-gray-100{--un-text-opacity:1;color:rgb(243 244 246 / var(--un-text-opacity));}
-.dark .dark\:text-gray-200{--un-text-opacity:1;color:rgb(229 231 235 / var(--un-text-opacity));}
 .dark .dark\:text-gray-300,
 .text-gray-300{--un-text-opacity:1;color:rgb(209 213 219 / var(--un-text-opacity));}
 .dark .dark\:text-gray-400,
@@ -272,7 +273,6 @@
 .text-emerald-900{--un-text-opacity:1;color:rgb(6 78 59 / var(--un-text-opacity));}
 .text-gray-500{--un-text-opacity:1;color:rgb(107 114 128 / var(--un-text-opacity));}
 .text-gray-600{--un-text-opacity:1;color:rgb(75 85 99 / var(--un-text-opacity));}
-.text-gray-700{--un-text-opacity:1;color:rgb(55 65 81 / var(--un-text-opacity));}
 .text-gray-900{--un-text-opacity:1;color:rgb(17 24 39 / var(--un-text-opacity));}
 .text-orange-300{--un-text-opacity:1;color:rgb(253 186 116 / var(--un-text-opacity));}
 .text-pink-100{--un-text-opacity:1;color:rgb(252 231 243 / var(--un-text-opacity));}
@@ -308,7 +308,6 @@
 .duration-200{transition-duration:200ms;}
 .duration-300{transition-duration:300ms;}
 @media (min-width: 640px){
-.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
 .sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
 .sm\:inline{display:inline;}
 .sm\:inline-block{display:inline-block;}
@@ -323,7 +322,6 @@
 .md\:text-base{font-size:1rem;line-height:1.5rem;}
 }
 @media (min-width: 1024px){
-.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
 .lg\:grid-cols-6{grid-template-columns:repeat(6,minmax(0,1fr));}
 .lg\:hidden{display:none;}
 .lg\:flex{display:flex;}
@@ -438,7 +436,7 @@
             </div>
           </div>
 
-          <a href="products.html" aria-label="View Wishlist" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg relative transition">
+          <a href="wishlist.html" aria-label="View Wishlist" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg relative transition">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
             <span class="absolute top-1 right-1 bg-accent-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center" [text]="storeState.wishlistCount">3</span>
           </a>
@@ -455,13 +453,10 @@
 
       <nav class="hidden lg:flex items-center gap-6 py-2.5 text-sm font-medium border-t border-gray-100 dark:border-gray-700 overflow-x-auto">
         <a href="index.html" class="text-brand-600 dark:text-brand-400 font-semibold border-b-2 border-brand-600 pb-1">Home</a>
-        <a href="products.html?category=Grocery" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🍎 Grocery</a>
-        <a href="products.html?category=Hardware" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🔧 Hardware</a>
-        <a href="products.html?category=Fast-food" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🍔 Fast-food & Dining</a>
-        <a href="products.html?category=Vegetables" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🥑 Fresh Produce</a>
-        <a href="products.html?category=Salon" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">💇 Salon & Beauty</a>
-        <a href="products.html?category=Electronics" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🎧 Electronics</a>
+        <a href="categories.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🗂️ Categories</a>
         <a href="products.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">📦 All Products</a>
+        <a href="wishlist.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">❤️ Wishlist</a>
+        <a href="faq.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">❓ FAQ & Help</a>
         <a href="schema-explorer.html" class="ml-auto text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-900/40 px-3 py-1 rounded-full text-xs font-bold border border-brand-200 dark:border-brand-800 flex items-center gap-1">
           <span>⚡ JSON-LD Schemas</span>
         </a>
@@ -479,22 +474,17 @@
     </div>
     <div class="py-4 space-y-3">
       <a href="index.html" class="block font-medium text-brand-600 py-1">Home</a>
-      <a href="products.html" class="block font-medium text-gray-700 dark:text-gray-200 py-1">All Products</a>
-      <a href="products.html?category=Grocery" class="block text-gray-600 dark:text-gray-300 py-1">🍎 Grocery</a>
-      <a href="products.html?category=Hardware" class="block text-gray-600 dark:text-gray-300 py-1">🔧 Hardware</a>
-      <a href="products.html?category=Fast-food" class="block text-gray-600 dark:text-gray-300 py-1">🍔 Fast-food</a>
-      <a href="products.html?category=Vegetables" class="block text-gray-600 dark:text-gray-300 py-1">🥑 Vegetables</a>
-      <a href="products.html?category=Salon" class="block text-gray-600 dark:text-gray-300 py-1">💇 Salon Services</a>
-      <a href="products.html?category=Electronics" class="block text-gray-600 dark:text-gray-300 py-1">🎧 Electronics</a>
+      <a href="categories.html" class="block text-gray-600 dark:text-gray-300 py-1">🗂️ Categories Directory</a>
+      <a href="products.html" class="block text-gray-600 dark:text-gray-300 py-1">📦 All Products</a>
+      <a href="wishlist.html" class="block text-gray-600 dark:text-gray-300 py-1">❤️ Saved Wishlist</a>
+      <a href="faq.html" class="block text-gray-600 dark:text-gray-300 py-1">❓ FAQ & Help</a>
       <a href="schema-explorer.html" class="block text-brand-600 font-bold py-1 border-t border-gray-100 dark:border-gray-700 pt-3">⚡ Schema.org Explorer</a>
     </div>
   </amp-sidebar>
 
-  <!-- CART SIDEBAR DRAWER (STRICT FLEX & SCROLL CONTAINER FIX) -->
+  <!-- CART SIDEBAR DRAWER -->
   <amp-sidebar id="cart-drawer" layout="nodisplay" side="right" class="w-80 sm:w-96 bg-white dark:bg-gray-800 shadow-2xl p-0">
     <div class="cart-drawer-container">
-
-      <!-- Drawer Header -->
       <div class="p-5 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800">
         <div class="flex items-center gap-2">
           <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
@@ -505,7 +495,6 @@
         </button>
       </div>
 
-      <!-- Scrollable Item List -->
       <div class="cart-items-scroll p-5 space-y-4">
         <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
           <amp-img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=200&auto=format&fit=crop&q=80" width="60" height="60" layout="fixed" class="rounded-lg object-cover"></amp-img>
@@ -536,7 +525,6 @@
         </div>
       </div>
 
-      <!-- Fixed/Sticky Footer with Checkout Button -->
       <div class="p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 space-y-3 mt-auto">
         <div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
           <span>Subtotal</span>
@@ -600,8 +588,8 @@
           <h2 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Shop By Department</h2>
           <p class="text-sm text-gray-500 dark:text-gray-400">Discover multi-niche products backed by JSON-LD structured schemas</p>
         </div>
-        <a href="products.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm flex items-center gap-1">
-          View All <span>&rarr;</span>
+        <a href="categories.html" class="text-brand-600 hover:text-brand-700 font-semibold text-sm flex items-center gap-1">
+          View All Directory <span>&rarr;</span>
         </a>
       </div>
 
@@ -653,40 +641,36 @@
         </div>
       </div>
 
-      <amp-list width="auto" height="600" layout="fixed-height" src="data/products.json" items="items" class="w-full">
+      <amp-list width="auto" height="850" layout="fixed-height" src="data/products.json" items="items" class="w-full">
         <template type="amp-mustache">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {{#items}}
-            <div class="card-base flex flex-col justify-between group">
-              <div>
-                <div class="relative overflow-hidden aspect-video bg-gray-100 dark:bg-gray-700">
-                  <amp-img src="{{image}}" width="400" height="250" layout="responsive" class="object-cover group-hover:scale-105 transition-transform duration-300"></amp-img>
-                  <span class="absolute top-3 left-3 badge-category shadow">{{category}}</span>
-                  <span class="absolute top-3 right-3 bg-gray-900/80 text-white text-[10px] font-mono px-2 py-0.5 rounded shadow">{{type}}</span>
-                </div>
-                <div class="p-5 space-y-2">
-                  <div class="flex items-center gap-1 text-xs text-amber-500">
-                    <span>★</span> <span class="font-bold text-gray-900 dark:text-white">{{rating}}</span>
-                    <span class="text-gray-400">({{reviewCount}} reviews)</span>
-                  </div>
-                  <h3 class="font-bold text-base text-gray-900 dark:text-white line-clamp-1 group-hover:text-brand-600 transition">
-                    <a href="product-detail.html?id={{id}}">{{name}}</a>
-                  </h3>
-                  <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">{{description}}</p>
-                </div>
+          <div class="card-base flex flex-col justify-between group h-full mb-6">
+            <div>
+              <div class="relative overflow-hidden aspect-video bg-gray-100 dark:bg-gray-700">
+                <amp-img src="{{image}}" width="400" height="250" layout="responsive" class="object-cover group-hover:scale-105 transition-transform duration-300"></amp-img>
+                <span class="absolute top-3 left-3 badge-category shadow">{{category}}</span>
+                <span class="absolute top-3 right-3 bg-gray-900/80 text-white text-[10px] font-mono px-2 py-0.5 rounded shadow">{{type}}</span>
               </div>
-
-              <div class="p-5 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-gray-700/50 mt-4">
-                <div>
-                  <div class="text-[10px] text-gray-400 uppercase font-semibold">Price</div>
-                  <div class="text-lg font-extrabold text-brand-600 dark:text-brand-400" [text]="storeState.symbol + ({{price}} * storeState.rate).toFixed(2)">${{price}}</div>
+              <div class="p-5 space-y-2">
+                <div class="flex items-center gap-1 text-xs text-amber-500">
+                  <span>★</span> <span class="font-bold text-gray-900 dark:text-white">{{rating}}</span>
+                  <span class="text-gray-400">({{reviewCount}} reviews)</span>
                 </div>
-                <a href="product-detail.html?id={{id}}" class="btn-primary text-xs px-3.5 py-2">
-                  View & Buy
-                </a>
+                <h3 class="font-bold text-base text-gray-900 dark:text-white line-clamp-1 group-hover:text-brand-600 transition">
+                  <a href="product-detail.html?id={{id}}">{{name}}</a>
+                </h3>
+                <p class="text-xs text-gray-500 dark:text-gray-400 line-clamp-2">{{description}}</p>
               </div>
             </div>
-            {{/items}}
+
+            <div class="p-5 pt-0 flex items-center justify-between border-t border-gray-100 dark:border-gray-700/50 mt-4">
+              <div>
+                <div class="text-[10px] text-gray-400 uppercase font-semibold">Price</div>
+                <div class="text-lg font-extrabold text-brand-600 dark:text-brand-400" [text]="storeState.symbol + ({{price}} * storeState.rate).toFixed(2)">${{price}}</div>
+              </div>
+              <a href="product-detail.html?id={{id}}" class="btn-primary text-xs px-3.5 py-2">
+                View & Buy
+              </a>
+            </div>
           </div>
         </template>
       </amp-list>
