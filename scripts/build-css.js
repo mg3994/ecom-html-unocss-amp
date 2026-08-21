@@ -9,34 +9,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const scriptContent = `
-function updateState() {
-  const cookieMatch = document.cookie.match(new RegExp('(?:^|; )amp_theme=([^;]+)'));
-  const savedTheme = cookieMatch ? cookieMatch[1] : (localStorage.getItem("antinna_theme") || "light");
+function updateCurrency() {
   const currency = localStorage.getItem("antinna_currency") || "USD";
   const rate = currency === "USD" ? 1.0 : (currency === "EUR" ? 0.92 : (currency === "GBP" ? 0.78 : 3.67));
   const symbol = currency === "USD" ? "$" : (currency === "EUR" ? "€" : (currency === "GBP" ? "£" : "د.إ"));
-
-  AMP.setState({ storeState: { theme: savedTheme, currency, rate, symbol } });
+  AMP.setState({ storeState: { currency, rate, symbol } });
 }
 
-updateState();
-
-const themeBtn = document.getElementById("theme-toggle-btn");
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
-    let currentTheme = localStorage.getItem("antinna_theme") || "light";
-    let newTheme = currentTheme === "light" ? "dark" : "light";
-    document.cookie = "amp_theme=" + newTheme + "; path=/; max-age=31536000";
-    localStorage.setItem("antinna_theme", newTheme);
-    updateState();
-  });
-}
+updateCurrency();
 
 const currencySelect = document.getElementById("currency-select");
 if (currencySelect) {
   currencySelect.addEventListener("change", (e) => {
     localStorage.setItem("antinna_currency", e.target.value);
-    updateState();
+    updateCurrency();
   });
 }
 `.trim();
@@ -46,37 +32,66 @@ const hashMeta = "sha384-" + hash.replace(/=/g, "");
 
 const customThemeVariablesCss = `
 :root {
-  --bg-color: #f8fafc;
-  --text-color: #0f172a;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #0284c7;
 }
-.dark {
+
+@media (prefers-color-scheme: dark) {
+  body:not(.amp-dark-mode) {
+  }
+}
+
+body.amp-dark-mode {
+  --background: #0f172a;
+  --surface: #1e293b;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --border: #334155;
+  --accent: #38bdf8;
   background-color: #0f172a;
   color: #f8fafc;
 }
-.light {
-  background-color: #f8fafc;
-  color: #0f172a;
-}
-.dark .bg-white {
+
+body.amp-dark-mode .bg-white {
   background-color: #1e293b;
 }
-.dark .text-surface-900 {
+body.amp-dark-mode .text-surface-900 {
   color: #f8fafc;
 }
-.dark .text-surface-600,
-.dark .text-surface-500 {
+body.amp-dark-mode .text-surface-600,
+body.amp-dark-mode .text-surface-500 {
   color: #cbd5e1;
 }
-.dark .border-surface-200 {
+body.amp-dark-mode .border-surface-200 {
   border-color: #334155;
 }
-.dark .bg-surface-50,
-.dark .bg-surface-100 {
+body.amp-dark-mode .bg-surface-50,
+body.amp-dark-mode .bg-surface-100 {
   background-color: #0f172a;
 }
+
+.sun {
+  display: none;
+}
+.moon {
+  display: inline;
+}
+body.amp-dark-mode .sun {
+  display: inline;
+}
+body.amp-dark-mode .moon {
+  display: none;
+}
+
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background);
+  color: var(--text);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 a {
@@ -119,12 +134,17 @@ async function buildCss() {
     const filePath = path.join(rootDir, file);
     let html = fs.readFileSync(filePath, "utf-8");
 
-    // Clean html tag and body tag
-    html = html.replace(/<html ⚡ lang="en" dir="ltr"[^>]*>/i, '<html ⚡ lang="en" dir="ltr">');
-    html = html.replace(/<body[^>]*>/i, '<body [class]="storeState.theme + \' transition-colors duration-200 max-w-full overflow-x-hidden\'" class="light transition-colors duration-200 max-w-full overflow-x-hidden">');
+    // Clean body tag for native AMP theme switching
+    html = html.replace(/<body[^>]*>/i, '<body class="transition-colors duration-200 max-w-full overflow-x-hidden">');
 
-    // Remove inline scripts from head if any were added
-    html = html.replace(/<script>\s*\(function\(\)[\s\S]*?<\/script>\s*/gi, '');
+    // Ensure theme toggle button uses on="tap:AMP.toggleTheme()" with sun/moon spans
+    if (html.includes('id="theme-toggle-btn"')) {
+      const nativeThemeBtn = `<button id="theme-toggle-btn" type="button" aria-label="Toggle theme" on="tap:AMP.toggleTheme()" class="bg-surface-800 hover:bg-surface-700 text-surface-200 px-2.5 py-1 rounded-lg text-xs transition flex items-center justify-center gap-1 cursor-pointer border-none font-medium">
+          <span class="moon" aria-hidden="true">🌙</span>
+          <span class="sun" aria-hidden="true">☀️</span>
+        </button>`;
+      html = html.replace(/<button id="theme-toggle-btn"[\s\S]*?<\/button>/i, nativeThemeBtn);
+    }
 
     const res = await uno.generate(html);
     const compiledCss = res.css + "\n" + customThemeVariablesCss;

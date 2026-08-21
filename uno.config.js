@@ -4,7 +4,10 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetWind3({
-      dark: 'media'
+      dark: {
+        dark: '.amp-dark-mode',
+        light: ':not(.amp-dark-mode)'
+      }
     }),
     presetIcons({
       scale: 1.2,
