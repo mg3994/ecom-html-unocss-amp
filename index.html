@@ -411,6 +411,8 @@
 .duration-300{transition-duration:300ms;}
 .placeholder-brand-200::placeholder{--un-placeholder-opacity:1;color:rgb(187 247 208 / var(--un-placeholder-opacity));}
 .responsive-product-grid{display:block;width:100%;}
+.rtl{direction:rtl;text-align:right;}
+.ltr{direction:ltr;text-align:left;}
 @media (min-width: 640px){
 .sm\:left-3{left:0.75rem;}
 .sm\:right-3{right:0.75rem;}
@@ -482,7 +484,8 @@
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
+<body [class]="'bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden ' + storeState.theme" class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden light" dir="ltr">
+  <div [class]="'w-full ' + (storeState.dir == 'rtl' ? 'rtl' : 'ltr')" class="w-full ltr">
 
   <!-- AMP State Initialization -->
   <amp-state id="storeState">
@@ -1183,6 +1186,7 @@
 
   </main>
 
+  </div>
   <!-- FOOTER -->
   <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 sm:mt-16 py-8 sm:py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">

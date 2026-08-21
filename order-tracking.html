@@ -114,6 +114,7 @@
 .w-6{width:1.5rem;}
 .w-72{width:18rem;}
 .w-8{width:2rem;}
+.w-full{width:100%;}
 .flex{display:flex;}
 .inline-flex{display:inline-flex;}
 .flex-1{flex:1 1 0%;}
@@ -253,6 +254,8 @@
 .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
+.rtl{direction:rtl;text-align:right;}
+.ltr{direction:ltr;text-align:left;}
 @media (min-width: 640px){
 .sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr));}
 .sm\:h-5{height:1.25rem;}
@@ -282,7 +285,8 @@
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
+<body [class]="'bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden ' + storeState.theme" class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden light" dir="ltr">
+  <div [class]="'w-full ' + (storeState.dir == 'rtl' ? 'rtl' : 'ltr')" class="w-full ltr">
 
   <!-- AMP State Initialization -->
   <amp-state id="storeState">
@@ -559,6 +563,7 @@
   </main>
 
   <!-- FOOTER -->
+  </div>
   <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 py-8">
     <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
       &copy; 2026 BlogStore Order Tracking & Delivery System. Valid AMP HTML.

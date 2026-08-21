@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Organic Honeycrisp Crisp Apples - Blog Store Detail</title>
   <link rel="canonical" href="https://blogstore.example.com/product-detail.html">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
   <!-- AMP Scripts -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -305,6 +305,8 @@
 .safe-pr{padding-right:env(safe-area-inset-right, 0px);}
 .tabletop-top-height{min-height:env(viewport-segment-height 0 0, auto);}
 .tabletop-bottom-height{min-height:env(viewport-segment-height 0 1, auto);}
+.rtl{direction:rtl;text-align:right;}
+.ltr{direction:ltr;text-align:left;}
 @media (min-width: 640px){
 .sm\:mt-16{margin-top:4rem;}
 .sm\:inline{display:inline;}
@@ -353,7 +355,8 @@
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden safe-pl safe-pr">
+<body [class]="'bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden safe-pl safe-pr ' + storeState.theme" class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden safe-pl safe-pr light" dir="ltr">
+  <div [class]="'w-full ' + (storeState.dir == 'rtl' ? 'rtl' : 'ltr')" class="w-full ltr">
 
   <!-- AMP State Initialization -->
   <amp-state id="storeState">
@@ -711,6 +714,7 @@
     </div>
   </amp-lightbox>
 
+  </div>
   <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 sm:mt-16 py-8 sm:py-12 text-center text-xs text-gray-500">
     &copy; 2026 BlogStore Product Detail. Powered by UnoCSS presetWind3 & AMP.
   </footer>
