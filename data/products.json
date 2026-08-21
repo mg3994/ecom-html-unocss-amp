@@ -5,16 +5,18 @@
       "type": "ProductGroup",
       "category": "Grocery",
       "name": "Organic Honeycrisp Crisp Apples",
-      "description": "Freshly harvested organic Honeycrisp apples, sweet, crisp, and bursting with flavor.",
+      "description": "Freshly harvested organic Honeycrisp apples, sweet, crisp, and bursting with natural juice.",
       "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=600&auto=format&fit=crop&q=80",
       "price": 4.99,
+      "originalPrice": 6.99,
       "currency": "USD",
       "rating": 4.8,
       "reviewCount": 128,
       "inStock": true,
       "availableDate": "2026-08-20T10:00:00Z",
       "brand": "BlogStore Organic Farms",
-      "sku": "GROC-APP-001"
+      "sku": "GROC-APP-001",
+      "variants": ["1 lb Bag ($4.99)", "3 lb Family Pack ($12.99)", "5 lb Bulk Carton ($19.99)"]
     },
     {
       "id": "prod-2",
@@ -24,13 +26,15 @@
       "description": "High torque cordless drill with dual speed transmission and 2Ah Lithium-ion battery pack.",
       "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&auto=format&fit=crop&q=80",
       "price": 89.99,
+      "originalPrice": 119.99,
       "currency": "USD",
       "rating": 4.9,
       "reviewCount": 85,
       "inStock": true,
       "availableDate": "2026-08-18T08:30:00Z",
       "brand": "ProBuild Tools",
-      "sku": "HDWR-DRL-020"
+      "sku": "HDWR-DRL-020",
+      "variants": ["Standard 20V Kit", "20V Kit + 50-Piece Bit Set ($109.99)", "Bare Tool Only ($69.99)"]
     },
     {
       "id": "prod-3",
@@ -40,13 +44,15 @@
       "description": "Two seared Angus beef patties, melted cheddar, caramelized onions, house sauce on brioche bun with fries.",
       "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&auto=format&fit=crop&q=80",
       "price": 12.50,
+      "originalPrice": 15.00,
       "currency": "USD",
       "rating": 4.7,
       "reviewCount": 210,
       "inStock": true,
       "availableDate": "2026-08-20T11:00:00Z",
       "brand": "BlogStore Express Bistro",
-      "sku": "FOOD-BRG-002"
+      "sku": "FOOD-BRG-002",
+      "variants": ["Regular Meal with Fries", "Large Meal + Milkshake ($15.50)", "Triple Patty Monster Meal ($17.99)"]
     },
     {
       "id": "prod-4",
@@ -56,13 +62,15 @@
       "description": "Creamy Hass avocados ripened naturally for guacamole, salads, and toast.",
       "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=600&auto=format&fit=crop&q=80",
       "price": 5.49,
+      "originalPrice": 7.50,
       "currency": "USD",
       "rating": 4.6,
       "reviewCount": 94,
       "inStock": true,
       "availableDate": "2026-08-19T06:00:00Z",
       "brand": "GreenValley Produce",
-      "sku": "VEG-AVO-004"
+      "sku": "VEG-AVO-004",
+      "variants": ["4-Pack Medium", "6-Pack Large ($7.99)", "Organically Certified 4-Pack ($6.49)"]
     },
     {
       "id": "prod-5",
@@ -72,13 +80,15 @@
       "description": "Complete hair wash, precision haircut, deep conditioning treatment, and blow-dry style session.",
       "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&auto=format&fit=crop&q=80",
       "price": 65.00,
+      "originalPrice": 85.00,
       "currency": "USD",
       "rating": 4.95,
       "reviewCount": 64,
       "inStock": true,
       "availableDate": "2026-08-20T09:00:00Z",
       "brand": "Glow Spa & Salon",
-      "sku": "SLN-HAIR-01"
+      "sku": "SLN-HAIR-01",
+      "variants": ["60 Min Styling & Wash", "90 Min Full Spa + Color Treatment ($110.00)", "Express Trim & Blow-Dry ($40.00)"]
     },
     {
       "id": "prod-6",
@@ -88,13 +98,15 @@
       "description": "Active noise cancellation, 40-hour battery life, spatial audio, and memory foam ear cushions.",
       "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
       "price": 149.99,
+      "originalPrice": 199.99,
       "currency": "USD",
       "rating": 4.8,
       "reviewCount": 312,
       "inStock": true,
       "availableDate": "2026-08-15T14:20:00Z",
       "brand": "AudioTech Pro",
-      "sku": "ELEC-HDP-06"
+      "sku": "ELEC-HDP-06",
+      "variants": ["Matte Black", "Midnight Blue", "Silver Frost"]
     }
   ]
 }
