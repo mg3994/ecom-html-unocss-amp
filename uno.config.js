@@ -2,11 +2,9 @@ import { defineConfig, presetUno, presetWind3, presetIcons } from 'unocss';
 
 export default defineConfig({
   presets: [
-    presetUno({
-      dark: 'class'
-    }),
+    presetUno(),
     presetWind3({
-      dark: 'class'
+      dark: 'media'
     }),
     presetIcons({
       scale: 1.2,
@@ -14,15 +12,15 @@ export default defineConfig({
     })
   ],
   shortcuts: {
-    'btn-primary': 'bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl transition duration-200 flex items-center justify-center cursor-pointer no-underline',
-    'btn-secondary': 'bg-surface-200 dark:bg-surface-700 hover:bg-surface-300 dark:hover:bg-surface-600 text-surface-900 dark:text-white font-bold rounded-xl transition duration-200 flex items-center justify-center cursor-pointer no-underline',
-    'btn-accent': 'bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition duration-200 flex items-center justify-center cursor-pointer no-underline',
-    'btn-icon': 'p-2 rounded-xl text-surface-600 dark:text-surface-300 hover:bg-surface-100 dark:hover:bg-surface-800 transition cursor-pointer no-underline',
-    'card-base': 'bg-white dark:bg-surface-800 rounded-2xl border border-surface-200 dark:border-surface-700/80 shadow-sm hover:shadow-md transition duration-200 overflow-hidden no-underline',
-    'trust-card': 'bg-white dark:bg-surface-800/80 p-3.5 sm:p-4 rounded-2xl border border-surface-200 dark:border-surface-700/60 shadow-sm flex items-center gap-3',
-    'badge-category': 'bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border border-sky-200 dark:border-sky-800/80 inline-flex items-center gap-1 no-underline',
-    'badge-sale': 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border border-rose-200 dark:border-rose-800/80 inline-flex items-center gap-1 no-underline',
-    'glass-header': 'sticky top-0 z-40 bg-white/90 dark:bg-surface-900/90 backdrop-blur-md border-b border-surface-200/80 dark:border-surface-800/80 transition-colors duration-200',
+    'btn-primary': 'bg-[var(--color-primary)] hover:opacity-90 text-white font-bold rounded-xl px-4 py-2.5 transition duration-200 inline-flex items-center justify-center gap-2 cursor-pointer no-underline border-none shadow-sm',
+    'btn-secondary': 'bg-surface-200 dark:bg-surface-800 hover:bg-surface-300 dark:hover:bg-surface-700 text-surface-900 dark:text-surface-100 font-bold rounded-xl px-4 py-2.5 transition duration-200 inline-flex items-center justify-center gap-2 cursor-pointer no-underline border border-surface-300 dark:border-surface-700 shadow-sm',
+    'btn-accent': 'bg-[var(--color-accent)] hover:opacity-90 text-white font-bold rounded-xl px-4 py-2.5 transition duration-200 inline-flex items-center justify-center gap-2 cursor-pointer no-underline border-none shadow-sm',
+    'btn-icon': 'p-2 rounded-xl text-surface-700 dark:text-surface-200 hover:bg-surface-200/60 dark:hover:bg-surface-800/80 transition cursor-pointer no-underline inline-flex items-center justify-center border-none bg-transparent',
+    'card-base': 'bg-white dark:bg-surface-900 rounded-2xl border border-surface-200/80 dark:border-surface-800/80 shadow-sm hover:shadow-md hover:border-sky-500/50 dark:hover:border-sky-500/50 transition duration-200 overflow-hidden no-underline block',
+    'trust-card': 'bg-white dark:bg-surface-900 p-4 rounded-2xl border border-surface-200/80 dark:border-surface-800/80 shadow-sm flex items-center gap-3.5',
+    'badge-category': 'bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 px-2.5 py-1 rounded-full text-[11px] font-bold border border-sky-200 dark:border-sky-800/80 inline-flex items-center gap-1 no-underline',
+    'badge-sale': 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 px-2.5 py-1 rounded-full text-[11px] font-bold border border-rose-200 dark:border-rose-800/80 inline-flex items-center gap-1 no-underline',
+    'glass-header': 'sticky top-0 z-40 bg-white/95 dark:bg-surface-950/95 backdrop-blur-md border-b border-surface-200/80 dark:border-surface-800/80 transition-colors duration-200',
     'nav-pill': 'px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-surface-600 dark:text-surface-300 hover:bg-surface-100 dark:hover:bg-surface-800 transition whitespace-nowrap cursor-pointer no-underline',
     'nav-pill-active': 'px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold bg-sky-600 text-white shadow-sm whitespace-nowrap cursor-pointer no-underline'
   },
