@@ -75,7 +75,13 @@ export default defineConfig({
     ['rtl', { 'direction': 'rtl', 'text-align': 'right' }],
     ['ltr', { 'direction': 'ltr', 'text-align': 'left' }],
 
+    // Layout utilities
     ['responsive-product-grid', { 'display': 'block', 'width': '100%' }],
+
+    // Custom ambient glows
+    ['glow-indigo', { 'box-shadow': '0 0 25px -5px rgba(99, 102, 241, 0.35)' }],
+    ['glow-emerald', { 'box-shadow': '0 0 25px -5px rgba(16, 185, 129, 0.35)' }],
+    ['glow-amber', { 'box-shadow': '0 0 25px -5px rgba(245, 158, 11, 0.35)' }],
   ],
   shortcuts: {
     // BUTTON SHORTCUTS
@@ -89,10 +95,12 @@ export default defineConfig({
     'card-base': 'bg-white dark:bg-surface-800/95 border border-surface-200/80 dark:border-surface-700/70 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1',
     'glass-header': 'bg-white/90 dark:bg-surface-900/90 backdrop-blur-md border-b border-surface-200/70 dark:border-surface-800/80 sticky top-0 z-40 transition-colors safe-pt',
     'glass-panel': 'bg-white/80 dark:bg-surface-800/80 backdrop-blur-md border border-surface-200/70 dark:border-surface-700/70 rounded-2xl p-5 shadow-sm',
+    'glass-card-hover': 'bg-white/90 dark:bg-surface-800/90 backdrop-blur-md border border-surface-200/80 dark:border-surface-700/80 rounded-2xl p-6 transition-all duration-300 hover:border-indigo-500/50 hover:shadow-xl',
 
     // BADGES & PILLS
     'badge-category': 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/60 text-xs font-bold px-3 py-1 rounded-full inline-flex items-center gap-1',
     'badge-sale': 'bg-gradient-to-r from-rose-600 to-red-500 text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm',
+    'badge-express': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-xs font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1',
     'nav-pill': 'whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 border border-transparent hover:border-surface-200 dark:hover:border-surface-700 hover:bg-surface-100 dark:hover:bg-surface-800 text-surface-600 dark:text-surface-300',
     'nav-pill-active': 'whitespace-nowrap px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-indigo-600 text-white shadow-md shadow-indigo-600/20',
 
@@ -101,5 +109,9 @@ export default defineConfig({
     'fold-split-grid': 'grid grid-cols-1 lg:grid-cols-2 gap-6 foldable-gap items-start',
     'fold-pane': 'bg-white dark:bg-surface-800/95 rounded-2xl p-5 sm:p-6 border border-surface-200/80 dark:border-surface-700/70 shadow-sm',
     'fold-badge': 'bg-sky-50 dark:bg-sky-950/50 text-sky-700 dark:text-sky-300 border border-sky-200/60 dark:border-sky-800/60 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1',
+
+    // TIMELINE & STEPPER UTILITIES
+    'stepper-node-active': 'w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center font-bold text-sm shadow-md glow-indigo',
+    'stepper-node-pending': 'w-8 h-8 rounded-full bg-surface-200 dark:bg-surface-700 text-surface-500 dark:text-surface-400 flex items-center justify-center font-bold text-sm',
   }
 })
