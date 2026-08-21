@@ -3,7 +3,7 @@ import { defineConfig, presetWind3 } from 'unocss'
 export default defineConfig({
   presets: [
     presetWind3({
-      dark: 'class',
+      dark: 'media', // Use system prefers-color-scheme by default for zero flash
     }),
   ],
   theme: {
