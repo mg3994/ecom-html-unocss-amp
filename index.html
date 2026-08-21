@@ -158,6 +158,7 @@
 .group:hover .group-hover\:scale-105{--un-scale-x:1.05;--un-scale-y:1.05;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .group:hover .group-hover\:scale-110{--un-scale-x:1.1;--un-scale-y:1.1;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .cursor-pointer{cursor:pointer;}
+.items-start{align-items:flex-start;}
 .items-end{align-items:flex-end;}
 .items-center{align-items:center;}
 .justify-center{justify-content:center;}
@@ -292,6 +293,7 @@
 .p-4{padding:1rem;}
 .p-5{padding:1.25rem;}
 .p-6{padding:1.5rem;}
+.p-8{padding:2rem;}
 .px-1\.5{padding-left:0.375rem;padding-right:0.375rem;}
 .px-2{padding-left:0.5rem;padding-right:0.5rem;}
 .px-2\.5{padding-left:0.625rem;padding-right:0.625rem;}
@@ -309,6 +311,7 @@
 .py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
 .pb-1{padding-bottom:0.25rem;}
+.pb-2{padding-bottom:0.5rem;}
 .pb-3{padding-bottom:0.75rem;}
 .pb-4{padding-bottom:1rem;}
 .pl-9{padding-left:2.25rem;}
@@ -368,6 +371,7 @@
 .text-pink-200{--un-text-opacity:1;color:rgb(251 207 232 / var(--un-text-opacity));}
 .text-pink-950{--un-text-opacity:1;color:rgb(80 7 36 / var(--un-text-opacity));}
 .text-purple-600{--un-text-opacity:1;color:rgb(147 51 234 / var(--un-text-opacity));}
+.text-red-500{--un-text-opacity:1;color:rgb(239 68 68 / var(--un-text-opacity));}
 .text-red-600{--un-text-opacity:1;color:rgb(220 38 38 / var(--un-text-opacity));}
 .dark .dark\:hover\:text-white:hover{--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));}
 .hover\:text-brand-600:hover{--un-text-opacity:1;color:rgb(22 163 74 / var(--un-text-opacity));}
@@ -386,6 +390,7 @@
 .tracking-wider{letter-spacing:0.05em;}
 .font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
 .uppercase{text-transform:uppercase;}
+.underline{text-decoration-line:underline;}
 .opacity-90{opacity:0.9;}
 .group:hover .group-hover\:opacity-100{opacity:1;}
 .shadow{--un-shadow:var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
@@ -413,7 +418,6 @@
 .sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
 .sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr));}
 .sm\:mb-2{margin-bottom:0.5rem;}
-.sm\:mb-3{margin-bottom:0.75rem;}
 .sm\:mt-16{margin-top:4rem;}
 .sm\:mt-4{margin-top:1rem;}
 .sm\:mt-8{margin-top:2rem;}
@@ -436,11 +440,11 @@
 .sm\:space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
 .sm\:space-y-5>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1.25rem * var(--un-space-y-reverse));}
 .sm\:p-10{padding:2.5rem;}
+.sm\:p-12{padding:3rem;}
 .sm\:p-2{padding:0.5rem;}
 .sm\:p-4{padding:1rem;}
 .sm\:p-5{padding:1.25rem;}
 .sm\:p-6{padding:1.5rem;}
-.sm\:p-8{padding:2rem;}
 .sm\:px-2{padding-left:0.5rem;padding-right:0.5rem;}
 .sm\:px-3\.5{padding-left:0.875rem;padding-right:0.875rem;}
 .sm\:px-4{padding-left:1rem;padding-right:1rem;}
@@ -494,6 +498,10 @@
       "tempLocation": "",
       "cartCount": 2,
       "cartTotal": 20.96,
+      "discount": 0.0,
+      "couponCode": "",
+      "appliedCoupon": "",
+      "couponError": false,
       "wishlistCount": 3,
       "paymentMethod": "gpay",
       "paymentSuccess": false,
@@ -783,13 +791,17 @@
               <span>Items Total (2 items)</span>
               <span class="font-semibold text-gray-900 dark:text-white" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
             </div>
+            <div [class]="storeState.discount > 0 ? 'flex justify-between text-green-600 dark:text-green-400 font-bold' : 'hidden'" class="hidden">
+              <span>Promo Savings (<span [text]="storeState.appliedCoupon"></span>)</span>
+              <span [text]="'-' + storeState.symbol + (storeState.discount * storeState.rate).toFixed(2)">-$0.00</span>
+            </div>
             <div class="flex justify-between text-gray-600 dark:text-gray-300">
               <span>Express Delivery Fee</span>
               <span class="text-brand-600 font-bold">FREE</span>
             </div>
             <div class="flex justify-between text-sm font-bold text-gray-900 dark:text-white pt-1.5 border-t border-gray-200 dark:border-gray-600">
               <span>Amount Payable</span>
-              <span class="text-brand-600 dark:text-brand-400 text-base" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
+              <span class="text-brand-600 dark:text-brand-400 text-base" [text]="storeState.symbol + ((20.96 - storeState.discount) * storeState.rate).toFixed(2)">$20.96</span>
             </div>
           </div>
 
@@ -909,9 +921,37 @@
       </div>
 
       <div class="p-4 sm:p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 space-y-3 mt-auto">
+        <!-- Promo Coupon Box -->
+        <div class="space-y-1.5 pb-2 border-b border-gray-200 dark:border-gray-700">
+          <label for="cart-coupon-input" class="block text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Promo Code / Voucher:</label>
+          <div class="flex gap-2">
+            <input type="text" id="cart-coupon-input" placeholder="Try 'SAVE15' or 'BLOG20'" class="flex-1 px-3 py-1.5 text-xs bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg focus:outline-none focus:border-brand-500 uppercase font-mono dark:text-white"
+              on="change:AMP.setState({ storeState: { couponCode: event.value.toUpperCase() } })">
+            <button class="btn-primary py-1.5 px-3 text-xs font-bold cursor-pointer"
+              on="tap:AMP.setState({
+                storeState: {
+                  discount: storeState.couponCode == 'SAVE15' ? 3.14 : (storeState.couponCode == 'BLOG20' ? 4.19 : 0),
+                  appliedCoupon: storeState.couponCode == 'SAVE15' ? 'SAVE15 (15% OFF)' : (storeState.couponCode == 'BLOG20' ? 'BLOG20 (20% OFF)' : ''),
+                  couponError: storeState.couponCode != 'SAVE15' && storeState.couponCode != 'BLOG20'
+                }
+              })">Apply</button>
+          </div>
+          <div [class]="storeState.appliedCoupon ? 'text-[11px] text-green-600 dark:text-green-400 font-bold flex items-center justify-between mt-1' : 'hidden'" class="hidden">
+            <span>✓ Promo <span [text]="storeState.appliedCoupon"></span> Applied!</span>
+            <button class="text-red-500 underline text-[10px] cursor-pointer" on="tap:AMP.setState({ storeState: { discount: 0, appliedCoupon: '', couponCode: '', couponError: false } })">Remove</button>
+          </div>
+          <div [class]="storeState.couponError ? 'text-[11px] text-red-500 font-semibold mt-1' : 'hidden'" class="hidden">
+            Invalid code! Use 'SAVE15' or 'BLOG20'.
+          </div>
+        </div>
+
         <div class="flex items-center justify-between text-xs sm:text-sm text-gray-600 dark:text-gray-400">
           <span>Subtotal</span>
           <span class="font-semibold text-gray-900 dark:text-white" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
+        </div>
+        <div [class]="storeState.discount > 0 ? 'flex items-center justify-between text-xs sm:text-sm text-green-600 dark:text-green-400 font-bold' : 'hidden'" class="hidden">
+          <span>Promo Discount</span>
+          <span [text]="'-' + storeState.symbol + (storeState.discount * storeState.rate).toFixed(2)">-$0.00</span>
         </div>
         <div class="flex items-center justify-between text-xs sm:text-sm text-gray-600 dark:text-gray-400">
           <span>Estimated Tax & Delivery</span>
@@ -919,7 +959,7 @@
         </div>
         <div class="flex items-center justify-between text-sm sm:text-base font-bold text-gray-900 dark:text-white pt-2 border-t border-gray-200 dark:border-gray-700">
           <span>Total</span>
-          <span class="text-lg sm:text-xl text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
+          <span class="text-lg sm:text-xl text-brand-600 dark:text-brand-400" [text]="storeState.symbol + ((20.96 - storeState.discount) * storeState.rate).toFixed(2)">$20.96</span>
         </div>
         <!-- Opens Payment Modal Bottom Sheet -->
         <button on="tap:cart-drawer.close,payment-sheet.open" class="w-full btn-primary py-2.5 sm:py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30 cursor-pointer">
@@ -935,9 +975,9 @@
 
     <!-- HERO AMP CAROUSEL -->
     <section class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 relative mt-2">
-      <amp-carousel width="800" height="400" layout="responsive" type="slides" autoplay delay="4000" class="rounded-2xl">
-        <div class="w-full h-full relative bg-gradient-to-r from-brand-900 via-brand-800 to-green-800 text-white p-6 sm:p-8 flex flex-col justify-center">
-          <span class="badge-sale w-max mb-2 sm:mb-3 text-[10px] sm:text-xs">Special Produce Promo</span>
+      <amp-carousel width="1200" height="380" layout="responsive" type="slides" autoplay delay="4000" class="rounded-2xl">
+        <div class="w-full h-full relative bg-gradient-to-r from-brand-900 via-brand-800 to-green-800 text-white p-8 sm:p-12 flex flex-col justify-center items-start">
+          <span class="badge-sale w-max mb-2 text-[10px] sm:text-xs">Special Produce Promo</span>
           <h1 class="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight max-w-2xl leading-tight">Fresh Organic Farm Harvest Delivered Daily</h1>
           <p class="mt-2 text-brand-100 max-w-lg text-xs sm:text-sm">Shop farm-fresh fruits, vegetables, and artisan grocery products with guaranteed same-day delivery.</p>
           <div class="mt-4 flex gap-3">
@@ -945,8 +985,8 @@
           </div>
         </div>
 
-        <div class="w-full h-full relative bg-gradient-to-r from-gray-900 to-slate-800 text-white p-6 sm:p-8 flex flex-col justify-center">
-          <span class="badge-category w-max mb-2 sm:mb-3 bg-orange-500/20 text-orange-300 text-[10px] sm:text-xs">Hardware & Power Tools</span>
+        <div class="w-full h-full relative bg-gradient-to-r from-gray-900 to-slate-800 text-white p-8 sm:p-12 flex flex-col justify-center items-start">
+          <span class="badge-category w-max mb-2 bg-orange-500/20 text-orange-300 text-[10px] sm:text-xs">Hardware & Power Tools</span>
           <h2 class="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight max-w-2xl leading-tight">Pro Grade Tools for Every Construction Job</h2>
           <p class="mt-2 text-gray-300 max-w-lg text-xs sm:text-sm">Heavy-duty cordless drills, safety gear, fasteners, and hand tools built for rugged durability.</p>
           <div class="mt-4 flex gap-3">
@@ -954,8 +994,8 @@
           </div>
         </div>
 
-        <div class="w-full h-full relative bg-gradient-to-r from-pink-900 to-rose-800 text-white p-6 sm:p-8 flex flex-col justify-center">
-          <span class="badge-category w-max mb-2 sm:mb-3 bg-pink-500/20 text-pink-200 text-[10px] sm:text-xs">Beauty & Wellness</span>
+        <div class="w-full h-full relative bg-gradient-to-r from-pink-900 to-rose-800 text-white p-8 sm:p-12 flex flex-col justify-center items-start">
+          <span class="badge-category w-max mb-2 bg-pink-500/20 text-pink-200 text-[10px] sm:text-xs">Beauty & Wellness</span>
           <h2 class="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-tight max-w-2xl leading-tight">Luxury Salon Treatments & Spa Bookings</h2>
           <p class="mt-2 text-pink-100 max-w-lg text-xs sm:text-sm">Book top-rated hair styling, skincare, and spa appointments with verified beauty specialists.</p>
           <div class="mt-4 flex gap-3">
