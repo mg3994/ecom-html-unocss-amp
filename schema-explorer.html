@@ -62,21 +62,26 @@
 .top-0{top:0;}
 .z-40{z-index:40;}
 .mx-auto{margin-left:auto;margin-right:auto;}
-.mt-16{margin-top:4rem;}
+.mt-12{margin-top:3rem;}
 .mt-3{margin-top:0.75rem;}
+.inline-block{display:inline-block;}
 .h-16{height:4rem;}
 .max-w-2xl{max-width:42rem;}
 .max-w-7xl{max-width:80rem;}
+.max-w-full{max-width:100%;}
 .flex{display:flex;}
+.flex-wrap{flex-wrap:wrap;}
 .cursor-pointer{cursor:pointer;}
 .items-center{align-items:center;}
 .justify-between{justify-content:space-between;}
 .gap-2{gap:0.5rem;}
 .gap-3{gap:0.75rem;}
+.space-y-2>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.5rem * var(--un-space-y-reverse));}
 .space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
 .space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
-.space-y-8>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2rem * var(--un-space-y-reverse));}
+.space-y-6>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1.5rem * var(--un-space-y-reverse));}
 .overflow-x-auto{overflow-x:auto;}
+.overflow-x-hidden{overflow-x:hidden;}
 .border-b{border-bottom-width:1px;}
 .border-t{border-top-width:1px;}
 .border-gray-100{--un-border-opacity:1;border-color:rgb(243 244 246 / var(--un-border-opacity));}
@@ -97,23 +102,24 @@
 .from-brand-900{--un-gradient-from-position:0%;--un-gradient-from:rgb(20 83 45 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(20 83 45 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);}
 .to-emerald-800{--un-gradient-to-position:100%;--un-gradient-to:rgb(6 95 70 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);}
 .bg-gradient-to-r{--un-gradient-shape:to right in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));}
-.p-2{padding:0.5rem;}
+.p-1\.5{padding:0.375rem;}
+.p-3{padding:0.75rem;}
 .p-4{padding:1rem;}
-.p-8{padding:2rem;}
+.p-5{padding:1.25rem;}
 .px-2{padding-left:0.5rem;padding-right:0.5rem;}
 .px-3{padding-left:0.75rem;padding-right:0.75rem;}
 .px-4{padding-left:1rem;padding-right:1rem;}
 .py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem;}
 .py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem;}
-.py-12{padding-top:3rem;padding-bottom:3rem;}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
 .pt-2{padding-top:0.5rem;}
-.pt-4{padding-top:1rem;}
+.pt-3{padding-top:0.75rem;}
 .text-center{text-align:center;}
+.text-\[10px\]{font-size:10px;}
 .text-\[11px\]{font-size:11px;}
 .text-2xl{font-size:1.5rem;line-height:2rem;}
-.text-3xl{font-size:1.875rem;line-height:2.25rem;}
-.text-base{font-size:1rem;line-height:1.5rem;}
+.text-lg{font-size:1.125rem;line-height:1.75rem;}
 .text-sm{font-size:0.875rem;line-height:1.25rem;}
 .text-xl{font-size:1.25rem;line-height:1.75rem;}
 .text-xs{font-size:0.75rem;line-height:1rem;}
@@ -141,7 +147,25 @@
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
 @media (min-width: 640px){
+.sm\:mt-16{margin-top:4rem;}
+.sm\:space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
+.sm\:space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
+.sm\:space-y-8>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2rem * var(--un-space-y-reverse));}
+.sm\:p-2{padding:0.5rem;}
+.sm\:p-4{padding:1rem;}
+.sm\:p-5{padding:1.25rem;}
+.sm\:p-8{padding:2rem;}
 .sm\:px-6{padding-left:1.5rem;padding-right:1.5rem;}
+.sm\:py-12{padding-top:3rem;padding-bottom:3rem;}
+.sm\:py-8{padding-top:2rem;padding-bottom:2rem;}
+.sm\:pt-4{padding-top:1rem;}
+.sm\:text-\[11px\]{font-size:11px;}
+.sm\:text-2xl{font-size:1.5rem;line-height:2rem;}
+.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem;}
+.sm\:text-base{font-size:1rem;line-height:1.5rem;}
+.sm\:text-sm{font-size:0.875rem;line-height:1.25rem;}
+.sm\:text-xl{font-size:1.25rem;line-height:1.75rem;}
+.sm\:text-xs{font-size:0.75rem;line-height:1rem;}
 }
 @media (min-width: 768px){
 .md\:text-4xl{font-size:2.25rem;line-height:2.5rem;}
@@ -151,7 +175,7 @@
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
 
   <!-- AMP State Initialization -->
   <amp-state id="storeState">
@@ -172,8 +196,8 @@
   <!-- HEADER -->
   <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-brand-600 dark:text-brand-500">
-        <span class="p-2 bg-brand-600 text-white rounded-lg">⚡</span>
+      <a href="index.html" class="flex items-center gap-2 text-lg sm:text-xl font-bold text-brand-600 dark:text-brand-500">
+        <span class="p-1.5 sm:p-2 bg-brand-600 text-white rounded-lg">⚡</span>
         <span class="tracking-tight text-gray-900 dark:text-white">Blog<span class="text-brand-600 dark:text-brand-400">Store</span></span>
       </a>
 
@@ -184,34 +208,34 @@
   </header>
 
   <!-- SCHEMA EXPLORER CONTENT -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
 
     <!-- PAGE HEADER -->
-    <div class="bg-gradient-to-r from-brand-900 to-emerald-800 text-white p-8 rounded-2xl shadow-lg space-y-3">
-      <span class="badge-category bg-white/20 text-white">Schema.org Visualizer</span>
-      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Structured JSON-LD Schema Explorer</h1>
-      <p class="text-emerald-100 text-sm max-w-2xl">
+    <div class="bg-gradient-to-r from-brand-900 to-emerald-800 text-white p-5 sm:p-8 rounded-2xl shadow-lg space-y-2 sm:space-y-3">
+      <span class="badge-category bg-white/20 text-white inline-block">Schema.org Visualizer</span>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">Structured JSON-LD Schema Explorer</h1>
+      <p class="text-emerald-100 text-xs sm:text-sm max-w-2xl leading-relaxed">
         Complete interactive viewer displaying Schema.org specifications and structured JSON-LD templates utilized throughout the BlogStore multi-niche marketplace.
       </p>
-      <div class="pt-2 flex items-center gap-2 text-xs text-brand-200">
+      <div class="pt-2 flex flex-wrap items-center gap-2 text-xs text-brand-200">
         <span>🕒 ISO Date-Time converted to User Local Standard:</span>
-        <span class="font-mono bg-brand-950/50 px-2 py-0.5 rounded text-white" [text]="storeState.userFormattedTime">2026-08-20 16:00:00 (Local Standard Time)</span>
+        <span class="font-mono bg-brand-950/50 px-2 py-0.5 rounded text-white text-[11px] sm:text-xs" [text]="storeState.userFormattedTime">2026-08-20 16:00:00 (Local Standard Time)</span>
       </div>
     </div>
 
     <!-- SCHEMA ACCORDION LIST -->
     <section class="space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Supported Schema.org Types</h2>
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Supported Schema.org Types</h2>
 
-      <amp-accordion class="space-y-4">
-        <section class="card-base p-4">
-          <h3 class="font-bold text-base text-gray-900 dark:text-white flex items-center justify-between cursor-pointer">
+      <amp-accordion class="space-y-3 sm:space-y-4">
+        <section class="card-base p-4 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white flex flex-wrap items-center justify-between gap-2 cursor-pointer">
             <span>🏷️ ProductGroup & Product Variants</span>
-            <span class="text-xs text-brand-600 font-mono">schema.org/ProductGroup</span>
+            <span class="text-[10px] sm:text-xs text-brand-600 font-mono">schema.org/ProductGroup</span>
           </h3>
-          <div class="pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
+          <div class="pt-3 sm:pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
             <p class="text-gray-600 dark:text-gray-300">Used for multi-variant products such as size bags, colors, or bundles.</p>
-            <pre class="bg-gray-900 text-emerald-400 p-4 rounded-xl overflow-x-auto text-[11px] font-mono leading-relaxed">
+            <pre class="bg-gray-900 text-emerald-400 p-3 sm:p-4 rounded-xl overflow-x-auto text-[10px] sm:text-[11px] font-mono leading-relaxed">
 {
   "@context": "https://schema.org",
   "@type": "ProductGroup",
@@ -229,14 +253,14 @@
           </div>
         </section>
 
-        <section class="card-base p-4">
-          <h3 class="font-bold text-base text-gray-900 dark:text-white flex items-center justify-between cursor-pointer">
+        <section class="card-base p-4 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white flex flex-wrap items-center justify-between gap-2 cursor-pointer">
             <span>🛒 Product & Offer</span>
-            <span class="text-xs text-brand-600 font-mono">schema.org/Product</span>
+            <span class="text-[10px] sm:text-xs text-brand-600 font-mono">schema.org/Product</span>
           </h3>
-          <div class="pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
+          <div class="pt-3 sm:pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
             <p class="text-gray-600 dark:text-gray-300">Core retail item schema defining SKU, price, availability, and merchant offers.</p>
-            <pre class="bg-gray-900 text-emerald-400 p-4 rounded-xl overflow-x-auto text-[11px] font-mono leading-relaxed">
+            <pre class="bg-gray-900 text-emerald-400 p-3 sm:p-4 rounded-xl overflow-x-auto text-[10px] sm:text-[11px] font-mono leading-relaxed">
 {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -252,14 +276,14 @@
           </div>
         </section>
 
-        <section class="card-base p-4">
-          <h3 class="font-bold text-base text-gray-900 dark:text-white flex items-center justify-between cursor-pointer">
+        <section class="card-base p-4 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white flex flex-wrap items-center justify-between gap-2 cursor-pointer">
             <span>💇 BeautySalon & Service</span>
-            <span class="text-xs text-brand-600 font-mono">schema.org/BeautySalon</span>
+            <span class="text-[10px] sm:text-xs text-brand-600 font-mono">schema.org/BeautySalon</span>
           </h3>
-          <div class="pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
+          <div class="pt-3 sm:pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
             <p class="text-gray-600 dark:text-gray-300">Service appointments, hair styling, spa sessions, and beauty service catalogs.</p>
-            <pre class="bg-gray-900 text-emerald-400 p-4 rounded-xl overflow-x-auto text-[11px] font-mono leading-relaxed">
+            <pre class="bg-gray-900 text-emerald-400 p-3 sm:p-4 rounded-xl overflow-x-auto text-[10px] sm:text-[11px] font-mono leading-relaxed">
 {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
@@ -274,14 +298,14 @@
           </div>
         </section>
 
-        <section class="card-base p-4">
-          <h3 class="font-bold text-base text-gray-900 dark:text-white flex items-center justify-between cursor-pointer">
+        <section class="card-base p-4 sm:p-5">
+          <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white flex flex-wrap items-center justify-between gap-2 cursor-pointer">
             <span>🍔 FoodEstablishment & MenuItem</span>
-            <span class="text-xs text-brand-600 font-mono">schema.org/MenuItem</span>
+            <span class="text-[10px] sm:text-xs text-brand-600 font-mono">schema.org/MenuItem</span>
           </h3>
-          <div class="pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
+          <div class="pt-3 sm:pt-4 text-xs space-y-3 border-t border-gray-100 dark:border-gray-700 mt-3">
             <p class="text-gray-600 dark:text-gray-300">Fast-food dishes, bistro menus, nutritional details, and dietary offers.</p>
-            <pre class="bg-gray-900 text-emerald-400 p-4 rounded-xl overflow-x-auto text-[11px] font-mono leading-relaxed">
+            <pre class="bg-gray-900 text-emerald-400 p-3 sm:p-4 rounded-xl overflow-x-auto text-[10px] sm:text-[11px] font-mono leading-relaxed">
 {
   "@context": "https://schema.org",
   "@type": "MenuItem",
@@ -296,7 +320,7 @@
 
   </main>
 
-  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-16 py-12 text-center text-xs text-gray-500">
+  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 sm:mt-16 py-8 sm:py-12 text-center text-xs text-gray-500">
     &copy; 2026 BlogStore Schema Visualizer. 100% AMP & Schema.org Compliant.
   </footer>
 

@@ -58,19 +58,21 @@
 .z-40{z-index:40;}
 .mx-auto{margin-left:auto;margin-right:auto;}
 .mt-1{margin-top:0.25rem;}
-.mt-16{margin-top:4rem;}
+.mt-12{margin-top:3rem;}
 .mt-2{margin-top:0.5rem;}
 .block{display:block;}
 .h-16{height:4rem;}
 .max-w-4xl{max-width:56rem;}
 .max-w-7xl{max-width:80rem;}
+.max-w-full{max-width:100%;}
 .flex{display:flex;}
 .cursor-pointer{cursor:pointer;}
 .items-center{align-items:center;}
 .justify-between{justify-content:space-between;}
 .gap-2{gap:0.5rem;}
-.space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
-.space-y-8>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2rem * var(--un-space-y-reverse));}
+.space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
+.space-y-6>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1.5rem * var(--un-space-y-reverse));}
+.overflow-x-hidden{overflow-x:hidden;}
 .border-b{border-bottom-width:1px;}
 .border-t{border-top-width:1px;}
 .border-gray-100{--un-border-opacity:1;border-color:rgb(243 244 246 / var(--un-border-opacity));}
@@ -84,20 +86,19 @@
 .dark .dark\:bg-gray-900{--un-bg-opacity:1;background-color:rgb(17 24 39 / var(--un-bg-opacity));}
 .bg-white{--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));}
 .dark .dark\:bg-gray-800{--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));}
-.p-2{padding:0.5rem;}
+.p-1\.5{padding:0.375rem;}
 .p-4{padding:1rem;}
 .px-3{padding-left:0.75rem;padding-right:0.75rem;}
 .px-4{padding-left:1rem;padding-right:1rem;}
 .py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem;}
-.py-12{padding-top:3rem;padding-bottom:3rem;}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
-.pb-6{padding-bottom:1.5rem;}
+.pb-4{padding-bottom:1rem;}
 .pt-3{padding-top:0.75rem;}
 .text-center{text-align:center;}
-.text-3xl{font-size:1.875rem;line-height:2.25rem;}
-.text-base{font-size:1rem;line-height:1.5rem;}
+.text-2xl{font-size:1.5rem;line-height:2rem;}
+.text-lg{font-size:1.125rem;line-height:1.75rem;}
 .text-sm{font-size:0.875rem;line-height:1.25rem;}
-.text-xl{font-size:1.25rem;line-height:1.75rem;}
 .text-xs{font-size:0.75rem;line-height:1rem;}
 .dark .dark\:text-brand-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
 .dark .dark\:text-brand-500{--un-text-opacity:1;color:rgb(34 197 94 / var(--un-text-opacity));}
@@ -118,19 +119,31 @@
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
 @media (min-width: 640px){
+.sm\:mt-16{margin-top:4rem;}
+.sm\:space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
+.sm\:space-y-8>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2rem * var(--un-space-y-reverse));}
+.sm\:p-2{padding:0.5rem;}
+.sm\:p-5{padding:1.25rem;}
 .sm\:px-6{padding-left:1.5rem;padding-right:1.5rem;}
+.sm\:py-12{padding-top:3rem;padding-bottom:3rem;}
+.sm\:py-8{padding-top:2rem;padding-bottom:2rem;}
+.sm\:pb-6{padding-bottom:1.5rem;}
+.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem;}
+.sm\:text-base{font-size:1rem;line-height:1.5rem;}
+.sm\:text-sm{font-size:0.875rem;line-height:1.25rem;}
+.sm\:text-xl{font-size:1.25rem;line-height:1.75rem;}
 }
 @media (min-width: 1024px){
 .lg\:px-8{padding-left:2rem;padding-right:2rem;}
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
 
   <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-brand-600 dark:text-brand-500">
-        <span class="p-2 bg-brand-600 text-white rounded-lg">⚡</span>
+      <a href="index.html" class="flex items-center gap-2 text-lg sm:text-xl font-bold text-brand-600 dark:text-brand-500">
+        <span class="p-1.5 sm:p-2 bg-brand-600 text-white rounded-lg">⚡</span>
         <span class="tracking-tight text-gray-900 dark:text-white">Blog<span class="text-brand-600 dark:text-brand-400">Store</span></span>
       </a>
 
@@ -138,43 +151,43 @@
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-    <div class="border-b border-gray-200 dark:border-gray-700 pb-6">
-      <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Help & Frequently Asked Questions</h1>
-      <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Get answers regarding BlogStore orders, delivery, AMP performance, and Schema.org specs.</p>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
+    <div class="border-b border-gray-200 dark:border-gray-700 pb-4 sm:pb-6">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">Help & Frequently Asked Questions</h1>
+      <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Get answers regarding BlogStore orders, delivery, AMP performance, and Schema.org specs.</p>
     </div>
 
-    <amp-accordion class="space-y-4">
-      <section class="card-base p-4">
-        <h3 class="font-bold text-base text-gray-900 dark:text-white cursor-pointer">
+    <amp-accordion class="space-y-3 sm:space-y-4">
+      <section class="card-base p-4 sm:p-5">
+        <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white cursor-pointer">
           ❓ What multi-niche departments does BlogStore support?
         </h3>
-        <div class="pt-3 text-xs text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700 mt-2">
+        <div class="pt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700 mt-2">
           BlogStore supports Grocery, Hardware, Fast-food, Vegetables, Salon & Spa, and Electronics with dedicated JSON-LD Schema.org types (ProductGroup, Product, Offer, BeautySalon, MenuItem).
         </div>
       </section>
 
-      <section class="card-base p-4">
-        <h3 class="font-bold text-base text-gray-900 dark:text-white cursor-pointer">
+      <section class="card-base p-4 sm:p-5">
+        <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white cursor-pointer">
           🌐 How do currency and RTL locale direction toggles work?
         </h3>
-        <div class="pt-3 text-xs text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700 mt-2">
+        <div class="pt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700 mt-2">
           The top navigation bar contains real-time AMP state bindings that dynamically format prices across USD ($), EUR (€), GBP (£), and AED (د.إ), and update page direction between LTR and RTL.
         </div>
       </section>
 
-      <section class="card-base p-4">
-        <h3 class="font-bold text-base text-gray-900 dark:text-white cursor-pointer">
+      <section class="card-base p-4 sm:p-5">
+        <h3 class="font-bold text-sm sm:text-base text-gray-900 dark:text-white cursor-pointer">
           ⚡ Is this store 100% valid AMP HTML?
         </h3>
-        <div class="pt-3 text-xs text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700 mt-2">
+        <div class="pt-3 text-xs sm:text-sm text-gray-600 dark:text-gray-300 border-t border-gray-100 dark:border-gray-700 mt-2">
           Yes! All stylesheets are compiled directly into a single custom AMP style block using UnoCSS presetWind3 and checked with amphtml-validator.
         </div>
       </section>
     </amp-accordion>
   </main>
 
-  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-16 py-12 text-center text-xs text-gray-500">
+  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 sm:mt-16 py-8 sm:py-12 text-center text-xs text-gray-500">
     &copy; 2026 BlogStore FAQ. Powered by UnoCSS presetWind3.
   </footer>
 </body>

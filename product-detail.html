@@ -76,10 +76,13 @@
 /* layer: default */
 .absolute{position:absolute;}
 .fixed{position:fixed;}
+.relative{position:relative;}
 .sticky{position:sticky;}
 .inset-0{inset:0;}
+.right-1{right:0.25rem;}
 .right-4{right:1rem;}
 .top-0{top:0;}
+.top-1{top:0.25rem;}
 .top-4{top:1rem;}
 .z-40{z-index:40;}
 .z-50{z-index:50;}
@@ -87,37 +90,45 @@
 .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr));}
 .mx-auto{margin-left:auto;margin-right:auto;}
 .mb-2{margin-bottom:0.5rem;}
+.mt-0\.5{margin-top:0.125rem;}
 .mt-1{margin-top:0.25rem;}
-.mt-16{margin-top:4rem;}
+.mt-12{margin-top:3rem;}
 .mt-auto{margin-top:auto;}
 .block{display:block;}
 .inline-block{display:inline-block;}
 .hidden{display:none;}
 .h-16{height:4rem;}
+.h-4{height:1rem;}
 .h-5{height:1.25rem;}
+.h-6{height:1.5rem;}
 .max-w-7xl{max-width:80rem;}
+.max-w-full{max-width:100%;}
+.w-4{width:1rem;}
 .w-5{width:1.25rem;}
+.w-6{width:1.5rem;}
+.w-72{width:18rem;}
 .w-80{width:20rem;}
 .w-full{width:100%;}
 .flex{display:flex;}
 .inline-flex{display:inline-flex;}
 .flex-1{flex:1 1 0%;}
+.flex-col{flex-direction:column;}
 .flex-wrap{flex-wrap:wrap;}
 .cursor-pointer{cursor:pointer;}
 .items-center{align-items:center;}
 .justify-center{justify-content:center;}
 .justify-between{justify-content:space-between;}
 .gap-1{gap:0.25rem;}
-.gap-10{gap:2.5rem;}
+.gap-1\.5{gap:0.375rem;}
 .gap-2{gap:0.5rem;}
 .gap-3{gap:0.75rem;}
-.gap-4{gap:1rem;}
-.space-y-10>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2.5rem * var(--un-space-y-reverse));}
+.gap-6{gap:1.5rem;}
 .space-y-2>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.5rem * var(--un-space-y-reverse));}
 .space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
 .space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
 .space-y-6>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1.5rem * var(--un-space-y-reverse));}
 .overflow-hidden{overflow:hidden;}
+.overflow-x-hidden{overflow-x:hidden;}
 .border{border-width:1px;}
 .border-2{border-width:2px;}
 .border-b{border-bottom-width:1px;}
@@ -125,6 +136,7 @@
 .border-brand-600{--un-border-opacity:1;border-color:rgb(22 163 74 / var(--un-border-opacity));}
 .border-brand-700{--un-border-opacity:1;border-color:rgb(21 128 61 / var(--un-border-opacity));}
 .border-brand-800{--un-border-opacity:1;border-color:rgb(22 101 52 / var(--un-border-opacity));}
+.border-gray-100{--un-border-opacity:1;border-color:rgb(243 244 246 / var(--un-border-opacity));}
 .border-gray-200{--un-border-opacity:1;border-color:rgb(229 231 235 / var(--un-border-opacity));}
 .border-gray-300{--un-border-opacity:1;border-color:rgb(209 213 219 / var(--un-border-opacity));}
 .border-gray-800{--un-border-opacity:1;border-color:rgb(31 41 55 / var(--un-border-opacity));}
@@ -134,6 +146,7 @@
 .rounded-full{border-radius:9999px;}
 .rounded-lg{border-radius:0.5rem;}
 .rounded-xl{border-radius:0.75rem;}
+.bg-accent-500{--un-bg-opacity:1;background-color:rgb(249 115 22 / var(--un-bg-opacity));}
 .bg-black\/90{background-color:rgb(0 0 0 / 0.9);}
 .bg-brand-50{--un-bg-opacity:1;background-color:rgb(240 253 244 / var(--un-bg-opacity));}
 .bg-brand-600{--un-bg-opacity:1;background-color:rgb(22 163 74 / var(--un-bg-opacity));}
@@ -147,30 +160,39 @@
 .dark .dark\:bg-brand-900\/40{background-color:rgb(20 83 45 / 0.4);}
 .dark .dark\:bg-gray-700{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
 .dark .dark\:bg-gray-800{--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));}
+.dark .dark\:hover\:bg-gray-700:hover{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
 .hover\:bg-brand-700:hover{--un-bg-opacity:1;background-color:rgb(21 128 61 / var(--un-bg-opacity));}
+.hover\:bg-gray-100:hover{--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));}
 .object-cover{object-fit:cover;}
 .p-0{padding:0;}
 .p-1{padding:0.25rem;}
+.p-1\.5{padding:0.375rem;}
 .p-2{padding:0.5rem;}
 .p-3{padding:0.75rem;}
 .p-4{padding:1rem;}
 .p-5{padding:1.25rem;}
 .px-1\.5{padding-left:0.375rem;padding-right:0.375rem;}
 .px-2{padding-left:0.5rem;padding-right:0.5rem;}
+.px-3{padding-left:0.75rem;padding-right:0.75rem;}
 .px-4{padding-left:1rem;padding-right:1rem;}
 .py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem;}
-.py-12{padding-top:3rem;padding-bottom:3rem;}
+.py-1{padding-top:0.25rem;padding-bottom:0.25rem;}
+.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem;}
 .py-2{padding-top:0.5rem;padding-bottom:0.5rem;}
+.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem;}
 .py-3{padding-top:0.75rem;padding-bottom:0.75rem;}
 .py-4{padding-top:1rem;padding-bottom:1rem;}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
+.pb-4{padding-bottom:1rem;}
+.pt-3{padding-top:0.75rem;}
 .text-center{text-align:center;}
+.text-\[10px\]{font-size:10px;}
+.text-\[11px\]{font-size:11px;}
 .text-2xl{font-size:1.5rem;line-height:2rem;}
-.text-3xl{font-size:1.875rem;line-height:2.25rem;}
 .text-base{font-size:1rem;line-height:1.5rem;}
 .text-lg{font-size:1.125rem;line-height:1.75rem;}
 .text-sm{font-size:0.875rem;line-height:1.25rem;}
-.text-xl{font-size:1.25rem;line-height:1.75rem;}
 .text-xs{font-size:0.75rem;line-height:1rem;}
 .dark .dark\:text-brand-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
 .dark .dark\:text-brand-500{--un-text-opacity:1;color:rgb(34 197 94 / var(--un-text-opacity));}
@@ -207,23 +229,55 @@
 .shadow-lg{--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-md{--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-sm{--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.shadow-xl{--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px;}
 .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
 @media (min-width: 640px){
+.sm\:mt-16{margin-top:4rem;}
 .sm\:inline{display:inline;}
-.sm\:inline-block{display:inline-block;}
+.sm\:h-5{height:1.25rem;}
+.sm\:h-6{height:1.5rem;}
+.sm\:w-5{width:1.25rem;}
+.sm\:w-6{width:1.5rem;}
 .sm\:w-96{width:24rem;}
+.sm\:w-auto{width:auto;}
+.sm\:flex-1{flex:1 1 0%;}
+.sm\:flex-none{flex:none;}
+.sm\:flex-row{flex-direction:row;}
+.sm\:gap-10{gap:2.5rem;}
+.sm\:gap-2{gap:0.5rem;}
+.sm\:gap-3{gap:0.75rem;}
+.sm\:gap-4{gap:1rem;}
+.sm\:space-y-10>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2.5rem * var(--un-space-y-reverse));}
+.sm\:space-y-6>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1.5rem * var(--un-space-y-reverse));}
+.sm\:p-2{padding:0.5rem;}
+.sm\:p-5{padding:1.25rem;}
+.sm\:px-4{padding-left:1rem;padding-right:1rem;}
 .sm\:px-6{padding-left:1.5rem;padding-right:1.5rem;}
+.sm\:py-12{padding-top:3rem;padding-bottom:3rem;}
+.sm\:py-2{padding-top:0.5rem;padding-bottom:0.5rem;}
+.sm\:py-3{padding-top:0.75rem;padding-bottom:0.75rem;}
+.sm\:py-8{padding-top:2rem;padding-bottom:2rem;}
+.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem;}
+.sm\:text-base{font-size:1rem;line-height:1.5rem;}
+.sm\:text-lg{font-size:1.125rem;line-height:1.75rem;}
+.sm\:text-sm{font-size:0.875rem;line-height:1.25rem;}
+.sm\:text-xl{font-size:1.25rem;line-height:1.75rem;}
+.sm\:text-xs{font-size:0.75rem;line-height:1rem;}
+}
+@media (min-width: 768px){
+.md\:inline-block{display:inline-block;}
 }
 @media (min-width: 1024px){
 .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.lg\:hidden{display:none;}
 .lg\:px-8{padding-left:2rem;padding-right:2rem;}
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
 
   <!-- AMP State Initialization -->
   <amp-state id="storeState">
@@ -247,20 +301,21 @@
   </amp-state>
 
   <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-brand-900 text-brand-100 text-xs py-2 px-4 border-b border-brand-800">
+  <div class="bg-brand-900 text-brand-100 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-brand-800">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3">
         <span class="inline-flex items-center gap-1 font-medium">⚡ <span>AMP & JSON-LD Product Details</span></span>
-        <span class="hidden sm:inline-block text-brand-300">|</span>
-        <span class="hidden sm:inline-block text-brand-200" [text]="'🕒 Local Time: ' + storeState.userFormattedTime">
+        <span class="hidden md:inline-block text-brand-300">|</span>
+        <span class="hidden md:inline-block text-brand-200" [text]="'🕒 Local Time: ' + storeState.userFormattedTime">
           🕒 Local Time: 2026-08-20 16:00:00 (Local Standard)
         </span>
       </div>
 
-      <div class="flex items-center gap-4">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-4">
+        <!-- Currency Selector -->
         <div class="flex items-center gap-1">
-          <label for="currency-select" class="text-brand-200">Currency:</label>
-          <select id="currency-select" class="bg-brand-800 text-white border border-brand-700 rounded px-1.5 py-0.5 text-xs focus:outline-none"
+          <label for="currency-select" class="text-brand-200 text-[10px] sm:text-xs">Currency:</label>
+          <select id="currency-select" class="bg-brand-800 text-white border border-brand-700 rounded px-1.5 py-0.5 text-[10px] sm:text-xs focus:outline-none"
             on="change:AMP.setState({
               storeState: {
                 currency: event.value,
@@ -275,12 +330,14 @@
           </select>
         </div>
 
-        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-xs transition"
+        <!-- Direction RTL / LTR Selector -->
+        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition"
           on="tap:AMP.setState({ storeState: { dir: storeState.dir == 'ltr' ? 'rtl' : 'ltr', lang: storeState.dir == 'ltr' ? 'ar' : 'en' } })">
-          <span [text]="storeState.dir == 'ltr' ? '🌐 Switch to RTL (Arabic)' : '🌐 Switch to LTR (English)'">🌐 Switch to RTL (Arabic)</span>
+          <span [text]="storeState.dir == 'ltr' ? '🌐 RTL' : '🌐 LTR'">🌐 RTL</span>
         </button>
 
-        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-xs transition flex items-center gap-1"
+        <!-- Dark / Light Theme Toggle -->
+        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition flex items-center gap-1"
           on="tap:AMP.setState({ storeState: { theme: storeState.theme == 'light' ? 'dark' : 'light' } })">
           <span [text]="storeState.theme == 'light' ? '🌙 Dark' : '☀️ Light'">🌙 Dark</span>
         </button>
@@ -291,49 +348,78 @@
   <!-- MAIN APPBAR / NAVIGATION -->
   <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 gap-4">
-        <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-brand-600 dark:text-brand-500">
-          <span class="p-2 bg-brand-600 text-white rounded-lg">⚡</span>
-          <span class="tracking-tight text-gray-900 dark:text-white">Blog<span class="text-brand-600 dark:text-brand-400">Store</span></span>
-        </a>
+      <div class="flex items-center justify-between h-16 gap-2 sm:gap-4">
 
-        <div class="flex items-center gap-3">
-          <button on="tap:cart-drawer.open" aria-label="Open Shopping Cart" class="btn-primary gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button on="tap:mobile-nav.toggle" aria-label="Open Navigation Menu" class="lg:hidden p-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          <a href="index.html" class="flex items-center gap-2 text-lg sm:text-xl font-bold text-brand-600 dark:text-brand-500">
+            <span class="p-1.5 sm:p-2 bg-brand-600 text-white rounded-lg">⚡</span>
+            <span class="tracking-tight text-gray-900 dark:text-white">Blog<span class="text-brand-600 dark:text-brand-400">Store</span></span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="wishlist.html" aria-label="View Wishlist" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg relative transition">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+            <span class="absolute top-1 right-1 bg-accent-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center" [text]="storeState.wishlistCount">3</span>
+          </a>
+
+          <button on="tap:cart-drawer.open" aria-label="Open Shopping Cart" class="btn-primary gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
             <span class="hidden sm:inline font-semibold">Cart</span>
-            <span class="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-bold" [text]="storeState.cartCount">2</span>
+            <span class="bg-white/20 text-white text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold" [text]="storeState.cartCount">2</span>
           </button>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- MOBILE NAVIGATION SIDEBAR -->
+  <amp-sidebar id="mobile-nav" layout="nodisplay" side="left" class="w-72 bg-white dark:bg-gray-800 p-5 shadow-xl">
+    <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
+      <span class="text-lg font-bold text-brand-600">BlogStore Menu</span>
+      <button on="tap:mobile-nav.close" aria-label="Close Menu" class="p-1 text-gray-500 hover:text-gray-800">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="py-4 space-y-3">
+      <a href="index.html" class="block text-gray-600 dark:text-gray-300 py-1">Home</a>
+      <a href="categories.html" class="block text-gray-600 dark:text-gray-300 py-1">🗂️ Categories Directory</a>
+      <a href="products.html" class="block text-gray-600 dark:text-gray-300 py-1">📦 All Products</a>
+      <a href="wishlist.html" class="block text-gray-600 dark:text-gray-300 py-1">❤️ Saved Wishlist</a>
+      <a href="faq.html" class="block text-gray-600 dark:text-gray-300 py-1">❓ FAQ & Help</a>
+      <a href="schema-explorer.html" class="block text-brand-600 font-bold py-1 border-t border-gray-100 dark:border-gray-700 pt-3">⚡ Schema.org Explorer</a>
+    </div>
+  </amp-sidebar>
+
   <!-- CART SIDEBAR DRAWER -->
   <amp-sidebar id="cart-drawer" layout="nodisplay" side="right" class="w-80 sm:w-96 bg-white dark:bg-gray-800 shadow-2xl p-0">
     <div class="cart-drawer-container">
-      <div class="p-5 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800">
-        <span class="text-lg font-bold text-gray-900 dark:text-white">Shopping Cart</span>
+      <div class="p-4 sm:p-5 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800">
+        <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Shopping Cart</span>
         <button on="tap:cart-drawer.close" aria-label="Close Cart" class="p-1 text-gray-500 hover:text-gray-800 dark:hover:text-white">✕</button>
       </div>
-      <div class="cart-items-scroll p-5 space-y-3 text-sm">
+      <div class="cart-items-scroll p-4 sm:p-5 space-y-3 text-xs sm:text-sm">
         <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-xl flex gap-3">
-          <amp-img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=200&auto=format&fit=crop&q=80" width="50" height="50" layout="fixed" class="rounded"></amp-img>
+          <amp-img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=200&auto=format&fit=crop&q=80" width="50" height="50" layout="fixed" class="rounded object-cover"></amp-img>
           <div>
-            <div class="font-bold">Organic Honeycrisp Apples</div>
-            <div class="text-brand-600 font-semibold" [text]="storeState.symbol + (4.99 * storeState.rate).toFixed(2)">$4.99</div>
+            <div class="font-bold text-gray-900 dark:text-white">Organic Honeycrisp Apples</div>
+            <div class="text-brand-600 font-semibold mt-0.5" [text]="storeState.symbol + (4.99 * storeState.rate).toFixed(2)">$4.99</div>
           </div>
         </div>
       </div>
-      <div class="p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 space-y-3 mt-auto">
-        <button class="w-full btn-primary py-3 text-base font-bold shadow-lg shadow-brand-600/30">Proceed to Checkout</button>
+      <div class="p-4 sm:p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 space-y-3 mt-auto">
+        <button class="w-full btn-primary py-2.5 sm:py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30">Proceed to Checkout</button>
       </div>
     </div>
   </amp-sidebar>
 
   <!-- PRODUCT DETAIL SECTION -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-10">
 
-    <nav class="flex items-center text-xs text-gray-500 dark:text-gray-400 gap-2">
+    <nav class="flex items-center text-xs text-gray-500 dark:text-gray-400 gap-2 flex-wrap">
       <a href="index.html" class="hover:underline">Home</a>
       <span>/</span>
       <a href="products.html" class="hover:underline">Grocery</a>
@@ -341,40 +427,42 @@
       <span class="text-gray-900 dark:text-white font-semibold">Organic Honeycrisp Crisp Apples</span>
     </nav>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-      <div class="space-y-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
+      <!-- Carousel Gallery -->
+      <div class="space-y-3">
         <amp-carousel width="600" height="450" layout="responsive" type="slides" controls class="rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden">
           <amp-img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&auto=format&fit=crop&q=80" width="600" height="450" layout="responsive" class="object-cover" on="tap:lightbox-image" role="button" tabindex="0"></amp-img>
           <amp-img src="https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?w=800&auto=format&fit=crop&q=80" width="600" height="450" layout="responsive" class="object-cover" on="tap:lightbox-image" role="button" tabindex="0"></amp-img>
         </amp-carousel>
-        <p class="text-xs text-center text-gray-400">Tap image to enlarge with AMP Lightbox</p>
+        <p class="text-[11px] sm:text-xs text-center text-gray-400">Tap image to enlarge with AMP Lightbox</p>
       </div>
 
-      <div class="space-y-6">
+      <!-- Info & Actions -->
+      <div class="space-y-4 sm:space-y-6">
         <div>
           <span class="badge-category mb-2 inline-block">ProductGroup & Offer Schema</span>
-          <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Organic Honeycrisp Crisp Apples</h1>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Brand: <span class="font-semibold text-brand-600">BlogStore Organic Farms</span> | SKU: GROC-APP-GRP</p>
+          <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Organic Honeycrisp Crisp Apples</h1>
+          <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">Brand: <span class="font-semibold text-brand-600">BlogStore Organic Farms</span> | SKU: GROC-APP-GRP</p>
         </div>
 
         <div class="flex items-center gap-3">
-          <span class="text-3xl font-black text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (storeState.basePrice * storeState.rate).toFixed(2)">$4.99</span>
+          <span class="text-2xl sm:text-3xl font-black text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (storeState.basePrice * storeState.rate).toFixed(2)">$4.99</span>
           <span class="badge-sale">In Stock</span>
         </div>
 
-        <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
           Freshly harvested organic Honeycrisp apples, sweet, crisp, and bursting with natural juice. Sourced directly from certified sustainable orchards.
         </p>
 
         <div class="space-y-2 border-t border-b border-gray-200 dark:border-gray-700 py-4">
           <label class="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">Select Bag Size (Product Variant):</label>
-          <div class="flex gap-3">
-            <button class="px-4 py-2 border-2 rounded-xl text-xs font-bold transition cursor-pointer"
+          <div class="flex flex-wrap gap-2 sm:gap-3">
+            <button class="px-3 py-2 sm:px-4 sm:py-2 border-2 rounded-xl text-xs font-bold transition cursor-pointer flex-1 sm:flex-none text-center"
               [class]="storeState.selectedVariant == '1lb' ? 'border-brand-600 bg-brand-50 text-brand-700 dark:bg-brand-900/40' : 'border-gray-300 dark:border-gray-700'"
               on="tap:AMP.setState({ storeState: { selectedVariant: '1lb', basePrice: 4.99 } })">
               1 lb Bag ($4.99)
             </button>
-            <button class="px-4 py-2 border-2 rounded-xl text-xs font-bold transition cursor-pointer"
+            <button class="px-3 py-2 sm:px-4 sm:py-2 border-2 rounded-xl text-xs font-bold transition cursor-pointer flex-1 sm:flex-none text-center"
               [class]="storeState.selectedVariant == '3lb' ? 'border-brand-600 bg-brand-50 text-brand-700 dark:bg-brand-900/40' : 'border-gray-300 dark:border-gray-700'"
               on="tap:AMP.setState({ storeState: { selectedVariant: '3lb', basePrice: 12.99 } })">
               3 lb Family Pack ($12.99)
@@ -382,11 +470,11 @@
           </div>
         </div>
 
-        <div class="flex gap-4">
-          <button on="tap:cart-drawer.open" class="btn-primary flex-1 py-3 text-base font-bold shadow-lg shadow-brand-600/30">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <button on="tap:cart-drawer.open" class="btn-primary w-full sm:flex-1 py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30">
             Add to Cart & Order
           </button>
-          <a href="schema-explorer.html" class="btn-secondary px-4 py-3 text-xs font-bold flex items-center gap-1">
+          <a href="schema-explorer.html" class="btn-secondary w-full sm:w-auto px-4 py-3 text-xs font-bold flex items-center justify-center gap-1">
             <span>⚡ View JSON-LD</span>
           </a>
         </div>
@@ -402,7 +490,7 @@
     </div>
   </amp-lightbox>
 
-  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-16 py-12 text-center text-xs text-gray-500">
+  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 sm:mt-16 py-8 sm:py-12 text-center text-xs text-gray-500">
     &copy; 2026 BlogStore Product Detail. Powered by UnoCSS presetWind3 & AMP.
   </footer>
 
