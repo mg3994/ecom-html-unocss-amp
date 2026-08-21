@@ -48,6 +48,9 @@ export default defineConfig({
 
     ['glass-border', { 'border-color': 'rgba(255, 255, 255, 0.15)' }],
     ['text-shadow-sm', { 'text-shadow': '0 1px 2px rgba(0,0,0,0.1)' }],
+
+    // Dynamic AMP List Grid Layout
+    ['responsive-product-grid', { 'display': 'block', 'width': '100%' }],
   ],
   shortcuts: {
     'btn-primary': 'bg-green-600 hover:bg-green-700 active:bg-green-800 text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 cursor-pointer inline-flex items-center justify-center shadow-sm hover:shadow-md active:scale-95',
