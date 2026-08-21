@@ -26,11 +26,25 @@ export default defineConfig({
       }
     }
   },
+  rules: [
+    ['safe-pt', { 'padding-top': 'env(safe-area-inset-top, 0px)' }],
+    ['safe-pb', { 'padding-bottom': 'env(safe-area-inset-bottom, 0px)' }],
+    ['safe-pl', { 'padding-left': 'env(safe-area-inset-left, 0px)' }],
+    ['safe-pr', { 'padding-right': 'env(safe-area-inset-right, 0px)' }],
+    ['safe-mt', { 'margin-top': 'env(safe-area-inset-top, 0px)' }],
+    ['safe-mb', { 'margin-bottom': 'env(safe-area-inset-bottom, 0px)' }],
+    ['foldable-gap', { 'gap': 'env(viewport-segment-width 0 0, 1.5rem)' }],
+  ],
   shortcuts: {
-    'btn-primary': 'bg-brand-600 hover:bg-brand-700 text-white font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center',
-    'btn-secondary': 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-100 font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center',
-    'card-base': 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow',
-    'badge-sale': 'bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wider',
-    'badge-category': 'bg-brand-50 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 text-xs font-medium px-2.5 py-1 rounded-md'
+    'btn-primary': 'bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 px-5 rounded-xl transition-all duration-200 cursor-pointer inline-flex items-center justify-center shadow-sm hover:shadow-md active:scale-95',
+    'btn-secondary': 'bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100 font-medium py-2.5 px-5 rounded-xl transition-all duration-200 cursor-pointer inline-flex items-center justify-center border border-gray-200/80 dark:border-gray-700/80 active:scale-95',
+    'btn-outline': 'border-2 border-green-600 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/40 font-semibold py-2 px-4 rounded-xl transition-all cursor-pointer inline-flex items-center justify-center',
+    'card-base': 'bg-white dark:bg-gray-800/90 border border-gray-100 dark:border-gray-700/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1',
+    'glass-header': 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200/60 dark:border-gray-800/60 sticky top-0 z-40 transition-colors safe-pt',
+    'badge-sale': 'bg-gradient-to-r from-red-600 to-rose-500 text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm',
+    'badge-category': 'bg-green-50 dark:bg-green-900/40 text-green-700 dark:text-green-300 border border-green-200/60 dark:border-green-800/60 text-xs font-semibold px-3 py-1 rounded-full',
+    'nav-pill': 'whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border border-transparent hover:border-gray-200 dark:hover:border-gray-700 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 text-gray-600 dark:text-gray-300',
+    'nav-pill-active': 'whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold bg-green-600 text-white shadow-sm',
+    'trust-card': 'flex items-center gap-3.5 p-4 rounded-2xl bg-gray-50/80 dark:bg-gray-800/50 border border-gray-200/60 dark:border-gray-700/50 hover:bg-white dark:hover:bg-gray-800 transition-all duration-200 shadow-sm'
   }
 })

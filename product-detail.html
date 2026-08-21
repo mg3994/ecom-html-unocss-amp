@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Organic Honeycrisp Crisp Apples - Blog Store Detail</title>
   <link rel="canonical" href="https://blogstore.example.com/product-detail.html">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">
 
   <!-- AMP Scripts -->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -12,6 +12,7 @@
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
   <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
 
   <!-- AMP Boilerplate -->
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -64,24 +65,29 @@
 /* layer: preflights */
 *,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}
 /* layer: shortcuts */
-.btn-primary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;border-radius:0.5rem;--un-bg-opacity:1;background-color:rgb(22 163 74 / var(--un-bg-opacity));padding-top:0.5rem;padding-bottom:0.5rem;padding-left:1rem;padding-right:1rem;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:500;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
-.btn-secondary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;border-radius:0.5rem;--un-bg-opacity:1;background-color:rgb(229 231 235 / var(--un-bg-opacity));padding-top:0.5rem;padding-bottom:0.5rem;padding-left:1rem;padding-right:1rem;--un-text-opacity:1;color:rgb(31 41 55 / var(--un-text-opacity));font-weight:500;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
-.badge-category{border-radius:0.375rem;--un-bg-opacity:1;background-color:rgb(240 253 244 / var(--un-bg-opacity));padding-left:0.625rem;padding-right:0.625rem;padding-top:0.25rem;padding-bottom:0.25rem;font-size:0.75rem;line-height:1rem;--un-text-opacity:1;color:rgb(21 128 61 / var(--un-text-opacity));font-weight:500;}
-.badge-sale{border-radius:9999px;--un-bg-opacity:1;background-color:rgb(239 68 68 / var(--un-bg-opacity));padding-left:0.5rem;padding-right:0.5rem;padding-top:0.125rem;padding-bottom:0.125rem;font-size:0.75rem;line-height:1rem;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:700;letter-spacing:0.05em;text-transform:uppercase;}
-.dark .badge-category{background-color:rgb(20 83 45 / 0.3);--un-text-opacity:1;color:rgb(134 239 172 / var(--un-text-opacity));}
-.dark .btn-secondary{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));--un-text-opacity:1;color:rgb(243 244 246 / var(--un-text-opacity));}
-.btn-primary:hover{--un-bg-opacity:1;background-color:rgb(21 128 61 / var(--un-bg-opacity));}
-.btn-secondary:hover{--un-bg-opacity:1;background-color:rgb(209 213 219 / var(--un-bg-opacity));}
-.dark .btn-secondary:hover{--un-bg-opacity:1;background-color:rgb(75 85 99 / var(--un-bg-opacity));}
+.glass-header{position:sticky;top:0;z-index:40;border-bottom-width:1px;border-color:rgb(229 231 235 / 0.6);background-color:rgb(255 255 255 / 0.9);--un-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;padding-top:env(safe-area-inset-top, 0px);}
+.btn-primary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;border-radius:0.75rem;--un-bg-opacity:1;background-color:rgb(22 163 74 / var(--un-bg-opacity));padding-top:0.625rem;padding-bottom:0.625rem;padding-left:1.25rem;padding-right:1.25rem;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:600;--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.btn-secondary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;border-width:1px;border-color:rgb(229 231 235 / 0.8);border-radius:0.75rem;--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));padding-top:0.625rem;padding-bottom:0.625rem;padding-left:1.25rem;padding-right:1.25rem;--un-text-opacity:1;color:rgb(31 41 55 / var(--un-text-opacity));font-weight:500;transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.btn-primary:active{--un-scale-x:0.95;--un-scale-y:0.95;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.btn-secondary:active{--un-scale-x:0.95;--un-scale-y:0.95;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
+.badge-category{border-width:1px;border-color:rgb(187 247 208 / 0.6);border-radius:9999px;--un-bg-opacity:1;background-color:rgb(240 253 244 / var(--un-bg-opacity));padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;font-size:0.75rem;line-height:1rem;--un-text-opacity:1;color:rgb(21 128 61 / var(--un-text-opacity));font-weight:600;}
+.dark .badge-category{border-color:rgb(22 101 52 / 0.6);background-color:rgb(20 83 45 / 0.4);--un-text-opacity:1;color:rgb(134 239 172 / var(--un-text-opacity));}
+.dark .btn-secondary{border-color:rgb(55 65 81 / 0.8);--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));--un-text-opacity:1;color:rgb(243 244 246 / var(--un-text-opacity));}
+.dark .glass-header{border-color:rgb(31 41 55 / 0.6);background-color:rgb(17 24 39 / 0.9);}
+.badge-sale{border-radius:9999px;--un-gradient-from-position:0%;--un-gradient-from:rgb(220 38 38 / var(--un-from-opacity, 1)) var(--un-gradient-from-position);--un-gradient-to-position:100%;--un-gradient-to:rgb(220 38 38 / 0) var(--un-gradient-to-position);--un-gradient-stops:var(--un-gradient-from), var(--un-gradient-to);--un-gradient-to:rgb(244 63 94 / var(--un-to-opacity, 1)) var(--un-gradient-to-position);--un-gradient-shape:to right in oklch;--un-gradient:var(--un-gradient-shape), var(--un-gradient-stops);background-image:linear-gradient(var(--un-gradient));padding-left:0.625rem;padding-right:0.625rem;padding-top:0.125rem;padding-bottom:0.125rem;font-size:11px;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:800;letter-spacing:0.05em;text-transform:uppercase;--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.btn-primary:hover{--un-bg-opacity:1;background-color:rgb(21 128 61 / var(--un-bg-opacity));--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.btn-secondary:hover{--un-bg-opacity:1;background-color:rgb(229 231 235 / var(--un-bg-opacity));}
+.dark .btn-secondary:hover{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
 /* layer: default */
 .absolute{position:absolute;}
 .fixed{position:fixed;}
 .relative{position:relative;}
-.sticky{position:sticky;}
 .inset-0{inset:0;}
+.bottom-0{bottom:0;}
+.left-0{left:0;}
+.right-0{right:0;}
 .right-1{right:0.25rem;}
 .right-4{right:1rem;}
-.top-0{top:0;}
 .top-1{top:0.25rem;}
 .top-4{top:1rem;}
 .z-40{z-index:40;}
@@ -103,6 +109,7 @@
 .h-5{height:1.25rem;}
 .h-6{height:1.5rem;}
 .max-h-\[90vh\]{max-height:90vh;}
+.max-w-\[240px\]{max-width:240px;}
 .max-w-7xl{max-width:80rem;}
 .max-w-full{max-width:100%;}
 .max-w-lg{max-width:32rem;}
@@ -130,6 +137,7 @@
 .gap-3{gap:0.75rem;}
 .gap-6{gap:1.5rem;}
 .space-y-1\.5>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.375rem * var(--un-space-y-reverse));}
+.space-y-1>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.25rem * var(--un-space-y-reverse));}
 .space-y-2\.5>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.625rem * var(--un-space-y-reverse));}
 .space-y-2>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.5rem * var(--un-space-y-reverse));}
 .space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
@@ -150,7 +158,8 @@
 .border-gray-300{--un-border-opacity:1;border-color:rgb(209 213 219 / var(--un-border-opacity));}
 .border-gray-700,
 .dark .dark\:border-gray-700{--un-border-opacity:1;border-color:rgb(55 65 81 / var(--un-border-opacity));}
-.border-gray-800{--un-border-opacity:1;border-color:rgb(31 41 55 / var(--un-border-opacity));}
+.border-gray-800,
+.dark .dark\:border-gray-800{--un-border-opacity:1;border-color:rgb(31 41 55 / var(--un-border-opacity));}
 .rounded{border-radius:0.25rem;}
 .rounded-2xl{border-radius:1rem;}
 .rounded-full{border-radius:9999px;}
@@ -172,11 +181,13 @@
 .bg-green-100{--un-bg-opacity:1;background-color:rgb(220 252 231 / var(--un-bg-opacity));}
 .bg-white{--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));}
 .bg-white\/20{background-color:rgb(255 255 255 / 0.2);}
+.bg-white\/95{background-color:rgb(255 255 255 / 0.95);}
 .dark .dark\:bg-brand-900\/40{background-color:rgb(20 83 45 / 0.4);}
 .dark .dark\:bg-gray-600{--un-bg-opacity:1;background-color:rgb(75 85 99 / var(--un-bg-opacity));}
 .dark .dark\:bg-gray-700{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
 .dark .dark\:bg-gray-700\/50{background-color:rgb(55 65 81 / 0.5);}
 .dark .dark\:bg-gray-800{--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));}
+.dark .dark\:bg-gray-900\/95{background-color:rgb(17 24 39 / 0.95);}
 .dark .dark\:bg-green-900\/50{background-color:rgb(20 83 45 / 0.5);}
 .dark .dark\:hover\:bg-gray-700:hover{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
 .hover\:bg-brand-700:hover{--un-bg-opacity:1;background-color:rgb(21 128 61 / var(--un-bg-opacity));}
@@ -204,9 +215,11 @@
 .py-4{padding-top:1rem;padding-bottom:1rem;}
 .py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
+.pb-20{padding-bottom:5rem;}
 .pb-3{padding-bottom:0.75rem;}
 .pb-4{padding-bottom:1rem;}
 .pt-3{padding-top:0.75rem;}
+.pt-4{padding-top:1rem;}
 .text-center{text-align:center;}
 .text-\[10px\]{font-size:10px;}
 .text-\[11px\]{font-size:11px;}
@@ -243,7 +256,6 @@
 .font-black{font-weight:900;}
 .font-bold{font-weight:700;}
 .font-extrabold{font-weight:800;}
-.font-medium{font-weight:500;}
 .font-normal{font-weight:400;}
 .font-semibold{font-weight:600;}
 .leading-relaxed{line-height:1.625;}
@@ -260,18 +272,26 @@
 .shadow-sm{--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-xl{--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px;}
+.backdrop-blur-md{--un-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);}
 .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
+.safe-pt{padding-top:env(safe-area-inset-top, 0px);}
+.safe-pb{padding-bottom:env(safe-area-inset-bottom, 0px);}
+.safe-pl{padding-left:env(safe-area-inset-left, 0px);}
+.safe-pr{padding-right:env(safe-area-inset-right, 0px);}
+.foldable-gap{gap:env(viewport-segment-width 0 0, 1.5rem);}
 @media (min-width: 640px){
 .sm\:mt-16{margin-top:4rem;}
 .sm\:inline{display:inline;}
+.sm\:hidden{display:none;}
 .sm\:h-5{height:1.25rem;}
 .sm\:h-6{height:1.5rem;}
 .sm\:w-5{width:1.25rem;}
 .sm\:w-6{width:1.5rem;}
 .sm\:w-96{width:24rem;}
 .sm\:w-auto{width:auto;}
+.sm\:flex{display:flex;}
 .sm\:flex-1{flex:1 1 0%;}
 .sm\:flex-none{flex:none;}
 .sm\:flex-row{flex-direction:row;}
@@ -291,6 +311,7 @@
 .sm\:py-2{padding-top:0.5rem;padding-bottom:0.5rem;}
 .sm\:py-3{padding-top:0.75rem;padding-bottom:0.75rem;}
 .sm\:py-8{padding-top:2rem;padding-bottom:2rem;}
+.sm\:pb-10{padding-bottom:2.5rem;}
 .sm\:text-3xl{font-size:1.875rem;line-height:2.25rem;}
 .sm\:text-base{font-size:1rem;line-height:1.5rem;}
 .sm\:text-lg{font-size:1.125rem;line-height:1.75rem;}
@@ -308,7 +329,7 @@
 }
 </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden safe-pl safe-pr">
 
   <!-- AMP State Initialization -->
   <amp-state id="storeState">
@@ -333,11 +354,11 @@
   </amp-state>
 
   <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-brand-900 text-brand-100 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-brand-800">
+  <div class="bg-brand-900 text-brand-100 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-brand-800 safe-pt">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center gap-2 sm:gap-3">
-        <span class="inline-flex items-center gap-1 font-medium">⚡ <span>AMP & JSON-LD Product Details</span></span>
-        <span class="hidden md:inline-block text-brand-300">|</span>
+        <span class="inline-flex items-center gap-1 font-semibold text-brand-300">⚡ <span>AMP & JSON-LD Product Details</span></span>
+        <span class="hidden md:inline-block text-brand-700">|</span>
         <span class="hidden md:inline-block text-brand-200" [text]="'🕒 Local Time: ' + storeState.userFormattedTime">
           🕒 Local Time: 2026-08-20 16:00:00 (Local Standard)
         </span>
@@ -363,13 +384,13 @@
         </div>
 
         <!-- Direction RTL / LTR Selector -->
-        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition"
+        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition cursor-pointer"
           on="tap:AMP.setState({ storeState: { dir: storeState.dir == 'ltr' ? 'rtl' : 'ltr', lang: storeState.dir == 'ltr' ? 'ar' : 'en' } })">
           <span [text]="storeState.dir == 'ltr' ? '🌐 RTL' : '🌐 LTR'">🌐 RTL</span>
         </button>
 
         <!-- Dark / Light Theme Toggle -->
-        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition flex items-center gap-1"
+        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition flex items-center gap-1 cursor-pointer"
           on="tap:AMP.setState({ storeState: { theme: storeState.theme == 'light' ? 'dark' : 'light' } })">
           <span [text]="storeState.theme == 'light' ? '🌙 Dark' : '☀️ Light'">🌙 Dark</span>
         </button>
@@ -378,30 +399,30 @@
   </div>
 
   <!-- MAIN APPBAR / NAVIGATION -->
-  <header class="sticky top-0 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm transition-colors">
+  <header class="glass-header">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 gap-2 sm:gap-4">
 
         <div class="flex items-center gap-2 sm:gap-3">
-          <button on="tap:mobile-nav.toggle" aria-label="Open Navigation Menu" class="lg:hidden p-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+          <button on="tap:mobile-nav.toggle" aria-label="Open Navigation Menu" class="lg:hidden p-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg cursor-pointer">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
           <a href="index.html" class="flex items-center gap-2 text-lg sm:text-xl font-bold text-brand-600 dark:text-brand-500">
-            <span class="p-1.5 sm:p-2 bg-brand-600 text-white rounded-lg">⚡</span>
+            <span class="p-1.5 sm:p-2 bg-brand-600 text-white rounded-xl shadow-sm">⚡</span>
             <span class="tracking-tight text-gray-900 dark:text-white">Blog<span class="text-brand-600 dark:text-brand-400">Store</span></span>
           </a>
         </div>
 
         <div class="flex items-center gap-2 sm:gap-3">
-          <a href="wishlist.html" aria-label="View Wishlist" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg relative transition">
+          <a href="wishlist.html" aria-label="View Wishlist" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl relative transition">
             <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-            <span class="absolute top-1 right-1 bg-accent-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center" [text]="storeState.wishlistCount">3</span>
+            <span class="absolute top-1 right-1 bg-accent-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm" [text]="storeState.wishlistCount">3</span>
           </a>
 
           <button on="tap:cart-drawer.open" aria-label="Open Shopping Cart" class="btn-primary gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm">
             <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path></svg>
-            <span class="hidden sm:inline font-semibold">Cart</span>
-            <span class="bg-white/20 text-white text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-bold" [text]="storeState.cartCount">2</span>
+            <span class="hidden sm:inline font-bold">Cart</span>
+            <span class="bg-white/20 text-white text-[10px] sm:text-xs px-2 py-0.5 rounded-full font-extrabold" [text]="storeState.cartCount">2</span>
           </button>
         </div>
       </div>
@@ -411,7 +432,7 @@
   <!-- PAYMENT MODAL BOTTOM SHEET (BROWSER DEFAULT / EXPRESS PAYMENTS) -->
   <amp-lightbox id="payment-sheet" layout="nodisplay">
     <div class="fixed inset-0 bg-black/70 z-50 flex items-end justify-center p-0">
-      <div class="bg-white dark:bg-gray-800 rounded-t-3xl p-5 sm:p-6 max-w-lg w-full shadow-2xl space-y-4 sm:space-y-5 border-t border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
+      <div class="bg-white dark:bg-gray-800 rounded-t-3xl p-5 sm:p-6 max-w-lg w-full shadow-2xl space-y-4 sm:space-y-5 border-t border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto safe-pb">
 
         <div class="space-y-3">
           <div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto"></div>
@@ -423,7 +444,7 @@
                 <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Powered by Web Payments API & Google / Apple Pay</p>
               </div>
             </div>
-            <button on="tap:payment-sheet.close" aria-label="Close Payment Sheet" class="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 text-xl font-bold">✕</button>
+            <button on="tap:payment-sheet.close" aria-label="Close Payment Sheet" class="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 text-xl font-bold cursor-pointer">✕</button>
           </div>
         </div>
 
@@ -433,7 +454,7 @@
           </div>
           <h4 class="text-xl font-bold text-gray-900 dark:text-white">Order Placed Successfully!</h4>
           <p class="text-xs text-gray-500 dark:text-gray-400">Your item order is confirmed.</p>
-          <button on="tap:AMP.setState({ storeState: { paymentSuccess: false } }),payment-sheet.close" class="btn-primary w-full py-3 text-sm font-bold">
+          <button on="tap:AMP.setState({ storeState: { paymentSuccess: false } }),payment-sheet.close" class="btn-primary w-full py-3 text-sm font-bold cursor-pointer">
             Done & Return
           </button>
         </div>
@@ -460,7 +481,7 @@
             </button>
           </div>
 
-          <button on="tap:AMP.setState({ storeState: { paymentSuccess: true } })" class="w-full btn-primary py-3 text-sm font-bold shadow-lg shadow-brand-600/30">
+          <button on="tap:AMP.setState({ storeState: { paymentSuccess: true } })" class="w-full btn-primary py-3 text-sm font-bold shadow-lg shadow-brand-600/30 cursor-pointer">
             Confirm & Pay
           </button>
         </div>
@@ -470,17 +491,17 @@
   </amp-lightbox>
 
   <!-- MOBILE NAVIGATION SIDEBAR -->
-  <amp-sidebar id="mobile-nav" layout="nodisplay" side="left" class="w-72 bg-white dark:bg-gray-800 p-5 shadow-xl">
+  <amp-sidebar id="mobile-nav" layout="nodisplay" side="left" class="w-72 bg-white dark:bg-gray-800 p-5 shadow-xl safe-pb">
     <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
       <span class="text-lg font-bold text-brand-600">BlogStore Menu</span>
-      <button on="tap:mobile-nav.close" aria-label="Close Menu" class="p-1 text-gray-500 hover:text-gray-800">
+      <button on="tap:mobile-nav.close" aria-label="Close Menu" class="p-1 text-gray-500 hover:text-gray-800 cursor-pointer">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
       </button>
     </div>
     <div class="py-4 space-y-3">
       <a href="index.html" class="block text-gray-600 dark:text-gray-300 py-1">Home</a>
       <a href="categories.html" class="block text-gray-600 dark:text-gray-300 py-1">🗂️ Categories Directory</a>
-      <a href="products.html" class="block text-gray-600 dark:text-gray-300 py-1">📦 All Products</a>
+      <a href="products.html" class="block text-gray-600 dark:text-gray-300 py-1">📦 All Products Catalog</a>
       <a href="wishlist.html" class="block text-gray-600 dark:text-gray-300 py-1">❤️ Saved Wishlist</a>
       <a href="faq.html" class="block text-gray-600 dark:text-gray-300 py-1">❓ FAQ & Help</a>
       <a href="schema-explorer.html" class="block text-brand-600 font-bold py-1 border-t border-gray-100 dark:border-gray-700 pt-3">⚡ Schema.org Explorer</a>
@@ -488,11 +509,11 @@
   </amp-sidebar>
 
   <!-- CART SIDEBAR DRAWER -->
-  <amp-sidebar id="cart-drawer" layout="nodisplay" side="right" class="w-80 sm:w-96 bg-white dark:bg-gray-800 shadow-2xl p-0">
+  <amp-sidebar id="cart-drawer" layout="nodisplay" side="right" class="w-80 sm:w-96 bg-white dark:bg-gray-800 shadow-2xl p-0 safe-pb">
     <div class="cart-drawer-container">
       <div class="p-4 sm:p-5 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800">
         <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Shopping Cart</span>
-        <button on="tap:cart-drawer.close" aria-label="Close Cart" class="p-1 text-gray-500 hover:text-gray-800 dark:hover:text-white">✕</button>
+        <button on="tap:cart-drawer.close" aria-label="Close Cart" class="p-1 text-gray-500 hover:text-gray-800 dark:hover:text-white cursor-pointer">✕</button>
       </div>
       <div class="cart-items-scroll p-4 sm:p-5 space-y-3 text-xs sm:text-sm">
         <div class="p-3 bg-gray-50 dark:bg-gray-700 rounded-xl flex gap-3">
@@ -504,13 +525,13 @@
         </div>
       </div>
       <div class="p-4 sm:p-5 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 space-y-3 mt-auto">
-        <button on="tap:cart-drawer.close,payment-sheet.open" class="w-full btn-primary py-2.5 sm:py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30">Proceed to Checkout</button>
+        <button on="tap:cart-drawer.close,payment-sheet.open" class="w-full btn-primary py-2.5 sm:py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30 cursor-pointer">Proceed to Checkout</button>
       </div>
     </div>
   </amp-sidebar>
 
-  <!-- PRODUCT DETAIL SECTION -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-10">
+  <!-- PRODUCT DETAIL SECTION (WITH DUAL SCREEN / FOLDABLE GAP SUPPORT) -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-6 sm:space-y-10 pb-20 sm:pb-10">
 
     <nav class="flex items-center text-xs text-gray-500 dark:text-gray-400 gap-2 flex-wrap">
       <a href="index.html" class="hover:underline">Home</a>
@@ -520,8 +541,10 @@
       <span class="text-gray-900 dark:text-white font-semibold">Organic Honeycrisp Crisp Apples</span>
     </nav>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
-      <!-- Carousel Gallery -->
+    <!-- FOLDABLE SPLIT GRID: Left Image Gallery, Right Details -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 foldable-gap">
+
+      <!-- Carousel Gallery (Left Screen on Foldables) -->
       <div class="space-y-3">
         <amp-carousel width="600" height="450" layout="responsive" type="slides" controls class="rounded-2xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden">
           <amp-img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&auto=format&fit=crop&q=80" width="600" height="450" layout="responsive" class="object-cover" on="tap:lightbox-image" role="button" tabindex="0"></amp-img>
@@ -530,7 +553,7 @@
         <p class="text-[11px] sm:text-xs text-center text-gray-400">Tap image to enlarge with AMP Lightbox</p>
       </div>
 
-      <!-- Info & Actions -->
+      <!-- Info & Actions (Right Screen on Foldables) -->
       <div class="space-y-4 sm:space-y-6">
         <div>
           <span class="badge-category mb-2 inline-block">ProductGroup & Offer Schema</span>
@@ -563,22 +586,65 @@
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-          <button on="tap:payment-sheet.open" class="btn-primary w-full sm:flex-1 py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30">
+        <div class="hidden sm:flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <button on="tap:payment-sheet.open" class="btn-primary w-full sm:flex-1 py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30 cursor-pointer">
             Buy Now with Express Pay
           </button>
           <a href="schema-explorer.html" class="btn-secondary w-full sm:w-auto px-4 py-3 text-xs font-bold flex items-center justify-center gap-1">
             <span>⚡ View JSON-LD</span>
           </a>
         </div>
+
+        <!-- AMP ACCORDION FOR SPECS & REVIEWS -->
+        <amp-accordion class="space-y-2 border-t border-gray-200 dark:border-gray-700 pt-4">
+          <section expanded class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
+            <h3 class="p-3 text-xs sm:text-sm font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-700/50 cursor-pointer flex justify-between items-center">
+              <span>📋 Product Specifications</span>
+              <span>▼</span>
+            </h3>
+            <div class="p-3 text-xs text-gray-600 dark:text-gray-300 space-y-1">
+              <p>• <strong>Origin:</strong> Pacific Northwest Sustainable Orchards</p>
+              <p>• <strong>Grade:</strong> USDA Certified Organic Grade A</p>
+              <p>• <strong>Storage:</strong> Keep refrigerated at 34°F–38°F for maximum crispness</p>
+            </div>
+          </section>
+
+          <section class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-800">
+            <h3 class="p-3 text-xs sm:text-sm font-bold text-gray-900 dark:text-white bg-gray-50 dark:bg-gray-700/50 cursor-pointer flex justify-between items-center">
+              <span>🚚 Shipping & Returns Policy</span>
+              <span>▼</span>
+            </h3>
+            <div class="p-3 text-xs text-gray-600 dark:text-gray-300 space-y-1">
+              <p>• <strong>Delivery:</strong> Guaranteed same-day local delivery for orders placed before 2 PM.</p>
+              <p>• <strong>Freshness Guarantee:</strong> 100% money-back refund if not fully satisfied.</p>
+            </div>
+          </section>
+        </amp-accordion>
+
       </div>
     </div>
 
   </main>
 
+  <!-- MOBILE STICKY BOTTOM ACTION BAR (SAFE-AREA PB AWARE) -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 p-3 sm:hidden safe-pb flex items-center justify-between gap-2 shadow-2xl">
+    <div>
+      <div class="text-[10px] text-gray-400 uppercase font-semibold">Total</div>
+      <div class="text-base font-extrabold text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (storeState.basePrice * storeState.rate).toFixed(2)">$4.99</div>
+    </div>
+    <div class="flex items-center gap-2 flex-1 max-w-[240px]">
+      <button on="tap:AMP.setState({ storeState: { cartCount: storeState.cartCount + 1 } }),cart-drawer.open" class="btn-secondary text-xs py-2 px-3 flex-1 font-bold cursor-pointer">
+        + Cart
+      </button>
+      <button on="tap:payment-sheet.open" class="btn-primary text-xs py-2 px-3 flex-1 font-bold cursor-pointer shadow-md">
+        Buy Now
+      </button>
+    </div>
+  </div>
+
   <amp-lightbox id="lightbox-image" layout="nodisplay">
     <div class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-      <button on="tap:lightbox-image.close" class="absolute top-4 right-4 text-white text-2xl font-bold p-2">✕</button>
+      <button on="tap:lightbox-image.close" class="absolute top-4 right-4 text-white text-2xl font-bold p-2 cursor-pointer">✕</button>
       <amp-img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=1200&auto=format&fit=crop&q=80" width="800" height="600" layout="intrinsic"></amp-img>
     </div>
   </amp-lightbox>
