@@ -1,0 +1,569 @@
+<!doctype html>
+<html ⚡ lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="utf-8">
+  <title>Order Tracking & Status - Blog Store</title>
+  <link rel="canonical" href="https://blogstore.example.com/order-tracking.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+  <!-- AMP Scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+
+  <!-- AMP Boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- JSON-LD Order & ParcelDelivery Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Order",
+    "orderNumber": "ORD-2026-8890",
+    "orderStatus": "https://schema.org/OrderInTransit",
+    "priceCurrency": "USD",
+    "price": "20.96",
+    "orderDate": "2026-08-20T14:30:00Z",
+    "seller": {
+      "@type": "Organization",
+      "name": "Blog Store Express"
+    },
+    "deliveryLeadTime": {
+      "@type": "QuantitativeValue",
+      "value": "2",
+      "unitCode": "HUR"
+    },
+    "orderDelivery": {
+      "@type": "ParcelDelivery",
+      "trackingNumber": "TRK-99201488",
+      "trackingUrl": "https://blogstore.example.com/order-tracking.html?id=ORD-2026-8890",
+      "provider": {
+        "@type": "Organization",
+        "name": "BlogStore Local Express Fulfillment"
+      },
+      "deliveryAddress": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Global Market Way",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10001",
+        "addressCountry": "US"
+      }
+    },
+    "orderedItem": [
+      {
+        "@type": "OrderItem",
+        "orderItemNumber": "ITEM-01",
+        "orderedItem": {
+          "@type": "Product",
+          "name": "Organic Honeycrisp Crisp Apples",
+          "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=800&auto=format&fit=crop&q=80"
+        },
+        "orderQuantity": 2
+      },
+      {
+        "@type": "OrderItem",
+        "orderItemNumber": "ITEM-02",
+        "orderedItem": {
+          "@type": "Product",
+          "name": "Fresh Farm Harvest Avocado Pack",
+          "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=800&auto=format&fit=crop&q=80"
+        },
+        "orderQuantity": 2
+      }
+    ]
+  }
+  </script>
+
+  <!-- Placeholder for UnoCSS Custom Styles -->
+  <style amp-custom>
+/* layer: preflights */
+*,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}
+/* layer: shortcuts */
+.glass-header{position:sticky;top:0;z-index:40;border-bottom-width:1px;border-color:rgb(229 231 235 / 0.6);background-color:rgb(255 255 255 / 0.9);--un-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);backdrop-filter:var(--un-backdrop-blur) var(--un-backdrop-brightness) var(--un-backdrop-contrast) var(--un-backdrop-grayscale) var(--un-backdrop-hue-rotate) var(--un-backdrop-invert) var(--un-backdrop-opacity) var(--un-backdrop-saturate) var(--un-backdrop-sepia);transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;padding-top:env(safe-area-inset-top, 0px);}
+.btn-primary{display:inline-flex;cursor:pointer;align-items:center;justify-content:center;border-radius:0.75rem;--un-bg-opacity:1;background-color:rgb(22 163 74 / var(--un-bg-opacity));padding-top:0.625rem;padding-bottom:0.625rem;padding-left:1.25rem;padding-right:1.25rem;--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));font-weight:600;--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:200ms;}
+.card-base:hover{--un-translate-y:-0.25rem;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.btn-primary:active{--un-scale-x:0.95;--un-scale-y:0.95;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));--un-bg-opacity:1;background-color:rgb(22 101 52 / var(--un-bg-opacity));}
+.card-base{overflow:hidden;border-width:1px;border-color:rgb(229 231 235 / 0.7);border-radius:1rem;--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;transition-duration:300ms;}
+.badge-category{border-width:1px;border-color:rgb(187 247 208 / 0.6);border-radius:9999px;--un-bg-opacity:1;background-color:rgb(240 253 244 / var(--un-bg-opacity));padding-left:0.75rem;padding-right:0.75rem;padding-top:0.25rem;padding-bottom:0.25rem;font-size:0.75rem;line-height:1rem;--un-text-opacity:1;color:rgb(21 128 61 / var(--un-text-opacity));font-weight:600;}
+.dark .badge-category{border-color:rgb(22 101 52 / 0.6);background-color:rgb(20 83 45 / 0.4);--un-text-opacity:1;color:rgb(134 239 172 / var(--un-text-opacity));}
+.dark .card-base{border-color:rgb(55 65 81 / 0.6);background-color:rgb(31 41 55 / 0.9);}
+.dark .glass-header{border-color:rgb(31 41 55 / 0.6);background-color:rgb(17 24 39 / 0.9);}
+.btn-primary:hover{--un-bg-opacity:1;background-color:rgb(21 128 61 / var(--un-bg-opacity));--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+/* layer: default */
+.grid{display:grid;}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr));}
+.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.mx-auto{margin-left:auto;margin-right:auto;}
+.mb-1\.5{margin-bottom:0.375rem;}
+.mt-1{margin-top:0.25rem;}
+.mt-12{margin-top:3rem;}
+.block{display:block;}
+.hidden{display:none;}
+.h-16{height:4rem;}
+.h-4{height:1rem;}
+.h-6{height:1.5rem;}
+.h-8{height:2rem;}
+.max-w-2xl{max-width:42rem;}
+.max-w-5xl{max-width:64rem;}
+.max-w-7xl{max-width:80rem;}
+.max-w-full{max-width:100%;}
+.max-w-xl{max-width:36rem;}
+.w-4{width:1rem;}
+.w-6{width:1.5rem;}
+.w-72{width:18rem;}
+.w-8{width:2rem;}
+.flex{display:flex;}
+.inline-flex{display:inline-flex;}
+.flex-1{flex:1 1 0%;}
+.flex-col{flex-direction:column;}
+.flex-wrap{flex-wrap:wrap;}
+@keyframes pulse{0%, 100% {opacity:1} 50% {opacity:.5}}
+.animate-pulse{animation:pulse 2s cubic-bezier(0.4,0,.6,1) infinite;}
+.cursor-pointer{cursor:pointer;}
+.items-center{align-items:center;}
+.justify-center{justify-content:center;}
+.justify-between{justify-content:space-between;}
+.gap-1{gap:0.25rem;}
+.gap-1\.5{gap:0.375rem;}
+.gap-2{gap:0.5rem;}
+.gap-3{gap:0.75rem;}
+.gap-4{gap:1rem;}
+.gap-6{gap:1.5rem;}
+.space-y-2>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.5rem * var(--un-space-y-reverse));}
+.space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
+.space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
+.space-y-6>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1.5rem * var(--un-space-y-reverse));}
+.space-y-8>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(2rem * var(--un-space-y-reverse));}
+.overflow-x-hidden{overflow-x:hidden;}
+.border{border-width:1px;}
+.border-b{border-bottom-width:1px;}
+.border-b-2{border-bottom-width:2px;}
+.border-t{border-top-width:1px;}
+.border-amber-500{--un-border-opacity:1;border-color:rgb(245 158 11 / var(--un-border-opacity));}
+.border-brand-500{--un-border-opacity:1;border-color:rgb(34 197 94 / var(--un-border-opacity));}
+.border-brand-600{--un-border-opacity:1;border-color:rgb(22 163 74 / var(--un-border-opacity));}
+.border-brand-700{--un-border-opacity:1;border-color:rgb(21 128 61 / var(--un-border-opacity));}
+.border-brand-800{--un-border-opacity:1;border-color:rgb(22 101 52 / var(--un-border-opacity));}
+.border-gray-100{--un-border-opacity:1;border-color:rgb(243 244 246 / var(--un-border-opacity));}
+.border-gray-200{--un-border-opacity:1;border-color:rgb(229 231 235 / var(--un-border-opacity));}
+.border-gray-800{--un-border-opacity:1;border-color:rgb(31 41 55 / var(--un-border-opacity));}
+.dark .dark\:border-gray-600{--un-border-opacity:1;border-color:rgb(75 85 99 / var(--un-border-opacity));}
+.dark .dark\:border-gray-700{--un-border-opacity:1;border-color:rgb(55 65 81 / var(--un-border-opacity));}
+.focus\:border-brand-500:focus{--un-border-opacity:1;border-color:rgb(34 197 94 / var(--un-border-opacity));}
+.rounded{border-radius:0.25rem;}
+.rounded-full{border-radius:9999px;}
+.rounded-lg{border-radius:0.5rem;}
+.rounded-xl{border-radius:0.75rem;}
+.bg-amber-50{--un-bg-opacity:1;background-color:rgb(255 251 235 / var(--un-bg-opacity));}
+.bg-amber-500{--un-bg-opacity:1;background-color:rgb(245 158 11 / var(--un-bg-opacity));}
+.bg-brand-100{--un-bg-opacity:1;background-color:rgb(220 252 231 / var(--un-bg-opacity));}
+.bg-brand-50{--un-bg-opacity:1;background-color:rgb(240 253 244 / var(--un-bg-opacity));}
+.bg-brand-600{--un-bg-opacity:1;background-color:rgb(22 163 74 / var(--un-bg-opacity));}
+.bg-brand-800{--un-bg-opacity:1;background-color:rgb(22 101 52 / var(--un-bg-opacity));}
+.bg-brand-900{--un-bg-opacity:1;background-color:rgb(20 83 45 / var(--un-bg-opacity));}
+.bg-gray-100{--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));}
+.bg-gray-200{--un-bg-opacity:1;background-color:rgb(229 231 235 / var(--un-bg-opacity));}
+.bg-gray-50{--un-bg-opacity:1;background-color:rgb(249 250 251 / var(--un-bg-opacity));}
+.bg-gray-900,
+.dark .dark\:bg-gray-900{--un-bg-opacity:1;background-color:rgb(17 24 39 / var(--un-bg-opacity));}
+.bg-white{--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));}
+.dark .dark\:bg-amber-900\/40{background-color:rgb(120 53 15 / 0.4);}
+.dark .dark\:bg-brand-900\/40{background-color:rgb(20 83 45 / 0.4);}
+.dark .dark\:bg-brand-900\/50{background-color:rgb(20 83 45 / 0.5);}
+.dark .dark\:bg-gray-600{--un-bg-opacity:1;background-color:rgb(75 85 99 / var(--un-bg-opacity));}
+.dark .dark\:bg-gray-700{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
+.dark .dark\:bg-gray-700\/50{background-color:rgb(55 65 81 / 0.5);}
+.dark .dark\:bg-gray-800{--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));}
+.dark .dark\:hover\:bg-gray-700:hover{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
+.hover\:bg-brand-700:hover{--un-bg-opacity:1;background-color:rgb(21 128 61 / var(--un-bg-opacity));}
+.hover\:bg-gray-100:hover{--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));}
+.p-1{padding:0.25rem;}
+.p-1\.5{padding:0.375rem;}
+.p-3{padding:0.75rem;}
+.p-4{padding:1rem;}
+.p-5{padding:1.25rem;}
+.p-6{padding:1.5rem;}
+.px-1\.5{padding-left:0.375rem;padding-right:0.375rem;}
+.px-2{padding-left:0.5rem;padding-right:0.5rem;}
+.px-2\.5{padding-left:0.625rem;padding-right:0.625rem;}
+.px-3{padding-left:0.75rem;padding-right:0.75rem;}
+.px-4{padding-left:1rem;padding-right:1rem;}
+.px-6{padding-left:1.5rem;padding-right:1.5rem;}
+.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem;}
+.py-1{padding-top:0.25rem;padding-bottom:0.25rem;}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem;}
+.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem;}
+.py-4{padding-top:1rem;padding-bottom:1rem;}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
+.py-8{padding-top:2rem;padding-bottom:2rem;}
+.pb-1{padding-bottom:0.25rem;}
+.pb-4{padding-bottom:1rem;}
+.pb-6{padding-bottom:1.5rem;}
+.pt-2{padding-top:0.5rem;}
+.pt-3{padding-top:0.75rem;}
+.pt-4{padding-top:1rem;}
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-\[10px\]{font-size:10px;}
+.text-\[11px\]{font-size:11px;}
+.text-2xl{font-size:1.5rem;line-height:2rem;}
+.text-lg{font-size:1.125rem;line-height:1.75rem;}
+.text-sm{font-size:0.875rem;line-height:1.25rem;}
+.text-xl{font-size:1.25rem;line-height:1.75rem;}
+.text-xs{font-size:0.75rem;line-height:1rem;}
+.dark .dark\:text-amber-300{--un-text-opacity:1;color:rgb(252 211 77 / var(--un-text-opacity));}
+.dark .dark\:text-brand-300,
+.text-brand-300{--un-text-opacity:1;color:rgb(134 239 172 / var(--un-text-opacity));}
+.dark .dark\:text-brand-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
+.dark .dark\:text-brand-500{--un-text-opacity:1;color:rgb(34 197 94 / var(--un-text-opacity));}
+.dark .dark\:text-gray-100{--un-text-opacity:1;color:rgb(243 244 246 / var(--un-text-opacity));}
+.dark .dark\:text-gray-300,
+.text-gray-300{--un-text-opacity:1;color:rgb(209 213 219 / var(--un-text-opacity));}
+.dark .dark\:text-gray-400,
+.text-gray-400{--un-text-opacity:1;color:rgb(156 163 175 / var(--un-text-opacity));}
+.dark .dark\:text-white,
+.text-white{--un-text-opacity:1;color:rgb(255 255 255 / var(--un-text-opacity));}
+.text-amber-700{--un-text-opacity:1;color:rgb(180 83 9 / var(--un-text-opacity));}
+.text-brand-100{--un-text-opacity:1;color:rgb(220 252 231 / var(--un-text-opacity));}
+.text-brand-200{--un-text-opacity:1;color:rgb(187 247 208 / var(--un-text-opacity));}
+.text-brand-600{--un-text-opacity:1;color:rgb(22 163 74 / var(--un-text-opacity));}
+.text-brand-700{--un-text-opacity:1;color:rgb(21 128 61 / var(--un-text-opacity));}
+.text-gray-500{--un-text-opacity:1;color:rgb(107 114 128 / var(--un-text-opacity));}
+.text-gray-600{--un-text-opacity:1;color:rgb(75 85 99 / var(--un-text-opacity));}
+.text-gray-700{--un-text-opacity:1;color:rgb(55 65 81 / var(--un-text-opacity));}
+.text-gray-900{--un-text-opacity:1;color:rgb(17 24 39 / var(--un-text-opacity));}
+.hover\:text-brand-600:hover{--un-text-opacity:1;color:rgb(22 163 74 / var(--un-text-opacity));}
+.hover\:text-gray-800:hover{--un-text-opacity:1;color:rgb(31 41 55 / var(--un-text-opacity));}
+.font-bold{font-weight:700;}
+.font-extrabold{font-weight:800;}
+.font-medium{font-weight:500;}
+.font-semibold{font-weight:600;}
+.leading-relaxed{line-height:1.625;}
+.tracking-tight{letter-spacing:-0.025em;}
+.tracking-wider{letter-spacing:0.05em;}
+.font-mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}
+.uppercase{text-transform:uppercase;}
+.opacity-80{opacity:0.8;}
+.shadow-md{--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.shadow-sm{--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.shadow-xl{--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
+.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px;}
+.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
+.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
+.duration-200{transition-duration:200ms;}
+@media (min-width: 640px){
+.sm\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+.sm\:h-5{height:1.25rem;}
+.sm\:w-5{width:1.25rem;}
+.sm\:flex-row{flex-direction:row;}
+.sm\:gap-3{gap:0.75rem;}
+.sm\:gap-4{gap:1rem;}
+.sm\:p-2{padding:0.5rem;}
+.sm\:p-6{padding:1.5rem;}
+.sm\:p-8{padding:2rem;}
+.sm\:px-4{padding-left:1rem;padding-right:1rem;}
+.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem;}
+.sm\:py-10{padding-top:2.5rem;padding-bottom:2.5rem;}
+.sm\:text-right{text-align:right;}
+.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem;}
+.sm\:text-sm{font-size:0.875rem;line-height:1.25rem;}
+.sm\:text-xl{font-size:1.25rem;line-height:1.75rem;}
+.sm\:text-xs{font-size:0.75rem;line-height:1rem;}
+}
+@media (min-width: 768px){
+.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (min-width: 1024px){
+.lg\:hidden{display:none;}
+.lg\:flex{display:flex;}
+.lg\:px-8{padding-left:2rem;padding-right:2rem;}
+}
+</style>
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-200 max-w-full overflow-x-hidden">
+
+  <!-- AMP State Initialization -->
+  <amp-state id="storeState">
+    <script type="application/json">
+    {
+      "theme": "light",
+      "dir": "ltr",
+      "lang": "en",
+      "currency": "USD",
+      "rate": 1.0,
+      "symbol": "$",
+      "location": "New York, NY (10001)",
+      "cartCount": 2,
+      "wishlistCount": 3,
+      "searchOrderId": "ORD-2026-8890",
+      "activeOrder": {
+        "id": "ORD-2026-8890",
+        "status": "Out for Delivery",
+        "statusStep": 3,
+        "date": "Aug 20, 2026, 02:30 PM",
+        "estimatedDelivery": "Today by 06:00 PM",
+        "trackingNumber": "TRK-99201488",
+        "courier": "BlogStore Express Courier #14",
+        "address": "100 Global Market Way, New York, NY 10001",
+        "items": [
+          {
+            "name": "Organic Honeycrisp Crisp Apples",
+            "qty": 2,
+            "price": 4.99,
+            "image": "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=200&auto=format&fit=crop&q=80"
+          },
+          {
+            "name": "Fresh Farm Harvest Avocado Pack",
+            "qty": 2,
+            "price": 5.49,
+            "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=200&auto=format&fit=crop&q=80"
+          }
+        ],
+        "total": 20.96
+      }
+    }
+    </script>
+  </amp-state>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-brand-900 text-brand-100 text-[11px] sm:text-xs py-2 px-3 sm:px-4 border-b border-brand-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <span class="inline-flex items-center gap-1 font-semibold text-brand-300">
+          ⚡ <span>AMP & JSON-LD Multi-Category Store</span>
+        </span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 sm:gap-4">
+        <!-- Currency Selector -->
+        <div class="flex items-center gap-1">
+          <label for="currency-select-order" class="text-brand-200 text-[10px] sm:text-xs">Currency:</label>
+          <select id="currency-select-order" class="bg-brand-800 text-white border border-brand-700 rounded px-1.5 py-0.5 text-[10px] sm:text-xs focus:outline-none"
+            on="change:AMP.setState({
+              storeState: {
+                currency: event.value,
+                symbol: event.value == 'USD' ? '$' : (event.value == 'EUR' ? '€' : (event.value == 'GBP' ? '£' : 'د.إ')),
+                rate: event.value == 'USD' ? 1.0 : (event.value == 'EUR' ? 0.92 : (event.value == 'GBP' ? 0.78 : 3.67))
+              }
+            })">
+            <option value="USD" selected>USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="AED">AED (د.إ)</option>
+          </select>
+        </div>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button class="bg-brand-800 hover:bg-brand-700 text-brand-100 px-2 py-0.5 rounded text-[10px] sm:text-xs transition flex items-center gap-1 cursor-pointer"
+          on="tap:AMP.setState({ storeState: { theme: storeState.theme == 'light' ? 'dark' : 'light' } })">
+          <span [text]="storeState.theme == 'light' ? '🌙 Dark' : '☀️ Light'">🌙 Dark</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-2 sm:gap-4">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button on="tap:mobile-nav.toggle" aria-label="Open Navigation Menu" class="lg:hidden p-1.5 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg cursor-pointer">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          <a href="index.html" class="flex items-center gap-2 text-lg sm:text-xl font-bold text-brand-600 dark:text-brand-500">
+            <span class="p-1.5 sm:p-2 bg-brand-600 text-white rounded-xl shadow-sm">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            </span>
+            <span class="tracking-tight text-gray-900 dark:text-white">Blog<span class="text-brand-600 dark:text-brand-400">Store</span></span>
+          </a>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-6 py-2.5 text-sm font-medium">
+          <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">Home</a>
+          <a href="categories.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">🗂️ Categories</a>
+          <a href="products.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">📦 Products</a>
+          <a href="order-tracking.html" class="text-brand-600 dark:text-brand-400 font-bold border-b-2 border-brand-600 pb-1">🚚 Track Order</a>
+          <a href="wishlist.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">❤️ Wishlist</a>
+          <a href="faq.html" class="text-gray-600 dark:text-gray-300 hover:text-brand-600 transition">❓ FAQ</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE NAVIGATION SIDEBAR -->
+  <amp-sidebar id="mobile-nav" layout="nodisplay" side="left" class="w-72 bg-white dark:bg-gray-800 p-5 shadow-xl">
+    <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
+      <span class="text-lg font-bold text-brand-600">BlogStore Menu</span>
+      <button on="tap:mobile-nav.close" aria-label="Close Menu" class="p-1 text-gray-500 hover:text-gray-800">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+    <div class="py-4 space-y-3">
+      <a href="index.html" class="block text-gray-600 dark:text-gray-300 py-1">Home</a>
+      <a href="categories.html" class="block text-gray-600 dark:text-gray-300 py-1">🗂️ Categories</a>
+      <a href="products.html" class="block text-gray-600 dark:text-gray-300 py-1">📦 Products</a>
+      <a href="order-tracking.html" class="block font-medium text-brand-600 py-1">🚚 Track Order</a>
+      <a href="wishlist.html" class="block text-gray-600 dark:text-gray-300 py-1">❤️ Wishlist</a>
+      <a href="faq.html" class="block text-gray-600 dark:text-gray-300 py-1">❓ FAQ & Help</a>
+      <a href="schema-explorer.html" class="block text-brand-600 font-bold py-1 border-t border-gray-100 dark:border-gray-700 pt-3">⚡ Schema.org Explorer</a>
+    </div>
+  </amp-sidebar>
+
+  <!-- MAIN TRACKING CONTENT -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-8">
+
+    <!-- PAGE TITLE HEADER -->
+    <div class="text-center space-y-2">
+      <span class="badge-category text-xs font-bold">Real-time Order Status</span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">Order Tracking & Status</h1>
+      <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+        Track your live shipment progress, view order items, and verify Schema.org `Order` and `ParcelDelivery` structured metadata.
+      </p>
+    </div>
+
+    <!-- ORDER SEARCH FORM CARD -->
+    <div class="card-base p-5 sm:p-6 shadow-md border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto space-y-4">
+      <h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider">Search Any Order ID</h3>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input type="text" placeholder="e.g. ORD-2026-8890" value="ORD-2026-8890" class="flex-1 px-4 py-2.5 text-xs sm:text-sm bg-gray-100 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:border-brand-500 dark:text-white font-mono uppercase"
+          on="change:AMP.setState({ storeState: { searchOrderId: event.value.toUpperCase() } })">
+        <button class="btn-primary py-2.5 px-6 text-xs sm:text-sm font-bold cursor-pointer gap-2"
+          on="tap:AMP.setState({
+            storeState: {
+              activeOrder: {
+                id: storeState.searchOrderId,
+                status: 'Out for Delivery',
+                statusStep: 3,
+                date: 'Aug 20, 2026, 02:30 PM',
+                estimatedDelivery: 'Today by 06:00 PM',
+                trackingNumber: 'TRK-' + Math.floor(10000000 + Math.random() * 90000000),
+                courier: 'BlogStore Express Courier #14',
+                address: '100 Global Market Way, New York, NY 10001',
+                items: [
+                  {
+                    name: 'Organic Honeycrisp Crisp Apples',
+                    qty: 2,
+                    price: 4.99,
+                    image: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=200&auto=format&fit=crop&q=80'
+                  },
+                  {
+                    name: 'Fresh Farm Harvest Avocado Pack',
+                    qty: 2,
+                    price: 5.49,
+                    image: 'https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=200&auto=format&fit=crop&q=80'
+                  }
+                ],
+                total: 20.96
+              }
+            }
+          })">
+          <span>Search Order</span>
+        </button>
+      </div>
+      <p class="text-[11px] text-gray-400">Demo orders available: <code class="font-bold text-brand-600 dark:text-brand-400">ORD-2026-8890</code>, <code class="font-bold text-brand-600 dark:text-brand-400">ORD-2026-5510</code></p>
+    </div>
+
+    <!-- LIVE TRACKING DETAILS CARD -->
+    <div class="card-base p-6 sm:p-8 border border-gray-200 dark:border-gray-700 space-y-6">
+
+      <!-- Order Header Info -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-gray-200 dark:border-gray-700">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-xl font-extrabold text-gray-900 dark:text-white" [text]="'Order #' + storeState.activeOrder.id">Order #ORD-2026-8890</h2>
+            <span class="bg-brand-100 dark:bg-brand-900/50 text-brand-700 dark:text-brand-300 px-2.5 py-0.5 rounded-full text-xs font-bold" [text]="storeState.activeOrder.status">Out for Delivery</span>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1" [text]="'Placed on ' + storeState.activeOrder.date">Placed on Aug 20, 2026, 02:30 PM</p>
+        </div>
+
+        <div class="text-left sm:text-right">
+          <div class="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Tracking Number</div>
+          <div class="font-mono font-bold text-sm text-brand-600 dark:text-brand-400" [text]="storeState.activeOrder.trackingNumber">TRK-99201488</div>
+        </div>
+      </div>
+
+      <!-- PROGRESS TIMELINE STEPPER -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider">Live Delivery Status</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+
+          <div class="p-3 rounded-xl border bg-brand-50 dark:bg-brand-900/40 border-brand-500 text-brand-700 dark:text-brand-300">
+            <div class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs mx-auto mb-1.5">✓</div>
+            <div class="font-bold text-xs">1. Order Confirmed</div>
+            <div class="text-[10px] opacity-80">Aug 20, 02:30 PM</div>
+          </div>
+
+          <div class="p-3 rounded-xl border bg-brand-50 dark:bg-brand-900/40 border-brand-500 text-brand-700 dark:text-brand-300">
+            <div class="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs mx-auto mb-1.5">✓</div>
+            <div class="font-bold text-xs">2. Processed & Packed</div>
+            <div class="text-[10px] opacity-80">Aug 20, 03:10 PM</div>
+          </div>
+
+          <div class="p-3 rounded-xl border bg-amber-50 dark:bg-amber-900/40 border-amber-500 text-amber-700 dark:text-amber-300 animate-pulse">
+            <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-xs mx-auto mb-1.5">🚚</div>
+            <div class="font-bold text-xs">3. Out for Delivery</div>
+            <div class="text-[10px] opacity-80">Aug 20, 03:45 PM</div>
+          </div>
+
+          <div class="p-3 rounded-xl border bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600 text-gray-400">
+            <div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-600 text-gray-500 dark:text-gray-300 flex items-center justify-center font-bold text-xs mx-auto mb-1.5">4</div>
+            <div class="font-bold text-xs">4. Delivered</div>
+            <div class="text-[10px]">Expected 06:00 PM</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DELIVERY SUMMARY & ITEMS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+
+        <!-- Address & Courier Info -->
+        <div class="space-y-3 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-200 dark:border-gray-600">
+          <h4 class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
+            <span>📍 Delivery Address</span>
+          </h4>
+          <p class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed" [text]="storeState.activeOrder.address">
+            100 Global Market Way, New York, NY 10001
+          </p>
+          <div class="pt-2 border-t border-gray-200 dark:border-gray-600">
+            <div class="text-[10px] text-gray-400 uppercase font-bold">Fulfillment Agent</div>
+            <div class="text-xs font-semibold text-gray-900 dark:text-white" [text]="storeState.activeOrder.courier">BlogStore Express Courier #14</div>
+          </div>
+        </div>
+
+        <!-- Order Items List -->
+        <div class="space-y-3 bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-200 dark:border-gray-600">
+          <h4 class="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">Package Contents (2 items)</h4>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-gray-700 dark:text-gray-300">Organic Honeycrisp Crisp Apples (x2)</span>
+              <span class="font-bold text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (9.98 * storeState.rate).toFixed(2)">$9.98</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-gray-700 dark:text-gray-300">Fresh Farm Harvest Avocado Pack (x2)</span>
+              <span class="font-bold text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (10.98 * storeState.rate).toFixed(2)">$10.98</span>
+            </div>
+          </div>
+          <div class="pt-2 border-t border-gray-200 dark:border-gray-600 flex justify-between text-xs font-bold text-gray-900 dark:text-white">
+            <span>Order Total</span>
+            <span class="text-brand-600 dark:text-brand-400 text-sm" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 mt-12 py-8">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
+      &copy; 2026 BlogStore Order Tracking & Delivery System. Valid AMP HTML.
+    </div>
+  </footer>
+
+</body>
+</html>
