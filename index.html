@@ -373,48 +373,127 @@
 .lg\:px-8{padding-left:2rem;padding-right:2rem;}
 }
 :root {
-  --background: #f8fafc;
-  --surface: #ffffff;
-  --text: #0f172a;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --accent: #0284c7;
+  --bg-color: #f8fafc;
+  --surface-color: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border-color: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-color: #0284c7;
 }
 
+/* System dark fallback */
 @media (prefers-color-scheme: dark) {
   body:not(.amp-dark-mode) {
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --surface-hover: #334155;
+    --border-color: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --accent-color: #38bdf8;
   }
 }
 
+/* Native AMP Dark Mode Override */
 body.amp-dark-mode {
-  --background: #0f172a;
-  --surface: #1e293b;
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --border: #334155;
-  --accent: #38bdf8;
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --surface-hover: #334155;
+  --border-color: #334155;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --accent-color: #38bdf8;
   background-color: #0f172a;
   color: #f8fafc;
 }
 
-body.amp-dark-mode .bg-white {
+body.amp-dark-mode,
+body.amp-dark-mode div,
+body.amp-dark-mode header,
+body.amp-dark-mode main,
+body.amp-dark-mode section,
+body.amp-dark-mode footer,
+body.amp-dark-mode amp-sidebar {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Comprehensive Dark Mode Component Overrides */
+body.amp-dark-mode .bg-white,
+body.amp-dark-mode .card-base,
+body.amp-dark-mode .trust-card,
+body.amp-dark-mode .glass-header {
   background-color: #1e293b;
-}
-body.amp-dark-mode .text-surface-900 {
-  color: #f8fafc;
-}
-body.amp-dark-mode .text-surface-600,
-body.amp-dark-mode .text-surface-500 {
-  color: #cbd5e1;
-}
-body.amp-dark-mode .border-surface-200 {
   border-color: #334155;
 }
+
 body.amp-dark-mode .bg-surface-50,
 body.amp-dark-mode .bg-surface-100 {
   background-color: #0f172a;
 }
 
+body.amp-dark-mode .bg-surface-200,
+body.amp-dark-mode .bg-surface-300 {
+  background-color: #334155;
+}
+
+body.amp-dark-mode .text-surface-900,
+body.amp-dark-mode h1,
+body.amp-dark-mode h2,
+body.amp-dark-mode h3,
+body.amp-dark-mode h4,
+body.amp-dark-mode h5,
+body.amp-dark-mode h6 {
+  color: #f8fafc;
+}
+
+body.amp-dark-mode .text-surface-700,
+body.amp-dark-mode .text-surface-600,
+body.amp-dark-mode .text-surface-500,
+body.amp-dark-mode p {
+  color: #cbd5e1;
+}
+
+body.amp-dark-mode .border-surface-200,
+body.amp-dark-mode .border-surface-100,
+body.amp-dark-mode .border-surface-300 {
+  border-color: #334155;
+}
+
+body.amp-dark-mode input,
+body.amp-dark-mode select,
+body.amp-dark-mode textarea {
+  background-color: #0f172a;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+body.amp-dark-mode .badge-category {
+  background-color: #082f49;
+  color: #7dd3fc;
+  border-color: #075985;
+}
+
+body.amp-dark-mode .badge-sale {
+  background-color: #4c0519;
+  color: #fda4af;
+  border-color: #9f1239;
+}
+
+body.amp-dark-mode amp-sidebar {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+body.amp-dark-mode amp-sidebar a {
+  color: #cbd5e1;
+}
+
+body.amp-dark-mode amp-sidebar a:hover {
+  color: #38bdf8;
+}
+
+/* Sun/Moon Toggle Icons */
 .sun {
   display: none;
 }
@@ -431,10 +510,11 @@ body.amp-dark-mode .moon {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--background);
-  color: var(--text);
+  background-color: var(--bg-color);
+  color: var(--text-main);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 a {
   text-decoration: none;
 }
