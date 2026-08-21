@@ -1,7 +1,7 @@
 <!doctype html>
-<html ⚡ lang="en" dir="ltr" class="light">
+<html ⚡ lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <title>Organic Honeycrisp Crisp Apples - Antinna Parts & Repair</title>
   <link rel="canonical" href="https://blogstore.example.com/product-detail.html">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -309,6 +309,7 @@
 .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .duration-200{transition-duration:200ms;}
+.ease{transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);}
 @media (min-width: 640px){
 .sm\:inline{display:inline;}
 .sm\:h-5{height:1.25rem;}
@@ -347,8 +348,9 @@
 .lg\:hidden{display:none;}
 .lg\:px-8{padding-left:2rem;padding-right:2rem;}
 }
-a {
-  text-decoration: none;
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
 }
 .dark {
   background-color: #0f172a;
@@ -357,6 +359,31 @@ a {
 .light {
   background-color: #f8fafc;
   color: #0f172a;
+}
+.dark .bg-white {
+  background-color: #1e293b;
+}
+.dark .text-surface-900 {
+  color: #f8fafc;
+}
+.dark .text-surface-600,
+.dark .text-surface-500 {
+  color: #cbd5e1;
+}
+.dark .border-surface-200 {
+  border-color: #334155;
+}
+.dark .bg-surface-50,
+.dark .bg-surface-100 {
+  background-color: #0f172a;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+a {
+  text-decoration: none;
 }
 .rtl {
   direction: rtl;
@@ -382,11 +409,8 @@ a {
   flex: 1;
   overflow-y: auto;
 }
-amp-carousel .amp-carousel-slide {
-  height: 100%;
-}
 </style>
-  <meta name="amp-script-src" content="sha384-4f/FaaNWd4El3qmmk+DRoq+7eggjgkjKaUtVP5rXTWnDbJ6WwsngLc9Ck/DyCkkS">
+  <meta name="amp-script-src" content="sha384-XhqplYmnlZAPOq6XoZcv6vSyhb1PeKAB3888wtlKYo39p9ZISKb8OPuUzpmCFntx">
   <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 </head>
 <body [class]="storeState.theme + ' transition-colors duration-200 max-w-full overflow-x-hidden'" class="light transition-colors duration-200 max-w-full overflow-x-hidden">
@@ -739,11 +763,13 @@ amp-carousel .amp-carousel-slide {
 
   <script id="state-script" type="text/plain" target="amp-script">
 function updateState() {
-  const theme = localStorage.getItem("antinna_theme") || "light";
+  const cookieMatch = document.cookie.match(new RegExp('(?:^|; )amp_theme=([^;]+)'));
+  const savedTheme = cookieMatch ? cookieMatch[1] : (localStorage.getItem("antinna_theme") || "light");
   const currency = localStorage.getItem("antinna_currency") || "USD";
   const rate = currency === "USD" ? 1.0 : (currency === "EUR" ? 0.92 : (currency === "GBP" ? 0.78 : 3.67));
   const symbol = currency === "USD" ? "$" : (currency === "EUR" ? "€" : (currency === "GBP" ? "£" : "د.إ"));
-  AMP.setState({ storeState: { theme, currency, rate, symbol } });
+
+  AMP.setState({ storeState: { theme: savedTheme, currency, rate, symbol } });
 }
 
 updateState();
@@ -753,6 +779,7 @@ if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     let currentTheme = localStorage.getItem("antinna_theme") || "light";
     let newTheme = currentTheme === "light" ? "dark" : "light";
+    document.cookie = "amp_theme=" + newTheme + "; path=/; max-age=31536000";
     localStorage.setItem("antinna_theme", newTheme);
     updateState();
   });

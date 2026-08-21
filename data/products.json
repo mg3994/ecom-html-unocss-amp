@@ -135,6 +135,50 @@
       "addOns": [
         { "id": "addon-stand", "name": "Aluminum Headphone Stand", "price": 15.99 }
       ]
+    },
+    {
+      "id": "prod-7",
+      "name": "Industrial Heavy-Duty Copper Pipe Fittings",
+      "category": "Hardware & Tools",
+      "categorySlug": "Hardware",
+      "schemaType": "Product",
+      "price": 24.99,
+      "mrp": 34.99,
+      "rating": 4.75,
+      "reviewsCount": 42,
+      "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "description": "Certified high-grade copper pipe fittings suitable for high-pressure hydraulic and plumbing repair jobs.",
+      "sku": "ANT-TL-088",
+      "variants": [
+        { "size": "1/2 inch Set (10 Pack)", "price": 24.99 },
+        { "size": "3/4 inch Set (10 Pack)", "price": 32.99 }
+      ],
+      "addOns": [
+        { "id": "addon-tape", "name": "Industrial Thread Sealant Tape", "price": 3.99 }
+      ]
+    },
+    {
+      "id": "prod-8",
+      "name": "Artisan Stone-Baked Pepperoni Pizza",
+      "category": "Fast Food & Bistro",
+      "categorySlug": "Fast-food",
+      "schemaType": "MenuItem",
+      "price": 13.49,
+      "mrp": 16.99,
+      "rating": 4.9,
+      "reviewsCount": 178,
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "description": "Wood-fired sourdough pizza topped with crushed San Marzano tomato sauce, fresh mozzarella, and cured pepperoni.",
+      "sku": "ANT-FB-012",
+      "variants": [
+        { "size": "Medium 12 inch", "price": 13.49 },
+        { "size": "Large 16 inch", "price": 18.99 }
+      ],
+      "addOns": [
+        { "id": "addon-garlic-dip", "name": "Creamy Garlic Herb Dip", "price": 1.25 }
+      ]
     }
   ]
 }

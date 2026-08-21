@@ -10,11 +10,13 @@ const __dirname = path.dirname(__filename);
 
 const scriptContent = `
 function updateState() {
-  const theme = localStorage.getItem("antinna_theme") || "light";
+  const cookieMatch = document.cookie.match(new RegExp('(?:^|; )amp_theme=([^;]+)'));
+  const savedTheme = cookieMatch ? cookieMatch[1] : (localStorage.getItem("antinna_theme") || "light");
   const currency = localStorage.getItem("antinna_currency") || "USD";
   const rate = currency === "USD" ? 1.0 : (currency === "EUR" ? 0.92 : (currency === "GBP" ? 0.78 : 3.67));
   const symbol = currency === "USD" ? "$" : (currency === "EUR" ? "€" : (currency === "GBP" ? "£" : "د.إ"));
-  AMP.setState({ storeState: { theme, currency, rate, symbol } });
+
+  AMP.setState({ storeState: { theme: savedTheme, currency, rate, symbol } });
 }
 
 updateState();
@@ -24,6 +26,7 @@ if (themeBtn) {
   themeBtn.addEventListener("click", () => {
     let currentTheme = localStorage.getItem("antinna_theme") || "light";
     let newTheme = currentTheme === "light" ? "dark" : "light";
+    document.cookie = "amp_theme=" + newTheme + "; path=/; max-age=31536000";
     localStorage.setItem("antinna_theme", newTheme);
     updateState();
   });
@@ -41,9 +44,10 @@ if (currencySelect) {
 const hash = crypto.createHash("sha384").update(scriptContent).digest("base64");
 const hashMeta = "sha384-" + hash.replace(/=/g, "");
 
-const customExtraCss = `
-a {
-  text-decoration: none;
+const customThemeVariablesCss = `
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
 }
 .dark {
   background-color: #0f172a;
@@ -52,6 +56,31 @@ a {
 .light {
   background-color: #f8fafc;
   color: #0f172a;
+}
+.dark .bg-white {
+  background-color: #1e293b;
+}
+.dark .text-surface-900 {
+  color: #f8fafc;
+}
+.dark .text-surface-600,
+.dark .text-surface-500 {
+  color: #cbd5e1;
+}
+.dark .border-surface-200 {
+  border-color: #334155;
+}
+.dark .bg-surface-50,
+.dark .bg-surface-100 {
+  background-color: #0f172a;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+a {
+  text-decoration: none;
 }
 .rtl {
   direction: rtl;
@@ -77,9 +106,6 @@ a {
   flex: 1;
   overflow-y: auto;
 }
-amp-carousel .amp-carousel-slide {
-  height: 100%;
-}
 `.trim();
 
 async function buildCss() {
@@ -93,21 +119,15 @@ async function buildCss() {
     const filePath = path.join(rootDir, file);
     let html = fs.readFileSync(filePath, "utf-8");
 
-    // Standardize initial theme state across all files to "light"
-    html = html.replace(/"theme":\s*"[^"]*"/g, '"theme": "light"');
+    // Clean html tag and body tag
+    html = html.replace(/<html ⚡ lang="en" dir="ltr"[^>]*>/i, '<html ⚡ lang="en" dir="ltr">');
+    html = html.replace(/<body[^>]*>/i, '<body [class]="storeState.theme + \' transition-colors duration-200 max-w-full overflow-x-hidden\'" class="light transition-colors duration-200 max-w-full overflow-x-hidden">');
 
-    // Fix amp-carousel slide heights for responsive layout
-    if (file === "index.html") {
-      html = html.replace(/<amp-carousel width="1200" height="420" layout="responsive"/i, '<amp-carousel width="1200" height="320" layout="responsive"');
-    }
-
-    // Ensure body tag uses storeState.theme class binding for dark/light mode
-    if (!html.includes('[class]="storeState.theme')) {
-      html = html.replace(/<body[^>]*>/i, '<body [class]="storeState.theme + \' transition-colors duration-200 max-w-full overflow-x-hidden\'" class="light transition-colors duration-200 max-w-full overflow-x-hidden">');
-    }
+    // Remove inline scripts from head if any were added
+    html = html.replace(/<script>\s*\(function\(\)[\s\S]*?<\/script>\s*/gi, '');
 
     const res = await uno.generate(html);
-    const compiledCss = res.css + "\n" + customExtraCss;
+    const compiledCss = res.css + "\n" + customThemeVariablesCss;
 
     // Inject compiled CSS into <style amp-custom>
     html = html.replace(/<style amp-custom>[\s\S]*?<\/style>/i, `<style amp-custom>\n${compiledCss}\n</style>`);
@@ -117,34 +137,7 @@ async function buildCss() {
       html = html.replace('</head>', '  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>\n</head>');
     }
 
-    // Ensure state controls are wrapped in amp-script container
-    if (html.includes('id="currency-select"') && !html.includes('id="state-manager"')) {
-      const newControls = `<amp-script id="state-manager" script="state-script" layout="container" class="inline-flex items-center gap-2 sm:gap-4">
-          <div class="flex items-center gap-1">
-            <label for="currency-select" class="text-surface-400 text-[10px] sm:text-xs">Currency:</label>
-            <select id="currency-select" class="bg-surface-800 text-white border border-surface-700 rounded-lg px-2 py-0.5 text-[10px] sm:text-xs focus:outline-none">
-              <option value="USD">USD ($)</option>
-              <option value="EUR">EUR (€)</option>
-              <option value="GBP">GBP (£)</option>
-              <option value="AED">AED (د.إ)</option>
-            </select>
-          </div>
-
-          <button class="bg-surface-800 hover:bg-surface-700 text-surface-200 px-2.5 py-0.5 rounded-lg text-[10px] sm:text-xs transition cursor-pointer font-medium"
-            on="tap:AMP.setState({ storeState: { dir: storeState.dir == 'ltr' ? 'rtl' : 'ltr', lang: storeState.dir == 'ltr' ? 'ar' : 'en' } })">
-            <span [text]="storeState.dir == 'ltr' ? '🌐 RTL' : '🌐 LTR'">🌐 RTL</span>
-          </button>
-
-          <button id="theme-toggle-btn" class="bg-surface-800 hover:bg-surface-700 text-surface-200 px-2.5 py-0.5 rounded-lg text-[10px] sm:text-xs transition flex items-center gap-1 cursor-pointer font-medium"
-            on="tap:AMP.setState({ storeState: { theme: storeState.theme == 'dark' ? 'light' : 'dark' } })">
-            <span [text]="storeState.theme == 'dark' ? '☀️ Light' : '🌙 Dark'">🌙 Dark</span>
-          </button>
-        </amp-script>
-      </div>`;
-      html = html.replace(/<div class="flex flex-wrap items-center gap-2 sm:gap-4">[\s\S]*?<\/div>\s*<\/div>/i, newControls);
-    }
-
-    // Ensure amp-script script and hash meta tag are present with correct type="text/plain"
+    // Ensure amp-script script and hash meta tag are present
     if (!html.includes('id="state-script"')) {
       const scriptBlock = `
   <script id="state-script" type="text/plain" target="amp-script">
