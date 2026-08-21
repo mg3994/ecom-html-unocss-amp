@@ -2,15 +2,30 @@ import { defineConfig, presetUno, presetWind3, presetIcons } from 'unocss';
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno({
+      dark: 'class'
+    }),
     presetWind3({
-      dark: 'media'
+      dark: 'class'
     }),
     presetIcons({
       scale: 1.2,
       cdn: 'https://esm.sh/'
     })
   ],
+  shortcuts: {
+    'btn-primary': 'bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl transition duration-200 flex items-center justify-center cursor-pointer no-underline',
+    'btn-secondary': 'bg-surface-200 dark:bg-surface-700 hover:bg-surface-300 dark:hover:bg-surface-600 text-surface-900 dark:text-white font-bold rounded-xl transition duration-200 flex items-center justify-center cursor-pointer no-underline',
+    'btn-accent': 'bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl transition duration-200 flex items-center justify-center cursor-pointer no-underline',
+    'btn-icon': 'p-2 rounded-xl text-surface-600 dark:text-surface-300 hover:bg-surface-100 dark:hover:bg-surface-800 transition cursor-pointer no-underline',
+    'card-base': 'bg-white dark:bg-surface-800 rounded-2xl border border-surface-200 dark:border-surface-700/80 shadow-sm hover:shadow-md transition duration-200 overflow-hidden no-underline',
+    'trust-card': 'bg-white dark:bg-surface-800/80 p-3.5 sm:p-4 rounded-2xl border border-surface-200 dark:border-surface-700/60 shadow-sm flex items-center gap-3',
+    'badge-category': 'bg-sky-100 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border border-sky-200 dark:border-sky-800/80 inline-flex items-center gap-1 no-underline',
+    'badge-sale': 'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold border border-rose-200 dark:border-rose-800/80 inline-flex items-center gap-1 no-underline',
+    'glass-header': 'sticky top-0 z-40 bg-white/90 dark:bg-surface-900/90 backdrop-blur-md border-b border-surface-200/80 dark:border-surface-800/80 transition-colors duration-200',
+    'nav-pill': 'px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold text-surface-600 dark:text-surface-300 hover:bg-surface-100 dark:hover:bg-surface-800 transition whitespace-nowrap cursor-pointer no-underline',
+    'nav-pill-active': 'px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold bg-sky-600 text-white shadow-sm whitespace-nowrap cursor-pointer no-underline'
+  },
   theme: {
     colors: {
       primary: {
@@ -132,18 +147,6 @@ export default defineConfig({
         800: '#27272a',
         900: '#18181b',
         950: '#09090b',
-      },
-      indigo: {
-        50: '#eef2ff',
-        100: '#e0e7ff',
-        200: '#c7d2fe',
-        300: '#a5b4fc',
-        400: '#818cf8',
-        500: '#6366f1',
-        600: '#4f46e5',
-        700: '#4338ca',
-        800: '#3730a3',
-        900: '#312e81',
       },
       surface: {
         50: '#f8fafc',

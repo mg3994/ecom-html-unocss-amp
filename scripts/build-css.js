@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 const scriptContent = `
 function updateState() {
-  const theme = localStorage.getItem("antinna_theme") || "system";
+  const theme = localStorage.getItem("antinna_theme") || "light";
   const currency = localStorage.getItem("antinna_currency") || "USD";
   const rate = currency === "USD" ? 1.0 : (currency === "EUR" ? 0.92 : (currency === "GBP" ? 0.78 : 3.67));
   const symbol = currency === "USD" ? "$" : (currency === "EUR" ? "€" : (currency === "GBP" ? "£" : "د.إ"));
@@ -22,8 +22,8 @@ updateState();
 const themeBtn = document.getElementById("theme-toggle-btn");
 if (themeBtn) {
   themeBtn.addEventListener("click", () => {
-    let currentTheme = localStorage.getItem("antinna_theme") || "system";
-    let newTheme = currentTheme === "light" ? "dark" : (currentTheme === "dark" ? "system" : "light");
+    let currentTheme = localStorage.getItem("antinna_theme") || "light";
+    let newTheme = currentTheme === "light" ? "dark" : "light";
     localStorage.setItem("antinna_theme", newTheme);
     updateState();
   });
@@ -41,6 +41,47 @@ if (currencySelect) {
 const hash = crypto.createHash("sha384").update(scriptContent).digest("base64");
 const hashMeta = "sha384-" + hash.replace(/=/g, "");
 
+const customExtraCss = `
+a {
+  text-decoration: none;
+}
+.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+.light {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cart-drawer-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.cart-items-scroll {
+  flex: 1;
+  overflow-y: auto;
+}
+amp-carousel .amp-carousel-slide {
+  height: 100%;
+}
+`.trim();
+
 async function buildCss() {
   const uno = await createGenerator(unoConfig);
   const rootDir = path.resolve(__dirname, "..");
@@ -52,11 +93,21 @@ async function buildCss() {
     const filePath = path.join(rootDir, file);
     let html = fs.readFileSync(filePath, "utf-8");
 
-    // Ensure state defaults in <amp-state id="storeState"> are consistent across all HTML files
-    html = html.replace(/"theme":\s*"[^"]*"/g, '"theme": "system"');
+    // Standardize initial theme state across all files to "light"
+    html = html.replace(/"theme":\s*"[^"]*"/g, '"theme": "light"');
+
+    // Fix amp-carousel slide heights for responsive layout
+    if (file === "index.html") {
+      html = html.replace(/<amp-carousel width="1200" height="420" layout="responsive"/i, '<amp-carousel width="1200" height="320" layout="responsive"');
+    }
+
+    // Ensure body tag uses storeState.theme class binding for dark/light mode
+    if (!html.includes('[class]="storeState.theme')) {
+      html = html.replace(/<body[^>]*>/i, '<body [class]="storeState.theme + \' transition-colors duration-200 max-w-full overflow-x-hidden\'" class="light transition-colors duration-200 max-w-full overflow-x-hidden">');
+    }
 
     const res = await uno.generate(html);
-    const compiledCss = res.css;
+    const compiledCss = res.css + "\n" + customExtraCss;
 
     // Inject compiled CSS into <style amp-custom>
     html = html.replace(/<style amp-custom>[\s\S]*?<\/style>/i, `<style amp-custom>\n${compiledCss}\n</style>`);
@@ -84,15 +135,16 @@ async function buildCss() {
             <span [text]="storeState.dir == 'ltr' ? '🌐 RTL' : '🌐 LTR'">🌐 RTL</span>
           </button>
 
-          <button id="theme-toggle-btn" class="bg-surface-800 hover:bg-surface-700 text-surface-200 px-2.5 py-0.5 rounded-lg text-[10px] sm:text-xs transition flex items-center gap-1 cursor-pointer font-medium">
-            <span [text]="storeState.theme == 'light' ? '🌙 Dark' : (storeState.theme == 'dark' ? '⚙️ System' : '☀️ Light')">⚙️ System</span>
+          <button id="theme-toggle-btn" class="bg-surface-800 hover:bg-surface-700 text-surface-200 px-2.5 py-0.5 rounded-lg text-[10px] sm:text-xs transition flex items-center gap-1 cursor-pointer font-medium"
+            on="tap:AMP.setState({ storeState: { theme: storeState.theme == 'dark' ? 'light' : 'dark' } })">
+            <span [text]="storeState.theme == 'dark' ? '☀️ Light' : '🌙 Dark'">🌙 Dark</span>
           </button>
         </amp-script>
       </div>`;
       html = html.replace(/<div class="flex flex-wrap items-center gap-2 sm:gap-4">[\s\S]*?<\/div>\s*<\/div>/i, newControls);
     }
 
-    // Ensure amp-script script and hash meta tag are present
+    // Ensure amp-script script and hash meta tag are present with correct type="text/plain"
     if (!html.includes('id="state-script"')) {
       const scriptBlock = `
   <script id="state-script" type="text/plain" target="amp-script">
