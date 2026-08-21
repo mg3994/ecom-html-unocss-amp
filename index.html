@@ -103,12 +103,14 @@
 .block{display:block;}
 .hidden{display:none;}
 .aspect-video{aspect-ratio:16/9;}
+.h-1\.5{height:0.375rem;}
 .h-10{height:2.5rem;}
 .h-16{height:4rem;}
 .h-4{height:1rem;}
 .h-5{height:1.25rem;}
 .h-6{height:1.5rem;}
 .h-full{height:100%;}
+.max-h-\[90vh\]{max-height:90vh;}
 .max-w-\[110px\]{max-width:110px;}
 .max-w-2xl{max-width:42rem;}
 .max-w-7xl{max-width:80rem;}
@@ -118,6 +120,8 @@
 .max-w-xs{max-width:20rem;}
 .min-h-full{min-height:100%;}
 .w-10{width:2.5rem;}
+.w-12{width:3rem;}
+.w-16{width:4rem;}
 .w-4{width:1rem;}
 .w-5{width:1.25rem;}
 .w-6{width:1.5rem;}
@@ -135,6 +139,7 @@
 .group:hover .group-hover\:scale-105{--un-scale-x:1.05;--un-scale-y:1.05;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .group:hover .group-hover\:scale-110{--un-scale-x:1.1;--un-scale-y:1.1;transform:translateX(var(--un-translate-x)) translateY(var(--un-translate-y)) translateZ(var(--un-translate-z)) rotate(var(--un-rotate)) rotateX(var(--un-rotate-x)) rotateY(var(--un-rotate-y)) rotateZ(var(--un-rotate-z)) skewX(var(--un-skew-x)) skewY(var(--un-skew-y)) scaleX(var(--un-scale-x)) scaleY(var(--un-scale-y)) scaleZ(var(--un-scale-z));}
 .cursor-pointer{cursor:pointer;}
+.items-end{align-items:flex-end;}
 .items-center{align-items:center;}
 .justify-center{justify-content:center;}
 .justify-between{justify-content:space-between;}
@@ -145,6 +150,7 @@
 .gap-6{gap:1.5rem;}
 .gap-8{gap:2rem;}
 .space-y-1\.5>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.375rem * var(--un-space-y-reverse));}
+.space-y-2\.5>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.625rem * var(--un-space-y-reverse));}
 .space-y-2>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.5rem * var(--un-space-y-reverse));}
 .space-y-3>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(0.75rem * var(--un-space-y-reverse));}
 .space-y-4>:not([hidden])~:not([hidden]){--un-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--un-space-y-reverse)));margin-bottom:calc(1rem * var(--un-space-y-reverse));}
@@ -152,6 +158,7 @@
 .overflow-hidden{overflow:hidden;}
 .overflow-x-auto{overflow-x:auto;}
 .overflow-x-hidden{overflow-x:hidden;}
+.overflow-y-auto{overflow-y:auto;}
 .truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .border{border-width:1px;}
 .border-b{border-bottom-width:1px;}
@@ -164,10 +171,11 @@
 .dark .dark\:border-brand-800{--un-border-opacity:1;border-color:rgb(22 101 52 / var(--un-border-opacity));}
 .border-gray-100{--un-border-opacity:1;border-color:rgb(243 244 246 / var(--un-border-opacity));}
 .border-gray-200{--un-border-opacity:1;border-color:rgb(229 231 235 / var(--un-border-opacity));}
+.border-gray-700,
+.dark .dark\:border-gray-700{--un-border-opacity:1;border-color:rgb(55 65 81 / var(--un-border-opacity));}
 .border-gray-800{--un-border-opacity:1;border-color:rgb(31 41 55 / var(--un-border-opacity));}
 .border-transparent{border-color:transparent;}
 .dark .dark\:border-gray-600{--un-border-opacity:1;border-color:rgb(75 85 99 / var(--un-border-opacity));}
-.dark .dark\:border-gray-700{--un-border-opacity:1;border-color:rgb(55 65 81 / var(--un-border-opacity));}
 .dark .dark\:border-gray-700\/50{border-color:rgb(55 65 81 / 0.5);}
 .hover\:border-brand-500:hover{--un-border-opacity:1;border-color:rgb(34 197 94 / var(--un-border-opacity));}
 .focus\:border-brand-500:focus{--un-border-opacity:1;border-color:rgb(34 197 94 / var(--un-border-opacity));}
@@ -176,8 +184,10 @@
 .rounded-full{border-radius:9999px;}
 .rounded-lg{border-radius:0.5rem;}
 .rounded-xl{border-radius:0.75rem;}
+.rounded-t-3xl{border-top-left-radius:1.5rem;border-top-right-radius:1.5rem;}
 .bg-accent-500{--un-bg-opacity:1;background-color:rgb(249 115 22 / var(--un-bg-opacity));}
 .bg-amber-50{--un-bg-opacity:1;background-color:rgb(255 251 235 / var(--un-bg-opacity));}
+.bg-black{--un-bg-opacity:1;background-color:rgb(0 0 0 / var(--un-bg-opacity));}
 .bg-black\/70{background-color:rgb(0 0 0 / 0.7);}
 .bg-blue-50{--un-bg-opacity:1;background-color:rgb(239 246 255 / var(--un-bg-opacity));}
 .bg-brand-50,
@@ -186,10 +196,12 @@
 .bg-brand-800{--un-bg-opacity:1;background-color:rgb(22 101 52 / var(--un-bg-opacity));}
 .bg-brand-900{--un-bg-opacity:1;background-color:rgb(20 83 45 / var(--un-bg-opacity));}
 .bg-gray-100{--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));}
+.bg-gray-300{--un-bg-opacity:1;background-color:rgb(209 213 219 / var(--un-bg-opacity));}
 .bg-gray-50{--un-bg-opacity:1;background-color:rgb(249 250 251 / var(--un-bg-opacity));}
 .bg-gray-900,
 .dark .dark\:bg-gray-900{--un-bg-opacity:1;background-color:rgb(17 24 39 / var(--un-bg-opacity));}
 .bg-gray-900\/80{background-color:rgb(17 24 39 / 0.8);}
+.bg-green-100{--un-bg-opacity:1;background-color:rgb(220 252 231 / var(--un-bg-opacity));}
 .bg-orange-500\/20{background-color:rgb(249 115 22 / 0.2);}
 .bg-pink-500\/20{background-color:rgb(236 72 153 / 0.2);}
 .bg-purple-50{--un-bg-opacity:1;background-color:rgb(250 245 255 / var(--un-bg-opacity));}
@@ -200,9 +212,11 @@
 .dark .dark\:bg-blue-900\/40{background-color:rgb(30 58 138 / 0.4);}
 .dark .dark\:bg-brand-900\/40,
 .dark .dark\:bg-green-900\/40{background-color:rgb(20 83 45 / 0.4);}
+.dark .dark\:bg-gray-600{--un-bg-opacity:1;background-color:rgb(75 85 99 / var(--un-bg-opacity));}
 .dark .dark\:bg-gray-700{--un-bg-opacity:1;background-color:rgb(55 65 81 / var(--un-bg-opacity));}
 .dark .dark\:bg-gray-700\/50{background-color:rgb(55 65 81 / 0.5);}
 .dark .dark\:bg-gray-800{--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));}
+.dark .dark\:bg-green-900\/50{background-color:rgb(20 83 45 / 0.5);}
 .dark .dark\:bg-purple-900\/40{background-color:rgb(88 28 135 / 0.4);}
 .dark .dark\:bg-red-900\/40{background-color:rgb(127 29 29 / 0.4);}
 .dark .dark\:hover\:bg-gray-600:hover{--un-bg-opacity:1;background-color:rgb(75 85 99 / var(--un-bg-opacity));}
@@ -212,6 +226,7 @@
 .hover\:bg-emerald-50:hover{--un-bg-opacity:1;background-color:rgb(236 253 245 / var(--un-bg-opacity));}
 .hover\:bg-gray-100:hover{--un-bg-opacity:1;background-color:rgb(243 244 246 / var(--un-bg-opacity));}
 .hover\:bg-gray-200:hover{--un-bg-opacity:1;background-color:rgb(229 231 235 / var(--un-bg-opacity));}
+.hover\:bg-gray-900:hover{--un-bg-opacity:1;background-color:rgb(17 24 39 / var(--un-bg-opacity));}
 .hover\:bg-pink-50:hover{--un-bg-opacity:1;background-color:rgb(253 242 248 / var(--un-bg-opacity));}
 .dark .dark\:focus\:bg-gray-800:focus{--un-bg-opacity:1;background-color:rgb(31 41 55 / var(--un-bg-opacity));}
 .focus\:bg-white:focus{--un-bg-opacity:1;background-color:rgb(255 255 255 / var(--un-bg-opacity));}
@@ -228,6 +243,7 @@
 .p-1\.5{padding:0.375rem;}
 .p-2{padding:0.5rem;}
 .p-3{padding:0.75rem;}
+.p-3\.5{padding:0.875rem;}
 .p-4{padding:1rem;}
 .p-5{padding:1.25rem;}
 .p-6{padding:1.5rem;}
@@ -243,6 +259,7 @@
 .py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem;}
 .py-3{padding-top:0.75rem;padding-bottom:0.75rem;}
 .py-4{padding-top:1rem;padding-bottom:1rem;}
+.py-6{padding-top:1.5rem;padding-bottom:1.5rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
 .pb-1{padding-bottom:0.25rem;}
 .pb-3{padding-bottom:0.75rem;}
@@ -251,6 +268,7 @@
 .pr-4{padding-right:1rem;}
 .pt-0{padding-top:0;}
 .pt-1{padding-top:0.25rem;}
+.pt-1\.5{padding-top:0.375rem;}
 .pt-2{padding-top:0.5rem;}
 .pt-3{padding-top:0.75rem;}
 .pt-6{padding-top:1.5rem;}
@@ -259,6 +277,7 @@
 .text-\[10px\]{font-size:10px;}
 .text-\[11px\]{font-size:11px;}
 .text-\[9px\]{font-size:9px;}
+.text-3xl{font-size:1.875rem;line-height:2.25rem;}
 .text-base{font-size:1rem;line-height:1.5rem;}
 .text-lg{font-size:1.125rem;line-height:1.75rem;}
 .text-sm{font-size:0.875rem;line-height:1.25rem;}
@@ -269,7 +288,8 @@
 .dark .dark\:text-brand-300,
 .dark .dark\:text-green-300,
 .text-brand-300{--un-text-opacity:1;color:rgb(134 239 172 / var(--un-text-opacity));}
-.dark .dark\:text-brand-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
+.dark .dark\:text-brand-400,
+.dark .dark\:text-green-400{--un-text-opacity:1;color:rgb(74 222 128 / var(--un-text-opacity));}
 .dark .dark\:text-brand-500{--un-text-opacity:1;color:rgb(34 197 94 / var(--un-text-opacity));}
 .dark .dark\:text-gray-100{--un-text-opacity:1;color:rgb(243 244 246 / var(--un-text-opacity));}
 .dark .dark\:text-gray-300,
@@ -310,6 +330,7 @@
 .font-bold{font-weight:700;}
 .font-extrabold{font-weight:800;}
 .font-medium{font-weight:500;}
+.font-normal{font-weight:400;}
 .font-semibold{font-weight:600;}
 .leading-relaxed{line-height:1.625;}
 .leading-tight{line-height:1.25;}
@@ -320,11 +341,13 @@
 .shadow{--un-shadow:var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-2xl{--un-shadow:var(--un-shadow-inset) 0 25px 50px -12px var(--un-shadow-color, rgb(0 0 0 / 0.25));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-brand-600\/30{--un-shadow-color:rgb(22 163 74 / 0.3);}
+.shadow-inner{--un-shadow:inset 0 2px 4px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-lg{--un-shadow:var(--un-shadow-inset) 0 10px 15px -3px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 4px 6px -4px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-md{--un-shadow:var(--un-shadow-inset) 0 4px 6px -1px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 2px 4px -2px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-sm{--un-shadow:var(--un-shadow-inset) 0 1px 2px 0 var(--un-shadow-color, rgb(0 0 0 / 0.05));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .shadow-xl{--un-shadow:var(--un-shadow-inset) 0 20px 25px -5px var(--un-shadow-color, rgb(0 0 0 / 0.1)),var(--un-shadow-inset) 0 8px 10px -6px var(--un-shadow-color, rgb(0 0 0 / 0.1));box-shadow:var(--un-ring-offset-shadow), var(--un-ring-shadow), var(--un-shadow);}
 .focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px;}
+.focus\:ring-brand-500:focus{--un-ring-opacity:1;--un-ring-color:rgb(34 197 94 / var(--un-ring-opacity));}
 .transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
 .transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms;}
@@ -419,6 +442,8 @@
       "cartCount": 2,
       "cartTotal": 20.96,
       "wishlistCount": 3,
+      "paymentMethod": "gpay",
+      "paymentSuccess": false,
       "userFormattedTime": "2026-08-20 16:00:00 (Local Time)"
     }
     </script>
@@ -503,7 +528,7 @@
         <!-- Location, Wishlist, Cart Actions -->
         <div class="flex items-center gap-1.5 sm:gap-3">
 
-          <!-- Location Icon Button for Mobile & Desktop Trigger -->
+          <!-- Location Icon Button for Mobile -->
           <button on="tap:location-lightbox.open" aria-label="Select Delivery Location" class="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg lg:hidden transition flex items-center gap-1">
             <svg class="w-5 h-5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
           </button>
@@ -600,6 +625,111 @@
     </div>
   </amp-lightbox>
 
+  <!-- PAYMENT MODAL BOTTOM SHEET (BROWSER DEFAULT / EXPRESS PAYMENTS) -->
+  <amp-lightbox id="payment-sheet" layout="nodisplay">
+    <div class="fixed inset-0 bg-black/70 z-50 flex items-end justify-center p-0">
+      <div class="bg-white dark:bg-gray-800 rounded-t-3xl p-5 sm:p-6 max-w-lg w-full shadow-2xl space-y-4 sm:space-y-5 border-t border-gray-200 dark:border-gray-700 max-h-[90vh] overflow-y-auto">
+
+        <!-- Bottom Sheet Drag Handle & Title -->
+        <div class="space-y-3">
+          <div class="w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto"></div>
+          <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="p-1.5 bg-brand-600 text-white rounded-lg text-xs">⚡</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-gray-900 dark:text-white leading-tight">Express Browser Checkout</h3>
+                <p class="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Powered by Web Payments API & Google / Apple Pay</p>
+              </div>
+            </div>
+            <button on="tap:payment-sheet.close" aria-label="Close Payment Sheet" class="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 text-xl font-bold">✕</button>
+          </div>
+        </div>
+
+        <!-- Success Message View -->
+        <div [class]="storeState.paymentSuccess ? 'space-y-4 text-center py-6 block' : 'hidden'" class="hidden">
+          <div class="w-16 h-16 bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center text-3xl mx-auto shadow-inner">
+            ✓
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white">Order Placed Successfully!</h4>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Your order #ORD-2026-8890 is confirmed. Delivering to <span class="font-bold text-gray-900 dark:text-white" [text]="storeState.location">New York, NY (10001)</span>.</p>
+          <button on="tap:AMP.setState({ storeState: { paymentSuccess: false, cartCount: 0 } }),payment-sheet.close" class="btn-primary w-full py-3 text-sm font-bold">
+            Done & Return to Store
+          </button>
+        </div>
+
+        <!-- Main Payment Options View -->
+        <div [class]="storeState.paymentSuccess ? 'hidden' : 'space-y-4 block'">
+
+          <!-- Price Breakdown -->
+          <div class="bg-gray-50 dark:bg-gray-700/50 p-3.5 rounded-xl space-y-1.5 text-xs">
+            <div class="flex justify-between text-gray-600 dark:text-gray-300">
+              <span>Items Total (2 items)</span>
+              <span class="font-semibold text-gray-900 dark:text-white" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
+            </div>
+            <div class="flex justify-between text-gray-600 dark:text-gray-300">
+              <span>Express Delivery Fee</span>
+              <span class="text-brand-600 font-bold">FREE</span>
+            </div>
+            <div class="flex justify-between text-sm font-bold text-gray-900 dark:text-white pt-1.5 border-t border-gray-200 dark:border-gray-600">
+              <span>Amount Payable</span>
+              <span class="text-brand-600 dark:text-brand-400 text-base" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
+            </div>
+          </div>
+
+          <!-- Express Browser Default Payment Buttons -->
+          <div class="space-y-2.5">
+            <label class="block text-[11px] uppercase font-bold tracking-wider text-gray-500 dark:text-gray-400">Instant Express Pay:</label>
+
+            <!-- Google Pay Button -->
+            <button on="tap:AMP.setState({ storeState: { paymentMethod: 'gpay', paymentSuccess: true } })"
+              class="w-full bg-black hover:bg-gray-900 text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-md transition border border-gray-700 cursor-pointer">
+              <span class="text-lg">G Pay</span>
+              <span class="text-xs font-normal text-gray-300">| Pay <span [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span></span>
+            </button>
+
+            <!-- Apple Pay Button -->
+            <button on="tap:AMP.setState({ storeState: { paymentMethod: 'applepay', paymentSuccess: true } })"
+              class="w-full bg-black hover:bg-gray-900 text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-md transition border border-gray-700 cursor-pointer">
+              <span class="text-lg"> Pay</span>
+              <span class="text-xs font-normal text-gray-300">| Pay <span [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span></span>
+            </button>
+          </div>
+
+          <div class="relative flex py-1 items-center">
+            <div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+            <span class="flex-shrink mx-3 text-[10px] uppercase tracking-wider font-bold text-gray-400">Or Select Other Payment</span>
+            <div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+          </div>
+
+          <!-- Radio List: Card, Netbanking, COD -->
+          <div class="space-y-2 text-xs">
+            <label class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 cursor-pointer">
+              <input type="radio" name="pay-option" value="card" checked class="text-brand-600 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="font-bold text-gray-900 dark:text-white">Credit / Debit Card</div>
+                <div class="text-[10px] text-gray-500 dark:text-gray-400">Visa, Mastercard, Amex, Discover</div>
+              </div>
+            </label>
+
+            <label class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600 cursor-pointer">
+              <input type="radio" name="pay-option" value="cod" class="text-brand-600 focus:ring-brand-500">
+              <div class="flex-1">
+                <div class="font-bold text-gray-900 dark:text-white">Cash on Delivery (COD)</div>
+                <div class="text-[10px] text-gray-500 dark:text-gray-400">Pay cash upon doorstep delivery</div>
+              </div>
+            </label>
+          </div>
+
+          <!-- Confirm Standard Pay Button -->
+          <button on="tap:AMP.setState({ storeState: { paymentSuccess: true } })" class="w-full btn-primary py-3 text-sm font-bold shadow-lg shadow-brand-600/30">
+            Confirm & Complete Purchase
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </amp-lightbox>
+
   <!-- MOBILE NAVIGATION SIDEBAR -->
   <amp-sidebar id="mobile-nav" layout="nodisplay" side="left" class="w-72 bg-white dark:bg-gray-800 p-5 shadow-xl">
     <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-700">
@@ -674,7 +804,8 @@
           <span>Total</span>
           <span class="text-lg sm:text-xl text-brand-600 dark:text-brand-400" [text]="storeState.symbol + (20.96 * storeState.rate).toFixed(2)">$20.96</span>
         </div>
-        <button class="w-full btn-primary py-2.5 sm:py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30">
+        <!-- Opens Payment Modal Bottom Sheet -->
+        <button on="tap:cart-drawer.close,payment-sheet.open" class="w-full btn-primary py-2.5 sm:py-3 text-sm sm:text-base font-bold shadow-lg shadow-brand-600/30">
           Proceed to Checkout
         </button>
       </div>
