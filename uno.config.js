@@ -27,15 +27,25 @@ export default defineConfig({
     }
   },
   rules: [
+    // Safe area inset utilities
     ['safe-pt', { 'padding-top': 'env(safe-area-inset-top, 0px)' }],
     ['safe-pb', { 'padding-bottom': 'env(safe-area-inset-bottom, 0px)' }],
     ['safe-pl', { 'padding-left': 'env(safe-area-inset-left, 0px)' }],
     ['safe-pr', { 'padding-right': 'env(safe-area-inset-right, 0px)' }],
     ['safe-mt', { 'margin-top': 'env(safe-area-inset-top, 0px)' }],
     ['safe-mb', { 'margin-bottom': 'env(safe-area-inset-bottom, 0px)' }],
-    ['foldable-gap', { 'gap': 'max(1.5rem, env(viewport-segment-width 0 1, 0px))' }],
-    ['fold-hinge-margin', { 'margin-right': 'env(viewport-segment-width 0 0, 0px)' }],
-    ['fold-pane-width', { 'width': 'env(viewport-segment-width 0 0, 100%)' }],
+
+    // Viewport segments & foldable hinge gap utilities (Book / Dual-Screen mode)
+    ['foldable-gap', { 'gap': 'max(1.5rem, calc(env(viewport-segment-left 0 1, 0px) - env(viewport-segment-width 0 0, 0px)))' }],
+    ['fold-hinge-x', { 'padding-left': 'calc(env(viewport-segment-left 0 1, 0px) - env(viewport-segment-width 0 0, 0px))' }],
+    ['fold-left-width', { 'width': 'env(viewport-segment-width 0 0, 100%)' }],
+    ['fold-right-width', { 'width': 'env(viewport-segment-width 0 1, 100%)' }],
+
+    // Clamshell / Tabletop posture utilities (Horizontal hinge mode)
+    ['tabletop-gap', { 'gap': 'max(1rem, calc(env(viewport-segment-top 0 1, 0px) - env(viewport-segment-height 0 0, 0px)))' }],
+    ['tabletop-top-height', { 'min-height': 'env(viewport-segment-height 0 0, auto)' }],
+    ['tabletop-bottom-height', { 'min-height': 'env(viewport-segment-height 0 1, auto)' }],
+
     ['glass-border', { 'border-color': 'rgba(255, 255, 255, 0.15)' }],
     ['text-shadow-sm', { 'text-shadow': '0 1px 2px rgba(0,0,0,0.1)' }],
   ],
@@ -53,5 +63,6 @@ export default defineConfig({
     'fold-split-grid': 'grid grid-cols-1 lg:grid-cols-2 gap-6 foldable-gap items-start',
     'fold-pane': 'bg-white dark:bg-gray-800/90 rounded-2xl p-5 sm:p-6 border border-gray-200/70 dark:border-gray-700/60 shadow-sm',
     'fold-badge': 'bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 text-[10px] font-bold px-2.5 py-0.5 rounded-full inline-flex items-center gap-1',
+    'tabletop-split-grid': 'flex flex-col gap-4 tabletop-gap',
   }
 })
