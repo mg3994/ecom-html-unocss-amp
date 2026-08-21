@@ -19,7 +19,7 @@
   <!-- AMP Boilerplate -->
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-  <!-- RICH SCHEMA.ORG JSON-LD FOR PRODUCTGROUP & VARIANTS -->
+  <!-- RICH SCHEMA.ORG JSON-LD FOR PRODUCTGROUP, VARIANTS & AGGREGATERATING -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -32,6 +32,29 @@
       "name": "BlogStore Organic Farms"
     },
     "productGroupID": "GROC-APP-GRP",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "128",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Sarah M." },
+        "datePublished": "2026-08-18",
+        "reviewBody": "Incredibly sweet and crisp! Delivered fresh within two hours.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "David K." },
+        "datePublished": "2026-08-15",
+        "reviewBody": "Top quality organic apples. Excellent packaging.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+      }
+    ],
     "variesBy": ["https://schema.org/size"],
     "hasVariant": [
       {
