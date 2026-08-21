@@ -16,7 +16,11 @@
       "availableDate": "2026-08-20T10:00:00Z",
       "brand": "BlogStore Organic Farms",
       "sku": "GROC-APP-001",
-      "variants": ["1 lb Bag ($4.99)", "3 lb Family Pack ($12.99)", "5 lb Bulk Carton ($19.99)"]
+      "variants": ["1 lb Bag ($4.99)", "3 lb Family Pack ($12.99)", "5 lb Bulk Carton ($19.99)"],
+      "addons": [
+        { "id": "add-101", "name": "Eco Organic Cotton Produce Bag", "price": 1.99, "type": "Accessory" },
+        { "id": "add-102", "name": "Artisan Caramel Dipping Sauce (8 oz)", "price": 3.49, "type": "CompanionFood" }
+      ]
     },
     {
       "id": "prod-2",
@@ -34,7 +38,12 @@
       "availableDate": "2026-08-18T08:30:00Z",
       "brand": "ProBuild Tools",
       "sku": "HDWR-DRL-020",
-      "variants": ["Standard 20V Kit", "20V Kit + 50-Piece Bit Set ($109.99)", "Bare Tool Only ($69.99)"]
+      "variants": ["Standard 20V Kit", "20V Kit + 50-Piece Bit Set ($109.99)", "Bare Tool Only ($69.99)"],
+      "addons": [
+        { "id": "add-201", "name": "Extended 2-Year Equipment Warranty", "price": 14.99, "type": "WarrantyService" },
+        { "id": "add-202", "name": "Heavy-Duty Hard Shell Carrying Case", "price": 19.99, "type": "Accessory" },
+        { "id": "add-203", "name": "50-Piece Titanium Drill Bit Set", "price": 12.50, "type": "ToolAddon" }
+      ]
     },
     {
       "id": "prod-3",
@@ -52,7 +61,12 @@
       "availableDate": "2026-08-20T11:00:00Z",
       "brand": "BlogStore Express Bistro",
       "sku": "FOOD-BRG-002",
-      "variants": ["Regular Meal with Fries", "Large Meal + Milkshake ($15.50)", "Triple Patty Monster Meal ($17.99)"]
+      "variants": ["Regular Meal with Fries", "Large Meal + Milkshake ($15.50)", "Triple Patty Monster Meal ($17.99)"],
+      "addons": [
+        { "id": "add-301", "name": "Extra Melted Aged Cheddar Slice", "price": 1.50, "type": "Topping" },
+        { "id": "add-302", "name": "Crispy Smoked Bacon Strips", "price": 2.25, "type": "Topping" },
+        { "id": "add-303", "name": "Hand-crafted Chocolate Milkshake", "price": 3.99, "type": "Beverage" }
+      ]
     },
     {
       "id": "prod-4",
@@ -70,7 +84,10 @@
       "availableDate": "2026-08-19T06:00:00Z",
       "brand": "GreenValley Produce",
       "sku": "VEG-AVO-004",
-      "variants": ["4-Pack Medium", "6-Pack Large ($7.99)", "Organically Certified 4-Pack ($6.49)"]
+      "variants": ["4-Pack Medium", "6-Pack Large ($7.99)", "Organically Certified 4-Pack ($6.49)"],
+      "addons": [
+        { "id": "add-401", "name": "Fresh Organic Lime & Cilantro Seasoning", "price": 1.25, "type": "SpiceAddon" }
+      ]
     },
     {
       "id": "prod-5",
@@ -88,7 +105,11 @@
       "availableDate": "2026-08-20T09:00:00Z",
       "brand": "Glow Spa & Salon",
       "sku": "SLN-HAIR-01",
-      "variants": ["60 Min Styling & Wash", "90 Min Full Spa + Color Treatment ($110.00)", "Express Trim & Blow-Dry ($40.00)"]
+      "variants": ["60 Min Styling & Wash", "90 Min Full Spa + Color Treatment ($110.00)", "Express Trim & Blow-Dry ($40.00)"],
+      "addons": [
+        { "id": "add-501", "name": "Argan Oil Hair Nourishing Mask", "price": 15.00, "type": "TreatmentAddon" },
+        { "id": "add-502", "name": "Scalp Massager & Aromatherapy Session", "price": 20.00, "type": "SpaService" }
+      ]
     },
     {
       "id": "prod-6",
@@ -106,7 +127,11 @@
       "availableDate": "2026-08-15T14:20:00Z",
       "brand": "AudioTech Pro",
       "sku": "ELEC-HDP-06",
-      "variants": ["Matte Black", "Midnight Blue", "Silver Frost"]
+      "variants": ["Matte Black", "Midnight Blue", "Silver Frost"],
+      "addons": [
+        { "id": "add-601", "name": "Replacement Memory Foam Ear Cushions", "price": 14.99, "type": "Accessory" },
+        { "id": "add-602", "name": "Bluetooth 5.3 Low Latency USB Dongle", "price": 18.50, "type": "TechAddon" }
+      ]
     }
   ]
 }
