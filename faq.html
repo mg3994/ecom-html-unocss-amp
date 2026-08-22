@@ -245,7 +245,7 @@ a {
   overflow-y: auto;
 }
 </style>
-  <meta name="amp-script-src" content="sha384-70WPMSxOaBqFC/vtrGbnbaDR2Sn6ywURLIVtcKTr6OhrwLLPgNuY2t1hwfo21/mv">
+  <meta name="amp-script-src" content="sha384-SfAT/8Y4hAsV9wXW8H8vV27Ic4PBnWmO5vFajFZ2ZWDSf9P7FUT4mbDwvj15CU/x">
   <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
 </head>
 <body class="transition-colors duration-200 max-w-full overflow-x-hidden">
@@ -314,11 +314,54 @@ a {
   </footer>
 
   <script id="state-script" type="text/plain" target="amp-script">
+const STORAGE_KEY = "amp_cart";
+
+function readCart() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : { items: [], count: 0, total: 0 };
+  } catch (e) {
+    return { items: [], count: 0, total: 0 };
+  }
+}
+
+function writeCart(cart) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  } catch (e) {}
+}
+
 function updateCurrency() {
   const currency = localStorage.getItem("antinna_currency") || "USD";
   const rate = currency === "USD" ? 1.0 : (currency === "EUR" ? 0.92 : (currency === "GBP" ? 0.78 : 3.67));
   const symbol = currency === "USD" ? "$" : (currency === "EUR" ? "€" : (currency === "GBP" ? "£" : "د.إ"));
-  AMP.setState({ storeState: { currency, rate, symbol } });
+
+  const cart = readCart();
+  AMP.setState({
+    storeState: {
+      currency,
+      rate,
+      symbol,
+      cartCount: cart.count || cart.items.length,
+      cartTotal: cart.total || 0
+    }
+  });
+}
+
+function addToCartItem(item) {
+  const cart = readCart();
+  const existingIdx = cart.items.findIndex(i => i.id === item.id);
+  if (existingIdx > -1) {
+    cart.items[existingIdx].qty += 1;
+  } else {
+    cart.items.push({ id: item.id, name: item.name, price: item.price, qty: 1, image: item.image, category: item.category });
+  }
+
+  cart.count = cart.items.reduce((acc, i) => acc + i.qty, 0);
+  cart.total = cart.items.reduce((acc, i) => acc + (i.price * i.qty), 0);
+
+  writeCart(cart);
+  updateCurrency();
 }
 
 updateCurrency();
@@ -330,6 +373,19 @@ if (currencySelect) {
     updateCurrency();
   });
 }
+
+document.addEventListener("click", (e) => {
+  const target = e.target.closest("[data-add-id]");
+  if (target) {
+    const id = target.getAttribute("data-add-id");
+    const name = target.getAttribute("data-add-name") || "Catalog Product";
+    const price = parseFloat(target.getAttribute("data-add-price") || "9.99");
+    const image = target.getAttribute("data-add-image") || "";
+    const category = target.getAttribute("data-add-category") || "General";
+
+    addToCartItem({ id, name, price, image, category });
+  }
+});
   </script>
 </body>
 </html>
