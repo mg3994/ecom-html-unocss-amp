@@ -63,19 +63,29 @@ body.amp-dark-mode {
   color: #f8fafc;
 }
 
-body.amp-dark-mode .bg-white {
+body.amp-dark-mode .bg-white,
+body.amp-dark-mode .card-base,
+body.amp-dark-mode .trust-card,
+body.amp-dark-mode .product-card,
+body.amp-dark-mode .order-form-card {
   background-color: #1e293b;
+  border-color: #334155;
 }
-body.amp-dark-mode .text-surface-900 {
+
+body.amp-dark-mode .text-surface-900,
+body.amp-dark-mode .product-card-title {
   color: #f8fafc;
 }
+
 body.amp-dark-mode .text-surface-600,
 body.amp-dark-mode .text-surface-500 {
   color: #cbd5e1;
 }
+
 body.amp-dark-mode .border-surface-200 {
   border-color: #334155;
 }
+
 body.amp-dark-mode .bg-surface-50,
 body.amp-dark-mode .bg-surface-100 {
   background-color: #0f172a;
