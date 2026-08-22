@@ -26,21 +26,54 @@ function writeCart(cart) {
   } catch (e) {}
 }
 
-function updateCurrency() {
+function updateCurrencyAndCart() {
   const currency = localStorage.getItem("antinna_currency") || "USD";
   const rate = currency === "USD" ? 1.0 : (currency === "EUR" ? 0.92 : (currency === "GBP" ? 0.78 : 3.67));
   const symbol = currency === "USD" ? "$" : (currency === "EUR" ? "€" : (currency === "GBP" ? "£" : "د.إ"));
 
   const cart = readCart();
+  const count = cart.items.reduce((acc, i) => acc + i.qty, 0);
+  const total = cart.items.reduce((acc, i) => acc + (i.price * i.qty), 0);
+
   AMP.setState({
     storeState: {
       currency,
       rate,
       symbol,
-      cartCount: cart.count || cart.items.length,
-      cartTotal: cart.total || 0
+      cartCount: count,
+      cartTotal: (total * rate).toFixed(2)
     }
   });
+
+  renderCartUI(cart, symbol, rate);
+}
+
+function renderCartUI(cart, symbol, rate) {
+  const container = document.getElementById("cart-items-container");
+  if (!container) return;
+
+  if (!cart.items || cart.items.length === 0) {
+    container.innerHTML = \`<div class="text-center py-10 text-surface-400 text-xs">Your shopping cart is currently empty.</div>\`;
+    return;
+  }
+
+  container.innerHTML = cart.items.map(item => \`
+    <div class="flex items-center gap-3 p-3 bg-surface-50 dark:bg-surface-800 rounded-xl border border-surface-200 dark:border-surface-700">
+      <img src="\${item.image || 'https://via.placeholder.com/60'}" class="w-12 h-12 rounded-lg object-cover" />
+      <div class="flex-1">
+        <h4 class="font-bold text-xs text-surface-900 dark:text-white leading-tight">\${item.name}</h4>
+        <div class="text-[10px] text-surface-400 mt-0.5">\${symbol}\${(item.price * rate).toFixed(2)} each</div>
+        <div class="flex items-center justify-between mt-2">
+          <div class="flex items-center gap-1">
+            <button class="w-5 h-5 bg-surface-200 dark:bg-surface-700 rounded text-xs font-bold border-none cursor-pointer" data-qty-dec="\${item.id}">-</button>
+            <span class="text-xs font-semibold px-1.5">\${item.qty}</span>
+            <button class="w-5 h-5 bg-surface-200 dark:bg-surface-700 rounded text-xs font-bold border-none cursor-pointer" data-qty-inc="\${item.id}">+</button>
+          </div>
+          <button class="text-[10px] text-rose-600 font-bold bg-transparent border-none cursor-pointer" data-remove-id="\${item.id}">Remove</button>
+        </div>
+      </div>
+    </div>
+  \`).join("");
 }
 
 function addToCartItem(item) {
@@ -56,29 +89,68 @@ function addToCartItem(item) {
   cart.total = cart.items.reduce((acc, i) => acc + (i.price * i.qty), 0);
 
   writeCart(cart);
-  updateCurrency();
+  updateCurrencyAndCart();
 }
 
-updateCurrency();
+function modifyQty(id, delta) {
+  const cart = readCart();
+  const idx = cart.items.findIndex(i => i.id === id);
+  if (idx > -1) {
+    cart.items[idx].qty += delta;
+    if (cart.items[idx].qty <= 0) {
+      cart.items.splice(idx, 1);
+    }
+  }
+  writeCart(cart);
+  updateCurrencyAndCart();
+}
+
+function removeItem(id) {
+  const cart = readCart();
+  cart.items = cart.items.filter(i => i.id !== id);
+  writeCart(cart);
+  updateCurrencyAndCart();
+}
+
+updateCurrencyAndCart();
 
 const currencySelect = document.getElementById("currency-select");
 if (currencySelect) {
   currencySelect.addEventListener("change", (e) => {
     localStorage.setItem("antinna_currency", e.target.value);
-    updateCurrency();
+    updateCurrencyAndCart();
   });
 }
 
 document.addEventListener("click", (e) => {
-  const target = e.target.closest("[data-add-id]");
-  if (target) {
-    const id = target.getAttribute("data-add-id");
-    const name = target.getAttribute("data-add-name") || "Catalog Product";
-    const price = parseFloat(target.getAttribute("data-add-price") || "9.99");
-    const image = target.getAttribute("data-add-image") || "";
-    const category = target.getAttribute("data-add-category") || "General";
+  const addTarget = e.target.closest("[data-add-id]");
+  if (addTarget) {
+    const id = addTarget.getAttribute("data-add-id");
+    const name = addTarget.getAttribute("data-add-name") || "Catalog Product";
+    const price = parseFloat(addTarget.getAttribute("data-add-price") || "9.99");
+    const image = addTarget.getAttribute("data-add-image") || "";
+    const category = addTarget.getAttribute("data-add-category") || "General";
 
     addToCartItem({ id, name, price, image, category });
+    return;
+  }
+
+  const incTarget = e.target.closest("[data-qty-inc]");
+  if (incTarget) {
+    modifyQty(incTarget.getAttribute("data-qty-inc"), 1);
+    return;
+  }
+
+  const decTarget = e.target.closest("[data-qty-dec]");
+  if (decTarget) {
+    modifyQty(decTarget.getAttribute("data-qty-dec"), -1);
+    return;
+  }
+
+  const removeTarget = e.target.closest("[data-remove-id]");
+  if (removeTarget) {
+    removeItem(removeTarget.getAttribute("data-remove-id"));
+    return;
   }
 });
 `.trim();
